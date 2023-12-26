@@ -1,0 +1,45 @@
+{
+    "exception_messages": {
+        "no_internet": "No internet! Please check internet and try again",
+        "network" : "Can not connect to server",
+        "server": "Can not connect to server",
+        "refreshToken": "Token expert! Please login again",
+        
+        "invalidNumber": "Invalid number! Only number is accept",
+        "negativeNumber": "We need a number more than zero", 
+        
+        "save_storage": "Save failed. Please try again",
+        "get_storage": "Error! Can not get value",
+
+        "unknown": "Something's running wrong!"
+    },
+
+    "notice" : "Notice",
+    "confirm" : "Confirm",
+    "retry" : "Retry",
+    "cancel" : "Cancel",
+    "ok" : "OK",
+    "view_all" : "View All",
+
+    "login" : "Login",
+    "login_guest" : "Login as guest",
+    "login_tmdb_account" : "Login with TMDB account",
+    "login_guest_description" : "When logged in as a guest, your data will not be stored for long, limiting activities on the application.",
+    "login_tmdb_description" : "Sign in with your TMDB account to use other advanced features, sync data with your TMDB account.",
+    "or" : "or",
+
+    "user_approval" : "User Approval",
+    "user_approval_description" : "By using TMDB account, please sign in to TMDB and approval Star Movie access your account to read and write data on your behalf.",
+    "user_not_approval_description" : "Not approval for Star Movie, we can't sync and read or write any data. You can't use advance feature in app",
+
+    "movies" : "Movies",
+    "trending_movies" : "Trending Movies",
+    "popular_movies": "Popular Movies",
+    "upcoming_movies": "Upcoming Movies",
+    "now_playing_movies": "Now Playing Movies",
+    "top_rate_movies": "Top Rate Movies",
+    
+    
+
+    "//" : "//"
+}

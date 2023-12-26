@@ -1,0 +1,28 @@
+import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+import 'package:star_movie/domain/repositories/repository.dart';
+import 'package:star_movie/domain/use_cases/base_use_case.dart';
+import 'package:star_movie/share/exceptions/app_exception.dart';
+
+part 'change_app_theme_use_case.freezed.dart';
+
+@Injectable()
+class ChangeAppThemeUseCase
+    extends BaseUseCase<bool, ChangeAppThemeUseCaseParams> {
+  const ChangeAppThemeUseCase({required this.repository});
+
+  final Repository repository;
+
+  @override
+  Future<Either<AppException, bool>> call(ChangeAppThemeUseCaseParams params) {
+    return repository.changeAppTheme(params.isDarkMode);
+  }
+}
+
+@freezed
+class ChangeAppThemeUseCaseParams with _$ChangeAppThemeUseCaseParams {
+  const factory ChangeAppThemeUseCaseParams({
+    @Default(false) bool isDarkMode,
+  }) = _ChangeAppThemeUseCaseParams;
+}
