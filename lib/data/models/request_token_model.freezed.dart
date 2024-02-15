@@ -12,7 +12,7 @@ part of 'request_token_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RequestTokenModel _$RequestTokenModelFromJson(Map<String, dynamic> json) {
   return _RequestTokenModel.fromJson(json);
@@ -80,11 +80,11 @@ class _$RequestTokenModelCopyWithImpl<$Res, $Val extends RequestTokenModel>
 }
 
 /// @nodoc
-abstract class _$$_RequestTokenModelCopyWith<$Res>
+abstract class _$$RequestTokenModelImplCopyWith<$Res>
     implements $RequestTokenModelCopyWith<$Res> {
-  factory _$$_RequestTokenModelCopyWith(_$_RequestTokenModel value,
-          $Res Function(_$_RequestTokenModel) then) =
-      __$$_RequestTokenModelCopyWithImpl<$Res>;
+  factory _$$RequestTokenModelImplCopyWith(_$RequestTokenModelImpl value,
+          $Res Function(_$RequestTokenModelImpl) then) =
+      __$$RequestTokenModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_RequestTokenModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RequestTokenModelCopyWithImpl<$Res>
-    extends _$RequestTokenModelCopyWithImpl<$Res, _$_RequestTokenModel>
-    implements _$$_RequestTokenModelCopyWith<$Res> {
-  __$$_RequestTokenModelCopyWithImpl(
-      _$_RequestTokenModel _value, $Res Function(_$_RequestTokenModel) _then)
+class __$$RequestTokenModelImplCopyWithImpl<$Res>
+    extends _$RequestTokenModelCopyWithImpl<$Res, _$RequestTokenModelImpl>
+    implements _$$RequestTokenModelImplCopyWith<$Res> {
+  __$$RequestTokenModelImplCopyWithImpl(_$RequestTokenModelImpl _value,
+      $Res Function(_$RequestTokenModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_RequestTokenModelCopyWithImpl<$Res>
     Object? expiresAt = null,
     Object? requestToken = null,
   }) {
-    return _then(_$_RequestTokenModel(
+    return _then(_$RequestTokenModelImpl(
       success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_RequestTokenModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RequestTokenModel implements _RequestTokenModel {
-  const _$_RequestTokenModel(
+class _$RequestTokenModelImpl implements _RequestTokenModel {
+  const _$RequestTokenModelImpl(
       {@JsonKey(name: 'success') this.success = false,
       @JsonKey(name: 'expires_at') this.expiresAt = '',
       @JsonKey(name: 'request_token') this.requestToken = ''});
 
-  factory _$_RequestTokenModel.fromJson(Map<String, dynamic> json) =>
-      _$$_RequestTokenModelFromJson(json);
+  factory _$RequestTokenModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RequestTokenModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'success')
@@ -152,10 +152,10 @@ class _$_RequestTokenModel implements _RequestTokenModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RequestTokenModel &&
+            other is _$RequestTokenModelImpl &&
             (identical(other.success, success) || other.success == success) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt) &&
@@ -171,13 +171,13 @@ class _$_RequestTokenModel implements _RequestTokenModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RequestTokenModelCopyWith<_$_RequestTokenModel> get copyWith =>
-      __$$_RequestTokenModelCopyWithImpl<_$_RequestTokenModel>(
+  _$$RequestTokenModelImplCopyWith<_$RequestTokenModelImpl> get copyWith =>
+      __$$RequestTokenModelImplCopyWithImpl<_$RequestTokenModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RequestTokenModelToJson(
+    return _$$RequestTokenModelImplToJson(
       this,
     );
   }
@@ -188,10 +188,10 @@ abstract class _RequestTokenModel implements RequestTokenModel {
           {@JsonKey(name: 'success') final bool success,
           @JsonKey(name: 'expires_at') final String expiresAt,
           @JsonKey(name: 'request_token') final String requestToken}) =
-      _$_RequestTokenModel;
+      _$RequestTokenModelImpl;
 
   factory _RequestTokenModel.fromJson(Map<String, dynamic> json) =
-      _$_RequestTokenModel.fromJson;
+      _$RequestTokenModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'success')
@@ -204,6 +204,6 @@ abstract class _RequestTokenModel implements RequestTokenModel {
   String get requestToken;
   @override
   @JsonKey(ignore: true)
-  _$$_RequestTokenModelCopyWith<_$_RequestTokenModel> get copyWith =>
+  _$$RequestTokenModelImplCopyWith<_$RequestTokenModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

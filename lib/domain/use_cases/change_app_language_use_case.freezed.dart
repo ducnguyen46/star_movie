@@ -12,7 +12,7 @@ part of 'change_app_language_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChangeAppLanguageUseCaseParams {
@@ -60,24 +60,25 @@ class _$ChangeAppLanguageUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChangeAppLanguageUseCaseCopyWith<$Res>
+abstract class _$$ChangeAppLanguageUseCaseImplCopyWith<$Res>
     implements $ChangeAppLanguageUseCaseParamsCopyWith<$Res> {
-  factory _$$_ChangeAppLanguageUseCaseCopyWith(
-          _$_ChangeAppLanguageUseCase value,
-          $Res Function(_$_ChangeAppLanguageUseCase) then) =
-      __$$_ChangeAppLanguageUseCaseCopyWithImpl<$Res>;
+  factory _$$ChangeAppLanguageUseCaseImplCopyWith(
+          _$ChangeAppLanguageUseCaseImpl value,
+          $Res Function(_$ChangeAppLanguageUseCaseImpl) then) =
+      __$$ChangeAppLanguageUseCaseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LanguageCode languageCode});
 }
 
 /// @nodoc
-class __$$_ChangeAppLanguageUseCaseCopyWithImpl<$Res>
+class __$$ChangeAppLanguageUseCaseImplCopyWithImpl<$Res>
     extends _$ChangeAppLanguageUseCaseParamsCopyWithImpl<$Res,
-        _$_ChangeAppLanguageUseCase>
-    implements _$$_ChangeAppLanguageUseCaseCopyWith<$Res> {
-  __$$_ChangeAppLanguageUseCaseCopyWithImpl(_$_ChangeAppLanguageUseCase _value,
-      $Res Function(_$_ChangeAppLanguageUseCase) _then)
+        _$ChangeAppLanguageUseCaseImpl>
+    implements _$$ChangeAppLanguageUseCaseImplCopyWith<$Res> {
+  __$$ChangeAppLanguageUseCaseImplCopyWithImpl(
+      _$ChangeAppLanguageUseCaseImpl _value,
+      $Res Function(_$ChangeAppLanguageUseCaseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -85,7 +86,7 @@ class __$$_ChangeAppLanguageUseCaseCopyWithImpl<$Res>
   $Res call({
     Object? languageCode = null,
   }) {
-    return _then(_$_ChangeAppLanguageUseCase(
+    return _then(_$ChangeAppLanguageUseCaseImpl(
       languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
@@ -96,8 +97,8 @@ class __$$_ChangeAppLanguageUseCaseCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ChangeAppLanguageUseCase implements _ChangeAppLanguageUseCase {
-  const _$_ChangeAppLanguageUseCase({this.languageCode = LanguageCode.en});
+class _$ChangeAppLanguageUseCaseImpl implements _ChangeAppLanguageUseCase {
+  const _$ChangeAppLanguageUseCaseImpl({this.languageCode = LanguageCode.en});
 
   @override
   @JsonKey()
@@ -109,10 +110,10 @@ class _$_ChangeAppLanguageUseCase implements _ChangeAppLanguageUseCase {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeAppLanguageUseCase &&
+            other is _$ChangeAppLanguageUseCaseImpl &&
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode));
   }
@@ -123,20 +124,20 @@ class _$_ChangeAppLanguageUseCase implements _ChangeAppLanguageUseCase {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChangeAppLanguageUseCaseCopyWith<_$_ChangeAppLanguageUseCase>
-      get copyWith => __$$_ChangeAppLanguageUseCaseCopyWithImpl<
-          _$_ChangeAppLanguageUseCase>(this, _$identity);
+  _$$ChangeAppLanguageUseCaseImplCopyWith<_$ChangeAppLanguageUseCaseImpl>
+      get copyWith => __$$ChangeAppLanguageUseCaseImplCopyWithImpl<
+          _$ChangeAppLanguageUseCaseImpl>(this, _$identity);
 }
 
 abstract class _ChangeAppLanguageUseCase
     implements ChangeAppLanguageUseCaseParams {
   const factory _ChangeAppLanguageUseCase({final LanguageCode languageCode}) =
-      _$_ChangeAppLanguageUseCase;
+      _$ChangeAppLanguageUseCaseImpl;
 
   @override
   LanguageCode get languageCode;
   @override
   @JsonKey(ignore: true)
-  _$$_ChangeAppLanguageUseCaseCopyWith<_$_ChangeAppLanguageUseCase>
+  _$$ChangeAppLanguageUseCaseImplCopyWith<_$ChangeAppLanguageUseCaseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

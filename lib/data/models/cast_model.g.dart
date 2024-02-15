@@ -6,7 +6,8 @@ part of 'cast_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CastModel _$$_CastModelFromJson(Map<String, dynamic> json) => _$_CastModel(
+_$CastModelImpl _$$CastModelImplFromJson(Map<String, dynamic> json) =>
+    _$CastModelImpl(
       id: json['id'] as int? ?? -1,
       castId: json['cast_id'] as int? ?? -1,
       creditId: json['credit_id'] as String? ?? '',
@@ -19,7 +20,7 @@ _$_CastModel _$$_CastModelFromJson(Map<String, dynamic> json) => _$_CastModel(
       gender: json['gender'] as int? ?? -1,
     );
 
-Map<String, dynamic> _$$_CastModelToJson(_$_CastModel instance) =>
+Map<String, dynamic> _$$CastModelImplToJson(_$CastModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'cast_id': instance.castId,

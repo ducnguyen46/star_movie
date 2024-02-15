@@ -12,7 +12,7 @@ part of 'production_country_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ProductionCountry _$ProductionCountryFromJson(Map<String, dynamic> json) {
   return _ProductionCountry.fromJson(json);
@@ -72,11 +72,11 @@ class _$ProductionCountryCopyWithImpl<$Res, $Val extends ProductionCountry>
 }
 
 /// @nodoc
-abstract class _$$_ProductionCountryCopyWith<$Res>
+abstract class _$$ProductionCountryImplCopyWith<$Res>
     implements $ProductionCountryCopyWith<$Res> {
-  factory _$$_ProductionCountryCopyWith(_$_ProductionCountry value,
-          $Res Function(_$_ProductionCountry) then) =
-      __$$_ProductionCountryCopyWithImpl<$Res>;
+  factory _$$ProductionCountryImplCopyWith(_$ProductionCountryImpl value,
+          $Res Function(_$ProductionCountryImpl) then) =
+      __$$ProductionCountryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,11 +85,11 @@ abstract class _$$_ProductionCountryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductionCountryCopyWithImpl<$Res>
-    extends _$ProductionCountryCopyWithImpl<$Res, _$_ProductionCountry>
-    implements _$$_ProductionCountryCopyWith<$Res> {
-  __$$_ProductionCountryCopyWithImpl(
-      _$_ProductionCountry _value, $Res Function(_$_ProductionCountry) _then)
+class __$$ProductionCountryImplCopyWithImpl<$Res>
+    extends _$ProductionCountryCopyWithImpl<$Res, _$ProductionCountryImpl>
+    implements _$$ProductionCountryImplCopyWith<$Res> {
+  __$$ProductionCountryImplCopyWithImpl(_$ProductionCountryImpl _value,
+      $Res Function(_$ProductionCountryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_ProductionCountryCopyWithImpl<$Res>
     Object? countryCode = null,
     Object? countryName = null,
   }) {
-    return _then(_$_ProductionCountry(
+    return _then(_$ProductionCountryImpl(
       countryCode: null == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -113,13 +113,13 @@ class __$$_ProductionCountryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductionCountry implements _ProductionCountry {
-  const _$_ProductionCountry(
+class _$ProductionCountryImpl implements _ProductionCountry {
+  const _$ProductionCountryImpl(
       {@JsonKey(name: 'iso_3166_1') this.countryCode = '',
       @JsonKey(name: 'name') this.countryName = ''});
 
-  factory _$_ProductionCountry.fromJson(Map<String, dynamic> json) =>
-      _$$_ProductionCountryFromJson(json);
+  factory _$ProductionCountryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductionCountryImplFromJson(json);
 
   @override
   @JsonKey(name: 'iso_3166_1')
@@ -134,10 +134,10 @@ class _$_ProductionCountry implements _ProductionCountry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductionCountry &&
+            other is _$ProductionCountryImpl &&
             (identical(other.countryCode, countryCode) ||
                 other.countryCode == countryCode) &&
             (identical(other.countryName, countryName) ||
@@ -151,13 +151,13 @@ class _$_ProductionCountry implements _ProductionCountry {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductionCountryCopyWith<_$_ProductionCountry> get copyWith =>
-      __$$_ProductionCountryCopyWithImpl<_$_ProductionCountry>(
+  _$$ProductionCountryImplCopyWith<_$ProductionCountryImpl> get copyWith =>
+      __$$ProductionCountryImplCopyWithImpl<_$ProductionCountryImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductionCountryToJson(
+    return _$$ProductionCountryImplToJson(
       this,
     );
   }
@@ -165,11 +165,12 @@ class _$_ProductionCountry implements _ProductionCountry {
 
 abstract class _ProductionCountry implements ProductionCountry {
   const factory _ProductionCountry(
-      {@JsonKey(name: 'iso_3166_1') final String countryCode,
-      @JsonKey(name: 'name') final String countryName}) = _$_ProductionCountry;
+          {@JsonKey(name: 'iso_3166_1') final String countryCode,
+          @JsonKey(name: 'name') final String countryName}) =
+      _$ProductionCountryImpl;
 
   factory _ProductionCountry.fromJson(Map<String, dynamic> json) =
-      _$_ProductionCountry.fromJson;
+      _$ProductionCountryImpl.fromJson;
 
   @override
   @JsonKey(name: 'iso_3166_1')
@@ -179,6 +180,6 @@ abstract class _ProductionCountry implements ProductionCountry {
   String get countryName;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductionCountryCopyWith<_$_ProductionCountry> get copyWith =>
+  _$$ProductionCountryImplCopyWith<_$ProductionCountryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

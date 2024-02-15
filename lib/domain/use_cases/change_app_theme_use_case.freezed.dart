@@ -12,7 +12,7 @@ part of 'change_app_theme_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChangeAppThemeUseCaseParams {
@@ -60,25 +60,25 @@ class _$ChangeAppThemeUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ChangeAppThemeUseCaseParamsCopyWith<$Res>
+abstract class _$$ChangeAppThemeUseCaseParamsImplCopyWith<$Res>
     implements $ChangeAppThemeUseCaseParamsCopyWith<$Res> {
-  factory _$$_ChangeAppThemeUseCaseParamsCopyWith(
-          _$_ChangeAppThemeUseCaseParams value,
-          $Res Function(_$_ChangeAppThemeUseCaseParams) then) =
-      __$$_ChangeAppThemeUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$ChangeAppThemeUseCaseParamsImplCopyWith(
+          _$ChangeAppThemeUseCaseParamsImpl value,
+          $Res Function(_$ChangeAppThemeUseCaseParamsImpl) then) =
+      __$$ChangeAppThemeUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isDarkMode});
 }
 
 /// @nodoc
-class __$$_ChangeAppThemeUseCaseParamsCopyWithImpl<$Res>
+class __$$ChangeAppThemeUseCaseParamsImplCopyWithImpl<$Res>
     extends _$ChangeAppThemeUseCaseParamsCopyWithImpl<$Res,
-        _$_ChangeAppThemeUseCaseParams>
-    implements _$$_ChangeAppThemeUseCaseParamsCopyWith<$Res> {
-  __$$_ChangeAppThemeUseCaseParamsCopyWithImpl(
-      _$_ChangeAppThemeUseCaseParams _value,
-      $Res Function(_$_ChangeAppThemeUseCaseParams) _then)
+        _$ChangeAppThemeUseCaseParamsImpl>
+    implements _$$ChangeAppThemeUseCaseParamsImplCopyWith<$Res> {
+  __$$ChangeAppThemeUseCaseParamsImplCopyWithImpl(
+      _$ChangeAppThemeUseCaseParamsImpl _value,
+      $Res Function(_$ChangeAppThemeUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_ChangeAppThemeUseCaseParamsCopyWithImpl<$Res>
   $Res call({
     Object? isDarkMode = null,
   }) {
-    return _then(_$_ChangeAppThemeUseCaseParams(
+    return _then(_$ChangeAppThemeUseCaseParamsImpl(
       isDarkMode: null == isDarkMode
           ? _value.isDarkMode
           : isDarkMode // ignore: cast_nullable_to_non_nullable
@@ -97,8 +97,9 @@ class __$$_ChangeAppThemeUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ChangeAppThemeUseCaseParams implements _ChangeAppThemeUseCaseParams {
-  const _$_ChangeAppThemeUseCaseParams({this.isDarkMode = false});
+class _$ChangeAppThemeUseCaseParamsImpl
+    implements _ChangeAppThemeUseCaseParams {
+  const _$ChangeAppThemeUseCaseParamsImpl({this.isDarkMode = false});
 
   @override
   @JsonKey()
@@ -110,10 +111,10 @@ class _$_ChangeAppThemeUseCaseParams implements _ChangeAppThemeUseCaseParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeAppThemeUseCaseParams &&
+            other is _$ChangeAppThemeUseCaseParamsImpl &&
             (identical(other.isDarkMode, isDarkMode) ||
                 other.isDarkMode == isDarkMode));
   }
@@ -124,20 +125,20 @@ class _$_ChangeAppThemeUseCaseParams implements _ChangeAppThemeUseCaseParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChangeAppThemeUseCaseParamsCopyWith<_$_ChangeAppThemeUseCaseParams>
-      get copyWith => __$$_ChangeAppThemeUseCaseParamsCopyWithImpl<
-          _$_ChangeAppThemeUseCaseParams>(this, _$identity);
+  _$$ChangeAppThemeUseCaseParamsImplCopyWith<_$ChangeAppThemeUseCaseParamsImpl>
+      get copyWith => __$$ChangeAppThemeUseCaseParamsImplCopyWithImpl<
+          _$ChangeAppThemeUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _ChangeAppThemeUseCaseParams
     implements ChangeAppThemeUseCaseParams {
   const factory _ChangeAppThemeUseCaseParams({final bool isDarkMode}) =
-      _$_ChangeAppThemeUseCaseParams;
+      _$ChangeAppThemeUseCaseParamsImpl;
 
   @override
   bool get isDarkMode;
   @override
   @JsonKey(ignore: true)
-  _$$_ChangeAppThemeUseCaseParamsCopyWith<_$_ChangeAppThemeUseCaseParams>
+  _$$ChangeAppThemeUseCaseParamsImplCopyWith<_$ChangeAppThemeUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

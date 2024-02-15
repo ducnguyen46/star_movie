@@ -23,19 +23,22 @@ class MovieDetailVideoItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(Dimens.d8),
-            ),
-            child: Container(
-              height: height,
-              width: height * 16 / 9,
-              decoration: BoxDecoration(
-                color: AppColors.richBlack20,
+          GestureDetector(
+            onTap: onPressed,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(Dimens.d8),
               ),
-              child: CachedImageCommon(
-                imageUrl: 'https://img.youtube.com/vi/$videoKey/0.jpg',
-                fit: BoxFit.fitWidth,
+              child: Container(
+                height: height,
+                width: height * 16 / 9,
+                decoration: BoxDecoration(
+                  color: AppColors.richBlack20,
+                ),
+                child: CachedImageCommon(
+                  imageUrl: 'https://img.youtube.com/vi/$videoKey/0.jpg',
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
           ),

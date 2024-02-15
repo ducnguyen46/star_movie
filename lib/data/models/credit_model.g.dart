@@ -6,8 +6,8 @@ part of 'credit_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CreditModel _$$_CreditModelFromJson(Map<String, dynamic> json) =>
-    _$_CreditModel(
+_$CreditModelImpl _$$CreditModelImplFromJson(Map<String, dynamic> json) =>
+    _$CreditModelImpl(
       casts: (json['cast'] as List<dynamic>?)
               ?.map((e) => CastModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -18,7 +18,7 @@ _$_CreditModel _$$_CreditModelFromJson(Map<String, dynamic> json) =>
           const <CrewModel>[],
     );
 
-Map<String, dynamic> _$$_CreditModelToJson(_$_CreditModel instance) =>
+Map<String, dynamic> _$$CreditModelImplToJson(_$CreditModelImpl instance) =>
     <String, dynamic>{
       'cast': instance.casts,
       'crew': instance.crews,

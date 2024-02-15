@@ -6,3 +6,4 @@ export 'movie_page/movie_page.dart';
 export 'user_acception_page/user_approval_page.dart';
 export 'list_home_movies_page/list_home_movies_page.dart';
 export 'movie_detail/movie_detail_page.dart';
+export 'video_player_page/video_player_page.dart';

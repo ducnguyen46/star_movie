@@ -12,7 +12,7 @@ part of 'credit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Credit _$CreditFromJson(Map<String, dynamic> json) {
   return _Credit.fromJson(json);
@@ -66,19 +66,21 @@ class _$CreditCopyWithImpl<$Res, $Val extends Credit>
 }
 
 /// @nodoc
-abstract class _$$_CreditCopyWith<$Res> implements $CreditCopyWith<$Res> {
-  factory _$$_CreditCopyWith(_$_Credit value, $Res Function(_$_Credit) then) =
-      __$$_CreditCopyWithImpl<$Res>;
+abstract class _$$CreditImplCopyWith<$Res> implements $CreditCopyWith<$Res> {
+  factory _$$CreditImplCopyWith(
+          _$CreditImpl value, $Res Function(_$CreditImpl) then) =
+      __$$CreditImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Cast> casts, List<Crew> crews});
 }
 
 /// @nodoc
-class __$$_CreditCopyWithImpl<$Res>
-    extends _$CreditCopyWithImpl<$Res, _$_Credit>
-    implements _$$_CreditCopyWith<$Res> {
-  __$$_CreditCopyWithImpl(_$_Credit _value, $Res Function(_$_Credit) _then)
+class __$$CreditImplCopyWithImpl<$Res>
+    extends _$CreditCopyWithImpl<$Res, _$CreditImpl>
+    implements _$$CreditImplCopyWith<$Res> {
+  __$$CreditImplCopyWithImpl(
+      _$CreditImpl _value, $Res Function(_$CreditImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +89,7 @@ class __$$_CreditCopyWithImpl<$Res>
     Object? casts = null,
     Object? crews = null,
   }) {
-    return _then(_$_Credit(
+    return _then(_$CreditImpl(
       casts: null == casts
           ? _value._casts
           : casts // ignore: cast_nullable_to_non_nullable
@@ -102,14 +104,14 @@ class __$$_CreditCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Credit implements _Credit {
-  const _$_Credit(
+class _$CreditImpl implements _Credit {
+  const _$CreditImpl(
       {required final List<Cast> casts, required final List<Crew> crews})
       : _casts = casts,
         _crews = crews;
 
-  factory _$_Credit.fromJson(Map<String, dynamic> json) =>
-      _$$_CreditFromJson(json);
+  factory _$CreditImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreditImplFromJson(json);
 
   final List<Cast> _casts;
   @override
@@ -133,10 +135,10 @@ class _$_Credit implements _Credit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Credit &&
+            other is _$CreditImpl &&
             const DeepCollectionEquality().equals(other._casts, _casts) &&
             const DeepCollectionEquality().equals(other._crews, _crews));
   }
@@ -151,12 +153,12 @@ class _$_Credit implements _Credit {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditCopyWith<_$_Credit> get copyWith =>
-      __$$_CreditCopyWithImpl<_$_Credit>(this, _$identity);
+  _$$CreditImplCopyWith<_$CreditImpl> get copyWith =>
+      __$$CreditImplCopyWithImpl<_$CreditImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CreditToJson(
+    return _$$CreditImplToJson(
       this,
     );
   }
@@ -165,9 +167,9 @@ class _$_Credit implements _Credit {
 abstract class _Credit implements Credit {
   const factory _Credit(
       {required final List<Cast> casts,
-      required final List<Crew> crews}) = _$_Credit;
+      required final List<Crew> crews}) = _$CreditImpl;
 
-  factory _Credit.fromJson(Map<String, dynamic> json) = _$_Credit.fromJson;
+  factory _Credit.fromJson(Map<String, dynamic> json) = _$CreditImpl.fromJson;
 
   @override
   List<Cast> get casts;
@@ -175,6 +177,6 @@ abstract class _Credit implements Credit {
   List<Crew> get crews;
   @override
   @JsonKey(ignore: true)
-  _$$_CreditCopyWith<_$_Credit> get copyWith =>
+  _$$CreditImplCopyWith<_$CreditImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

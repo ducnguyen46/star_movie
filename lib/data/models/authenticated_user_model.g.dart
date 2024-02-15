@@ -6,17 +6,17 @@ part of 'authenticated_user_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AuthenticatedUserModel _$$_AuthenticatedUserModelFromJson(
+_$AuthenticatedUserModelImpl _$$AuthenticatedUserModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AuthenticatedUserModel(
+    _$AuthenticatedUserModelImpl(
       isAuthenticatedUser: json['is_authenticated'] as bool? ?? false,
       sessionId: json['session_id'] as String? ?? '',
       guestSessionId: json['guest_session_id'] as String? ?? '',
       expiresAt: json['expires_at'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_AuthenticatedUserModelToJson(
-        _$_AuthenticatedUserModel instance) =>
+Map<String, dynamic> _$$AuthenticatedUserModelImplToJson(
+        _$AuthenticatedUserModelImpl instance) =>
     <String, dynamic>{
       'is_authenticated': instance.isAuthenticatedUser,
       'session_id': instance.sessionId,

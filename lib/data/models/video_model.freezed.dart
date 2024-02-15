@@ -12,7 +12,7 @@ part of 'video_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VideoModel _$VideoModelFromJson(Map<String, dynamic> json) {
   return _VideoModel.fromJson(json);
@@ -88,11 +88,11 @@ class _$VideoModelCopyWithImpl<$Res, $Val extends VideoModel>
 }
 
 /// @nodoc
-abstract class _$$_VideoModelCopyWith<$Res>
+abstract class _$$VideoModelImplCopyWith<$Res>
     implements $VideoModelCopyWith<$Res> {
-  factory _$$_VideoModelCopyWith(
-          _$_VideoModel value, $Res Function(_$_VideoModel) then) =
-      __$$_VideoModelCopyWithImpl<$Res>;
+  factory _$$VideoModelImplCopyWith(
+          _$VideoModelImpl value, $Res Function(_$VideoModelImpl) then) =
+      __$$VideoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_VideoModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_VideoModelCopyWithImpl<$Res>
-    extends _$VideoModelCopyWithImpl<$Res, _$_VideoModel>
-    implements _$$_VideoModelCopyWith<$Res> {
-  __$$_VideoModelCopyWithImpl(
-      _$_VideoModel _value, $Res Function(_$_VideoModel) _then)
+class __$$VideoModelImplCopyWithImpl<$Res>
+    extends _$VideoModelCopyWithImpl<$Res, _$VideoModelImpl>
+    implements _$$VideoModelImplCopyWith<$Res> {
+  __$$VideoModelImplCopyWithImpl(
+      _$VideoModelImpl _value, $Res Function(_$VideoModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_VideoModelCopyWithImpl<$Res>
     Object? site = null,
     Object? isOfficialVid = null,
   }) {
-    return _then(_$_VideoModel(
+    return _then(_$VideoModelImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -141,15 +141,15 @@ class __$$_VideoModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VideoModel implements _VideoModel {
-  const _$_VideoModel(
+class _$VideoModelImpl implements _VideoModel {
+  const _$VideoModelImpl(
       {@JsonKey(name: 'name') this.title = '',
       @JsonKey(name: 'key') this.key = '',
       @JsonKey(name: 'site') this.site = '',
       @JsonKey(name: 'official') this.isOfficialVid = false});
 
-  factory _$_VideoModel.fromJson(Map<String, dynamic> json) =>
-      _$$_VideoModelFromJson(json);
+  factory _$VideoModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VideoModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'name')
@@ -170,10 +170,10 @@ class _$_VideoModel implements _VideoModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VideoModel &&
+            other is _$VideoModelImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.site, site) || other.site == site) &&
@@ -188,12 +188,12 @@ class _$_VideoModel implements _VideoModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VideoModelCopyWith<_$_VideoModel> get copyWith =>
-      __$$_VideoModelCopyWithImpl<_$_VideoModel>(this, _$identity);
+  _$$VideoModelImplCopyWith<_$VideoModelImpl> get copyWith =>
+      __$$VideoModelImplCopyWithImpl<_$VideoModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VideoModelToJson(
+    return _$$VideoModelImplToJson(
       this,
     );
   }
@@ -204,10 +204,10 @@ abstract class _VideoModel implements VideoModel {
       {@JsonKey(name: 'name') final String title,
       @JsonKey(name: 'key') final String key,
       @JsonKey(name: 'site') final String site,
-      @JsonKey(name: 'official') final bool isOfficialVid}) = _$_VideoModel;
+      @JsonKey(name: 'official') final bool isOfficialVid}) = _$VideoModelImpl;
 
   factory _VideoModel.fromJson(Map<String, dynamic> json) =
-      _$_VideoModel.fromJson;
+      _$VideoModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'name')
@@ -223,6 +223,6 @@ abstract class _VideoModel implements VideoModel {
   bool get isOfficialVid;
   @override
   @JsonKey(ignore: true)
-  _$$_VideoModelCopyWith<_$_VideoModel> get copyWith =>
+  _$$VideoModelImplCopyWith<_$VideoModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

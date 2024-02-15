@@ -12,7 +12,7 @@ part of 'get_app_setting_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetAppSettingParams {}
@@ -36,25 +36,25 @@ class _$GetAppSettingParamsCopyWithImpl<$Res, $Val extends GetAppSettingParams>
 }
 
 /// @nodoc
-abstract class _$$_GetAppSettingParamsCopyWith<$Res> {
-  factory _$$_GetAppSettingParamsCopyWith(_$_GetAppSettingParams value,
-          $Res Function(_$_GetAppSettingParams) then) =
-      __$$_GetAppSettingParamsCopyWithImpl<$Res>;
+abstract class _$$GetAppSettingParamsImplCopyWith<$Res> {
+  factory _$$GetAppSettingParamsImplCopyWith(_$GetAppSettingParamsImpl value,
+          $Res Function(_$GetAppSettingParamsImpl) then) =
+      __$$GetAppSettingParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetAppSettingParamsCopyWithImpl<$Res>
-    extends _$GetAppSettingParamsCopyWithImpl<$Res, _$_GetAppSettingParams>
-    implements _$$_GetAppSettingParamsCopyWith<$Res> {
-  __$$_GetAppSettingParamsCopyWithImpl(_$_GetAppSettingParams _value,
-      $Res Function(_$_GetAppSettingParams) _then)
+class __$$GetAppSettingParamsImplCopyWithImpl<$Res>
+    extends _$GetAppSettingParamsCopyWithImpl<$Res, _$GetAppSettingParamsImpl>
+    implements _$$GetAppSettingParamsImplCopyWith<$Res> {
+  __$$GetAppSettingParamsImplCopyWithImpl(_$GetAppSettingParamsImpl _value,
+      $Res Function(_$GetAppSettingParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetAppSettingParams implements _GetAppSettingParams {
-  const _$_GetAppSettingParams();
+class _$GetAppSettingParamsImpl implements _GetAppSettingParams {
+  const _$GetAppSettingParamsImpl();
 
   @override
   String toString() {
@@ -62,9 +62,10 @@ class _$_GetAppSettingParams implements _GetAppSettingParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetAppSettingParams);
+        (other.runtimeType == runtimeType &&
+            other is _$GetAppSettingParamsImpl);
   }
 
   @override
@@ -72,5 +73,5 @@ class _$_GetAppSettingParams implements _GetAppSettingParams {
 }
 
 abstract class _GetAppSettingParams implements GetAppSettingParams {
-  const factory _GetAppSettingParams() = _$_GetAppSettingParams;
+  const factory _GetAppSettingParams() = _$GetAppSettingParamsImpl;
 }

@@ -12,7 +12,7 @@ part of 'app_setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppSetting {
@@ -69,22 +69,22 @@ class _$AppSettingCopyWithImpl<$Res, $Val extends AppSetting>
 }
 
 /// @nodoc
-abstract class _$$_AppSettingCopyWith<$Res>
+abstract class _$$AppSettingImplCopyWith<$Res>
     implements $AppSettingCopyWith<$Res> {
-  factory _$$_AppSettingCopyWith(
-          _$_AppSetting value, $Res Function(_$_AppSetting) then) =
-      __$$_AppSettingCopyWithImpl<$Res>;
+  factory _$$AppSettingImplCopyWith(
+          _$AppSettingImpl value, $Res Function(_$AppSettingImpl) then) =
+      __$$AppSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LanguageCode languageCode, bool isDarkMode, bool isOpened});
 }
 
 /// @nodoc
-class __$$_AppSettingCopyWithImpl<$Res>
-    extends _$AppSettingCopyWithImpl<$Res, _$_AppSetting>
-    implements _$$_AppSettingCopyWith<$Res> {
-  __$$_AppSettingCopyWithImpl(
-      _$_AppSetting _value, $Res Function(_$_AppSetting) _then)
+class __$$AppSettingImplCopyWithImpl<$Res>
+    extends _$AppSettingCopyWithImpl<$Res, _$AppSettingImpl>
+    implements _$$AppSettingImplCopyWith<$Res> {
+  __$$AppSettingImplCopyWithImpl(
+      _$AppSettingImpl _value, $Res Function(_$AppSettingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_AppSettingCopyWithImpl<$Res>
     Object? isDarkMode = null,
     Object? isOpened = null,
   }) {
-    return _then(_$_AppSetting(
+    return _then(_$AppSettingImpl(
       languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_AppSettingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppSetting implements _AppSetting {
-  const _$_AppSetting(
+class _$AppSettingImpl implements _AppSetting {
+  const _$AppSettingImpl(
       {this.languageCode = LanguageCode.en,
       this.isDarkMode = false,
       this.isOpened = false});
@@ -135,10 +135,10 @@ class _$_AppSetting implements _AppSetting {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppSetting &&
+            other is _$AppSettingImpl &&
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode) &&
             (identical(other.isDarkMode, isDarkMode) ||
@@ -154,15 +154,15 @@ class _$_AppSetting implements _AppSetting {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppSettingCopyWith<_$_AppSetting> get copyWith =>
-      __$$_AppSettingCopyWithImpl<_$_AppSetting>(this, _$identity);
+  _$$AppSettingImplCopyWith<_$AppSettingImpl> get copyWith =>
+      __$$AppSettingImplCopyWithImpl<_$AppSettingImpl>(this, _$identity);
 }
 
 abstract class _AppSetting implements AppSetting {
   const factory _AppSetting(
       {final LanguageCode languageCode,
       final bool isDarkMode,
-      final bool isOpened}) = _$_AppSetting;
+      final bool isOpened}) = _$AppSettingImpl;
 
   @override
   LanguageCode get languageCode;
@@ -172,6 +172,6 @@ abstract class _AppSetting implements AppSetting {
   bool get isOpened;
   @override
   @JsonKey(ignore: true)
-  _$$_AppSettingCopyWith<_$_AppSetting> get copyWith =>
+  _$$AppSettingImplCopyWith<_$AppSettingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

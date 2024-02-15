@@ -6,16 +6,17 @@ part of 'account_state_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AccountStateModel _$$_AccountStateModelFromJson(Map<String, dynamic> json) =>
-    _$_AccountStateModel(
+_$AccountStateModelImpl _$$AccountStateModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AccountStateModelImpl(
       movieId: json['id'] as int? ?? -1,
       favorite: json['favorite'] as bool? ?? false,
       rated: json['rated'] ?? false,
       watchlist: json['watchlist'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_AccountStateModelToJson(
-        _$_AccountStateModel instance) =>
+Map<String, dynamic> _$$AccountStateModelImplToJson(
+        _$AccountStateModelImpl instance) =>
     <String, dynamic>{
       'id': instance.movieId,
       'favorite': instance.favorite,

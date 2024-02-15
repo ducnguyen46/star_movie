@@ -12,7 +12,7 @@ part of 'get_now_playing_movies_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetNowPlayingMoviesUseCaseParams {
@@ -72,25 +72,25 @@ class _$GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetNowPlayingMoviesUseCaseParamsCopyWith<$Res>
+abstract class _$$GetNowPlayingMoviesUseCaseParamsImplCopyWith<$Res>
     implements $GetNowPlayingMoviesUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetNowPlayingMoviesUseCaseParamsCopyWith(
-          _$_GetNowPlayingMoviesUseCaseParams value,
-          $Res Function(_$_GetNowPlayingMoviesUseCaseParams) then) =
-      __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$GetNowPlayingMoviesUseCaseParamsImplCopyWith(
+          _$GetNowPlayingMoviesUseCaseParamsImpl value,
+          $Res Function(_$GetNowPlayingMoviesUseCaseParamsImpl) then) =
+      __$$GetNowPlayingMoviesUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int page, String language, String region});
 }
 
 /// @nodoc
-class __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res>
+class __$$GetNowPlayingMoviesUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res,
-        _$_GetNowPlayingMoviesUseCaseParams>
-    implements _$$_GetNowPlayingMoviesUseCaseParamsCopyWith<$Res> {
-  __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl(
-      _$_GetNowPlayingMoviesUseCaseParams _value,
-      $Res Function(_$_GetNowPlayingMoviesUseCaseParams) _then)
+        _$GetNowPlayingMoviesUseCaseParamsImpl>
+    implements _$$GetNowPlayingMoviesUseCaseParamsImplCopyWith<$Res> {
+  __$$GetNowPlayingMoviesUseCaseParamsImplCopyWithImpl(
+      _$GetNowPlayingMoviesUseCaseParamsImpl _value,
+      $Res Function(_$GetNowPlayingMoviesUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res>
     Object? language = null,
     Object? region = null,
   }) {
-    return _then(_$_GetNowPlayingMoviesUseCaseParams(
+    return _then(_$GetNowPlayingMoviesUseCaseParamsImpl(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -119,9 +119,9 @@ class __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetNowPlayingMoviesUseCaseParams
+class _$GetNowPlayingMoviesUseCaseParamsImpl
     implements _GetNowPlayingMoviesUseCaseParams {
-  const _$_GetNowPlayingMoviesUseCaseParams(
+  const _$GetNowPlayingMoviesUseCaseParamsImpl(
       {this.page = 1, this.language = '', this.region = ''});
 
   @override
@@ -140,10 +140,10 @@ class _$_GetNowPlayingMoviesUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetNowPlayingMoviesUseCaseParams &&
+            other is _$GetNowPlayingMoviesUseCaseParamsImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.language, language) ||
                 other.language == language) &&
@@ -156,10 +156,10 @@ class _$_GetNowPlayingMoviesUseCaseParams
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetNowPlayingMoviesUseCaseParamsCopyWith<
-          _$_GetNowPlayingMoviesUseCaseParams>
-      get copyWith => __$$_GetNowPlayingMoviesUseCaseParamsCopyWithImpl<
-          _$_GetNowPlayingMoviesUseCaseParams>(this, _$identity);
+  _$$GetNowPlayingMoviesUseCaseParamsImplCopyWith<
+          _$GetNowPlayingMoviesUseCaseParamsImpl>
+      get copyWith => __$$GetNowPlayingMoviesUseCaseParamsImplCopyWithImpl<
+          _$GetNowPlayingMoviesUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _GetNowPlayingMoviesUseCaseParams
@@ -167,7 +167,7 @@ abstract class _GetNowPlayingMoviesUseCaseParams
   const factory _GetNowPlayingMoviesUseCaseParams(
       {final int page,
       final String language,
-      final String region}) = _$_GetNowPlayingMoviesUseCaseParams;
+      final String region}) = _$GetNowPlayingMoviesUseCaseParamsImpl;
 
   @override
   int get page;
@@ -177,7 +177,7 @@ abstract class _GetNowPlayingMoviesUseCaseParams
   String get region;
   @override
   @JsonKey(ignore: true)
-  _$$_GetNowPlayingMoviesUseCaseParamsCopyWith<
-          _$_GetNowPlayingMoviesUseCaseParams>
+  _$$GetNowPlayingMoviesUseCaseParamsImplCopyWith<
+          _$GetNowPlayingMoviesUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'account_state_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AccountStateModel _$AccountStateModelFromJson(Map<String, dynamic> json) {
   return _AccountStateModel.fromJson(json);
@@ -88,11 +88,11 @@ class _$AccountStateModelCopyWithImpl<$Res, $Val extends AccountStateModel>
 }
 
 /// @nodoc
-abstract class _$$_AccountStateModelCopyWith<$Res>
+abstract class _$$AccountStateModelImplCopyWith<$Res>
     implements $AccountStateModelCopyWith<$Res> {
-  factory _$$_AccountStateModelCopyWith(_$_AccountStateModel value,
-          $Res Function(_$_AccountStateModel) then) =
-      __$$_AccountStateModelCopyWithImpl<$Res>;
+  factory _$$AccountStateModelImplCopyWith(_$AccountStateModelImpl value,
+          $Res Function(_$AccountStateModelImpl) then) =
+      __$$AccountStateModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_AccountStateModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AccountStateModelCopyWithImpl<$Res>
-    extends _$AccountStateModelCopyWithImpl<$Res, _$_AccountStateModel>
-    implements _$$_AccountStateModelCopyWith<$Res> {
-  __$$_AccountStateModelCopyWithImpl(
-      _$_AccountStateModel _value, $Res Function(_$_AccountStateModel) _then)
+class __$$AccountStateModelImplCopyWithImpl<$Res>
+    extends _$AccountStateModelCopyWithImpl<$Res, _$AccountStateModelImpl>
+    implements _$$AccountStateModelImplCopyWith<$Res> {
+  __$$AccountStateModelImplCopyWithImpl(_$AccountStateModelImpl _value,
+      $Res Function(_$AccountStateModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_AccountStateModelCopyWithImpl<$Res>
     Object? rated = freezed,
     Object? watchlist = null,
   }) {
-    return _then(_$_AccountStateModel(
+    return _then(_$AccountStateModelImpl(
       movieId: null == movieId
           ? _value.movieId
           : movieId // ignore: cast_nullable_to_non_nullable
@@ -141,15 +141,15 @@ class __$$_AccountStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AccountStateModel implements _AccountStateModel {
-  const _$_AccountStateModel(
+class _$AccountStateModelImpl implements _AccountStateModel {
+  const _$AccountStateModelImpl(
       {@JsonKey(name: 'id') this.movieId = -1,
       @JsonKey(name: 'favorite') this.favorite = false,
       @JsonKey(name: 'rated') this.rated = false,
       @JsonKey(name: 'watchlist') this.watchlist = false});
 
-  factory _$_AccountStateModel.fromJson(Map<String, dynamic> json) =>
-      _$$_AccountStateModelFromJson(json);
+  factory _$AccountStateModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccountStateModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -170,10 +170,10 @@ class _$_AccountStateModel implements _AccountStateModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AccountStateModel &&
+            other is _$AccountStateModelImpl &&
             (identical(other.movieId, movieId) || other.movieId == movieId) &&
             (identical(other.favorite, favorite) ||
                 other.favorite == favorite) &&
@@ -190,13 +190,13 @@ class _$_AccountStateModel implements _AccountStateModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AccountStateModelCopyWith<_$_AccountStateModel> get copyWith =>
-      __$$_AccountStateModelCopyWithImpl<_$_AccountStateModel>(
+  _$$AccountStateModelImplCopyWith<_$AccountStateModelImpl> get copyWith =>
+      __$$AccountStateModelImplCopyWithImpl<_$AccountStateModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccountStateModelToJson(
+    return _$$AccountStateModelImplToJson(
       this,
     );
   }
@@ -204,13 +204,14 @@ class _$_AccountStateModel implements _AccountStateModel {
 
 abstract class _AccountStateModel implements AccountStateModel {
   const factory _AccountStateModel(
-      {@JsonKey(name: 'id') final int movieId,
-      @JsonKey(name: 'favorite') final bool favorite,
-      @JsonKey(name: 'rated') final dynamic rated,
-      @JsonKey(name: 'watchlist') final bool watchlist}) = _$_AccountStateModel;
+          {@JsonKey(name: 'id') final int movieId,
+          @JsonKey(name: 'favorite') final bool favorite,
+          @JsonKey(name: 'rated') final dynamic rated,
+          @JsonKey(name: 'watchlist') final bool watchlist}) =
+      _$AccountStateModelImpl;
 
   factory _AccountStateModel.fromJson(Map<String, dynamic> json) =
-      _$_AccountStateModel.fromJson;
+      _$AccountStateModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -226,6 +227,6 @@ abstract class _AccountStateModel implements AccountStateModel {
   bool get watchlist;
   @override
   @JsonKey(ignore: true)
-  _$$_AccountStateModelCopyWith<_$_AccountStateModel> get copyWith =>
+  _$$AccountStateModelImplCopyWith<_$AccountStateModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

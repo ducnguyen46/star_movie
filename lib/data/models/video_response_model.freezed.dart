@@ -12,7 +12,7 @@ part of 'video_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VideoResponseModel _$VideoResponseModelFromJson(Map<String, dynamic> json) {
   return _VideoResponseModel.fromJson(json);
@@ -63,22 +63,22 @@ class _$VideoResponseModelCopyWithImpl<$Res, $Val extends VideoResponseModel>
 }
 
 /// @nodoc
-abstract class _$$_VideoResponseModelCopyWith<$Res>
+abstract class _$$VideoResponseModelImplCopyWith<$Res>
     implements $VideoResponseModelCopyWith<$Res> {
-  factory _$$_VideoResponseModelCopyWith(_$_VideoResponseModel value,
-          $Res Function(_$_VideoResponseModel) then) =
-      __$$_VideoResponseModelCopyWithImpl<$Res>;
+  factory _$$VideoResponseModelImplCopyWith(_$VideoResponseModelImpl value,
+          $Res Function(_$VideoResponseModelImpl) then) =
+      __$$VideoResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'results') List<VideoModel> videos});
 }
 
 /// @nodoc
-class __$$_VideoResponseModelCopyWithImpl<$Res>
-    extends _$VideoResponseModelCopyWithImpl<$Res, _$_VideoResponseModel>
-    implements _$$_VideoResponseModelCopyWith<$Res> {
-  __$$_VideoResponseModelCopyWithImpl(
-      _$_VideoResponseModel _value, $Res Function(_$_VideoResponseModel) _then)
+class __$$VideoResponseModelImplCopyWithImpl<$Res>
+    extends _$VideoResponseModelCopyWithImpl<$Res, _$VideoResponseModelImpl>
+    implements _$$VideoResponseModelImplCopyWith<$Res> {
+  __$$VideoResponseModelImplCopyWithImpl(_$VideoResponseModelImpl _value,
+      $Res Function(_$VideoResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_VideoResponseModelCopyWithImpl<$Res>
   $Res call({
     Object? videos = null,
   }) {
-    return _then(_$_VideoResponseModel(
+    return _then(_$VideoResponseModelImpl(
       videos: null == videos
           ? _value._videos
           : videos // ignore: cast_nullable_to_non_nullable
@@ -97,14 +97,14 @@ class __$$_VideoResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VideoResponseModel implements _VideoResponseModel {
-  const _$_VideoResponseModel(
+class _$VideoResponseModelImpl implements _VideoResponseModel {
+  const _$VideoResponseModelImpl(
       {@JsonKey(name: 'results')
-          final List<VideoModel> videos = const <VideoModel>[]})
+      final List<VideoModel> videos = const <VideoModel>[]})
       : _videos = videos;
 
-  factory _$_VideoResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_VideoResponseModelFromJson(json);
+  factory _$VideoResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VideoResponseModelImplFromJson(json);
 
   final List<VideoModel> _videos;
   @override
@@ -121,10 +121,10 @@ class _$_VideoResponseModel implements _VideoResponseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VideoResponseModel &&
+            other is _$VideoResponseModelImpl &&
             const DeepCollectionEquality().equals(other._videos, _videos));
   }
 
@@ -136,13 +136,13 @@ class _$_VideoResponseModel implements _VideoResponseModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VideoResponseModelCopyWith<_$_VideoResponseModel> get copyWith =>
-      __$$_VideoResponseModelCopyWithImpl<_$_VideoResponseModel>(
+  _$$VideoResponseModelImplCopyWith<_$VideoResponseModelImpl> get copyWith =>
+      __$$VideoResponseModelImplCopyWithImpl<_$VideoResponseModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VideoResponseModelToJson(
+    return _$$VideoResponseModelImplToJson(
       this,
     );
   }
@@ -151,16 +151,16 @@ class _$_VideoResponseModel implements _VideoResponseModel {
 abstract class _VideoResponseModel implements VideoResponseModel {
   const factory _VideoResponseModel(
           {@JsonKey(name: 'results') final List<VideoModel> videos}) =
-      _$_VideoResponseModel;
+      _$VideoResponseModelImpl;
 
   factory _VideoResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_VideoResponseModel.fromJson;
+      _$VideoResponseModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'results')
   List<VideoModel> get videos;
   @override
   @JsonKey(ignore: true)
-  _$$_VideoResponseModelCopyWith<_$_VideoResponseModel> get copyWith =>
+  _$$VideoResponseModelImplCopyWith<_$VideoResponseModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

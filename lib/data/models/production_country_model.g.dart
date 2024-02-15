@@ -6,14 +6,15 @@ part of 'production_country_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductionCountry _$$_ProductionCountryFromJson(Map<String, dynamic> json) =>
-    _$_ProductionCountry(
+_$ProductionCountryImpl _$$ProductionCountryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ProductionCountryImpl(
       countryCode: json['iso_3166_1'] as String? ?? '',
       countryName: json['name'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_ProductionCountryToJson(
-        _$_ProductionCountry instance) =>
+Map<String, dynamic> _$$ProductionCountryImplToJson(
+        _$ProductionCountryImpl instance) =>
     <String, dynamic>{
       'iso_3166_1': instance.countryCode,
       'name': instance.countryName,

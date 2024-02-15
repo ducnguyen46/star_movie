@@ -12,7 +12,7 @@ part of 'app_dialog_util.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppDialogInfo {
@@ -127,20 +127,22 @@ class _$AppDialogInfoCopyWithImpl<$Res, $Val extends AppDialogInfo>
 }
 
 /// @nodoc
-abstract class _$$_AppDialogConfirmDialogCopyWith<$Res> {
-  factory _$$_AppDialogConfirmDialogCopyWith(_$_AppDialogConfirmDialog value,
-          $Res Function(_$_AppDialogConfirmDialog) then) =
-      __$$_AppDialogConfirmDialogCopyWithImpl<$Res>;
+abstract class _$$AppDialogConfirmDialogImplCopyWith<$Res> {
+  factory _$$AppDialogConfirmDialogImplCopyWith(
+          _$AppDialogConfirmDialogImpl value,
+          $Res Function(_$AppDialogConfirmDialogImpl) then) =
+      __$$AppDialogConfirmDialogImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String title, String messages, VoidCallback onPressedAction});
 }
 
 /// @nodoc
-class __$$_AppDialogConfirmDialogCopyWithImpl<$Res>
-    extends _$AppDialogInfoCopyWithImpl<$Res, _$_AppDialogConfirmDialog>
-    implements _$$_AppDialogConfirmDialogCopyWith<$Res> {
-  __$$_AppDialogConfirmDialogCopyWithImpl(_$_AppDialogConfirmDialog _value,
-      $Res Function(_$_AppDialogConfirmDialog) _then)
+class __$$AppDialogConfirmDialogImplCopyWithImpl<$Res>
+    extends _$AppDialogInfoCopyWithImpl<$Res, _$AppDialogConfirmDialogImpl>
+    implements _$$AppDialogConfirmDialogImplCopyWith<$Res> {
+  __$$AppDialogConfirmDialogImplCopyWithImpl(
+      _$AppDialogConfirmDialogImpl _value,
+      $Res Function(_$AppDialogConfirmDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +152,7 @@ class __$$_AppDialogConfirmDialogCopyWithImpl<$Res>
     Object? messages = null,
     Object? onPressedAction = null,
   }) {
-    return _then(_$_AppDialogConfirmDialog(
+    return _then(_$AppDialogConfirmDialogImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -169,8 +171,8 @@ class __$$_AppDialogConfirmDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppDialogConfirmDialog implements _AppDialogConfirmDialog {
-  const _$_AppDialogConfirmDialog(
+class _$AppDialogConfirmDialogImpl implements _AppDialogConfirmDialog {
+  const _$AppDialogConfirmDialogImpl(
       {required this.title,
       required this.messages,
       required this.onPressedAction});
@@ -188,10 +190,10 @@ class _$_AppDialogConfirmDialog implements _AppDialogConfirmDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppDialogConfirmDialog &&
+            other is _$AppDialogConfirmDialogImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.messages, messages) ||
                 other.messages == messages) &&
@@ -206,9 +208,9 @@ class _$_AppDialogConfirmDialog implements _AppDialogConfirmDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppDialogConfirmDialogCopyWith<_$_AppDialogConfirmDialog> get copyWith =>
-      __$$_AppDialogConfirmDialogCopyWithImpl<_$_AppDialogConfirmDialog>(
-          this, _$identity);
+  _$$AppDialogConfirmDialogImplCopyWith<_$AppDialogConfirmDialogImpl>
+      get copyWith => __$$AppDialogConfirmDialogImplCopyWithImpl<
+          _$AppDialogConfirmDialogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -326,24 +328,25 @@ class _$_AppDialogConfirmDialog implements _AppDialogConfirmDialog {
 
 abstract class _AppDialogConfirmDialog implements AppDialogInfo {
   const factory _AppDialogConfirmDialog(
-      {required final String title,
-      required final String messages,
-      required final VoidCallback onPressedAction}) = _$_AppDialogConfirmDialog;
+          {required final String title,
+          required final String messages,
+          required final VoidCallback onPressedAction}) =
+      _$AppDialogConfirmDialogImpl;
 
   @override
   String get title;
   String get messages;
   VoidCallback get onPressedAction;
   @JsonKey(ignore: true)
-  _$$_AppDialogConfirmDialogCopyWith<_$_AppDialogConfirmDialog> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppDialogConfirmDialogImplCopyWith<_$AppDialogConfirmDialogImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AppDialogErrorRetryCopyWith<$Res> {
-  factory _$$_AppDialogErrorRetryCopyWith(_$_AppDialogErrorRetry value,
-          $Res Function(_$_AppDialogErrorRetry) then) =
-      __$$_AppDialogErrorRetryCopyWithImpl<$Res>;
+abstract class _$$AppDialogErrorRetryImplCopyWith<$Res> {
+  factory _$$AppDialogErrorRetryImplCopyWith(_$AppDialogErrorRetryImpl value,
+          $Res Function(_$AppDialogErrorRetryImpl) then) =
+      __$$AppDialogErrorRetryImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String title,
@@ -353,11 +356,11 @@ abstract class _$$_AppDialogErrorRetryCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppDialogErrorRetryCopyWithImpl<$Res>
-    extends _$AppDialogInfoCopyWithImpl<$Res, _$_AppDialogErrorRetry>
-    implements _$$_AppDialogErrorRetryCopyWith<$Res> {
-  __$$_AppDialogErrorRetryCopyWithImpl(_$_AppDialogErrorRetry _value,
-      $Res Function(_$_AppDialogErrorRetry) _then)
+class __$$AppDialogErrorRetryImplCopyWithImpl<$Res>
+    extends _$AppDialogInfoCopyWithImpl<$Res, _$AppDialogErrorRetryImpl>
+    implements _$$AppDialogErrorRetryImplCopyWith<$Res> {
+  __$$AppDialogErrorRetryImplCopyWithImpl(_$AppDialogErrorRetryImpl _value,
+      $Res Function(_$AppDialogErrorRetryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -368,7 +371,7 @@ class __$$_AppDialogErrorRetryCopyWithImpl<$Res>
     Object? onRetryAction = null,
     Object? onCancelAction = null,
   }) {
-    return _then(_$_AppDialogErrorRetry(
+    return _then(_$AppDialogErrorRetryImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -391,8 +394,8 @@ class __$$_AppDialogErrorRetryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppDialogErrorRetry implements _AppDialogErrorRetry {
-  const _$_AppDialogErrorRetry(
+class _$AppDialogErrorRetryImpl implements _AppDialogErrorRetry {
+  const _$AppDialogErrorRetryImpl(
       {required this.title,
       required this.messages,
       required this.onRetryAction,
@@ -413,10 +416,10 @@ class _$_AppDialogErrorRetry implements _AppDialogErrorRetry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppDialogErrorRetry &&
+            other is _$AppDialogErrorRetryImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.messages, messages) ||
                 other.messages == messages) &&
@@ -433,8 +436,8 @@ class _$_AppDialogErrorRetry implements _AppDialogErrorRetry {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppDialogErrorRetryCopyWith<_$_AppDialogErrorRetry> get copyWith =>
-      __$$_AppDialogErrorRetryCopyWithImpl<_$_AppDialogErrorRetry>(
+  _$$AppDialogErrorRetryImplCopyWith<_$AppDialogErrorRetryImpl> get copyWith =>
+      __$$AppDialogErrorRetryImplCopyWithImpl<_$AppDialogErrorRetryImpl>(
           this, _$identity);
 
   @override
@@ -557,7 +560,7 @@ abstract class _AppDialogErrorRetry implements AppDialogInfo {
       {required final String title,
       required final String messages,
       required final VoidCallback onRetryAction,
-      required final VoidCallback onCancelAction}) = _$_AppDialogErrorRetry;
+      required final VoidCallback onCancelAction}) = _$AppDialogErrorRetryImpl;
 
   @override
   String get title;
@@ -565,15 +568,16 @@ abstract class _AppDialogErrorRetry implements AppDialogInfo {
   VoidCallback get onRetryAction;
   VoidCallback get onCancelAction;
   @JsonKey(ignore: true)
-  _$$_AppDialogErrorRetryCopyWith<_$_AppDialogErrorRetry> get copyWith =>
+  _$$AppDialogErrorRetryImplCopyWith<_$AppDialogErrorRetryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AppDialogCustomDialogCopyWith<$Res> {
-  factory _$$_AppDialogCustomDialogCopyWith(_$_AppDialogCustomDialog value,
-          $Res Function(_$_AppDialogCustomDialog) then) =
-      __$$_AppDialogCustomDialogCopyWithImpl<$Res>;
+abstract class _$$AppDialogCustomDialogImplCopyWith<$Res> {
+  factory _$$AppDialogCustomDialogImplCopyWith(
+          _$AppDialogCustomDialogImpl value,
+          $Res Function(_$AppDialogCustomDialogImpl) then) =
+      __$$AppDialogCustomDialogImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {Widget? icon,
@@ -589,11 +593,11 @@ abstract class _$$_AppDialogCustomDialogCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppDialogCustomDialogCopyWithImpl<$Res>
-    extends _$AppDialogInfoCopyWithImpl<$Res, _$_AppDialogCustomDialog>
-    implements _$$_AppDialogCustomDialogCopyWith<$Res> {
-  __$$_AppDialogCustomDialogCopyWithImpl(_$_AppDialogCustomDialog _value,
-      $Res Function(_$_AppDialogCustomDialog) _then)
+class __$$AppDialogCustomDialogImplCopyWithImpl<$Res>
+    extends _$AppDialogInfoCopyWithImpl<$Res, _$AppDialogCustomDialogImpl>
+    implements _$$AppDialogCustomDialogImplCopyWith<$Res> {
+  __$$AppDialogCustomDialogImplCopyWithImpl(_$AppDialogCustomDialogImpl _value,
+      $Res Function(_$AppDialogCustomDialogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -610,7 +614,7 @@ class __$$_AppDialogCustomDialogCopyWithImpl<$Res>
     Object? actions = freezed,
     Object? scrollable = null,
   }) {
-    return _then(_$_AppDialogCustomDialog(
+    return _then(_$AppDialogCustomDialogImpl(
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -657,8 +661,8 @@ class __$$_AppDialogCustomDialogCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppDialogCustomDialog implements _AppDialogCustomDialog {
-  const _$_AppDialogCustomDialog(
+class _$AppDialogCustomDialogImpl implements _AppDialogCustomDialog {
+  const _$AppDialogCustomDialogImpl(
       {this.icon,
       this.iconPadding,
       this.title,
@@ -707,10 +711,10 @@ class _$_AppDialogCustomDialog implements _AppDialogCustomDialog {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppDialogCustomDialog &&
+            other is _$AppDialogCustomDialogImpl &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.iconPadding, iconPadding) ||
                 other.iconPadding == iconPadding) &&
@@ -746,9 +750,9 @@ class _$_AppDialogCustomDialog implements _AppDialogCustomDialog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppDialogCustomDialogCopyWith<_$_AppDialogCustomDialog> get copyWith =>
-      __$$_AppDialogCustomDialogCopyWithImpl<_$_AppDialogCustomDialog>(
-          this, _$identity);
+  _$$AppDialogCustomDialogImplCopyWith<_$AppDialogCustomDialogImpl>
+      get copyWith => __$$AppDialogCustomDialogImplCopyWithImpl<
+          _$AppDialogCustomDialogImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -896,7 +900,7 @@ abstract class _AppDialogCustomDialog implements AppDialogInfo {
       final EdgeInsetsGeometry? contentPadding,
       final TextStyle? contentTextStyle,
       final List<Widget>? actions,
-      final bool scrollable}) = _$_AppDialogCustomDialog;
+      final bool scrollable}) = _$AppDialogCustomDialogImpl;
 
   Widget? get icon;
   EdgeInsetsGeometry? get iconPadding;
@@ -910,6 +914,6 @@ abstract class _AppDialogCustomDialog implements AppDialogInfo {
   List<Widget>? get actions;
   bool get scrollable;
   @JsonKey(ignore: true)
-  _$$_AppDialogCustomDialogCopyWith<_$_AppDialogCustomDialog> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppDialogCustomDialogImplCopyWith<_$AppDialogCustomDialogImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

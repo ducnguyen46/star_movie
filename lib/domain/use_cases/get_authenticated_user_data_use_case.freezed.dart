@@ -12,7 +12,7 @@ part of 'get_authenticated_user_data_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetAuthenticatedUserDataUseCaseParams {}
@@ -39,29 +39,29 @@ class _$GetAuthenticatedUserDataUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetAuthenticatedUserDataUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetAuthenticatedUserDataUseCaseParamsCopyWith(
-          _$_GetAuthenticatedUserDataUseCaseParams value,
-          $Res Function(_$_GetAuthenticatedUserDataUseCaseParams) then) =
-      __$$_GetAuthenticatedUserDataUseCaseParamsCopyWithImpl<$Res>;
+abstract class _$$GetAuthenticatedUserDataUseCaseParamsImplCopyWith<$Res> {
+  factory _$$GetAuthenticatedUserDataUseCaseParamsImplCopyWith(
+          _$GetAuthenticatedUserDataUseCaseParamsImpl value,
+          $Res Function(_$GetAuthenticatedUserDataUseCaseParamsImpl) then) =
+      __$$GetAuthenticatedUserDataUseCaseParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetAuthenticatedUserDataUseCaseParamsCopyWithImpl<$Res>
+class __$$GetAuthenticatedUserDataUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetAuthenticatedUserDataUseCaseParamsCopyWithImpl<$Res,
-        _$_GetAuthenticatedUserDataUseCaseParams>
-    implements _$$_GetAuthenticatedUserDataUseCaseParamsCopyWith<$Res> {
-  __$$_GetAuthenticatedUserDataUseCaseParamsCopyWithImpl(
-      _$_GetAuthenticatedUserDataUseCaseParams _value,
-      $Res Function(_$_GetAuthenticatedUserDataUseCaseParams) _then)
+        _$GetAuthenticatedUserDataUseCaseParamsImpl>
+    implements _$$GetAuthenticatedUserDataUseCaseParamsImplCopyWith<$Res> {
+  __$$GetAuthenticatedUserDataUseCaseParamsImplCopyWithImpl(
+      _$GetAuthenticatedUserDataUseCaseParamsImpl _value,
+      $Res Function(_$GetAuthenticatedUserDataUseCaseParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetAuthenticatedUserDataUseCaseParams
+class _$GetAuthenticatedUserDataUseCaseParamsImpl
     implements _GetAuthenticatedUserDataUseCaseParams {
-  const _$_GetAuthenticatedUserDataUseCaseParams();
+  const _$GetAuthenticatedUserDataUseCaseParamsImpl();
 
   @override
   String toString() {
@@ -69,10 +69,10 @@ class _$_GetAuthenticatedUserDataUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetAuthenticatedUserDataUseCaseParams);
+            other is _$GetAuthenticatedUserDataUseCaseParamsImpl);
   }
 
   @override
@@ -82,5 +82,5 @@ class _$_GetAuthenticatedUserDataUseCaseParams
 abstract class _GetAuthenticatedUserDataUseCaseParams
     implements GetAuthenticatedUserDataUseCaseParams {
   const factory _GetAuthenticatedUserDataUseCaseParams() =
-      _$_GetAuthenticatedUserDataUseCaseParams;
+      _$GetAuthenticatedUserDataUseCaseParamsImpl;
 }

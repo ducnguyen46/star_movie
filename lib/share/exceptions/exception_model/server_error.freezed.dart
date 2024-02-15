@@ -12,7 +12,7 @@ part of 'server_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ServerError _$ServerErrorFromJson(Map<String, dynamic> json) {
   return _ServerError.fromJson(json);
@@ -80,11 +80,11 @@ class _$ServerErrorCopyWithImpl<$Res, $Val extends ServerError>
 }
 
 /// @nodoc
-abstract class _$$_ServerErrorCopyWith<$Res>
+abstract class _$$ServerErrorImplCopyWith<$Res>
     implements $ServerErrorCopyWith<$Res> {
-  factory _$$_ServerErrorCopyWith(
-          _$_ServerError value, $Res Function(_$_ServerError) then) =
-      __$$_ServerErrorCopyWithImpl<$Res>;
+  factory _$$ServerErrorImplCopyWith(
+          _$ServerErrorImpl value, $Res Function(_$ServerErrorImpl) then) =
+      __$$ServerErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_ServerErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ServerErrorCopyWithImpl<$Res>
-    extends _$ServerErrorCopyWithImpl<$Res, _$_ServerError>
-    implements _$$_ServerErrorCopyWith<$Res> {
-  __$$_ServerErrorCopyWithImpl(
-      _$_ServerError _value, $Res Function(_$_ServerError) _then)
+class __$$ServerErrorImplCopyWithImpl<$Res>
+    extends _$ServerErrorCopyWithImpl<$Res, _$ServerErrorImpl>
+    implements _$$ServerErrorImplCopyWith<$Res> {
+  __$$ServerErrorImplCopyWithImpl(
+      _$ServerErrorImpl _value, $Res Function(_$ServerErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_ServerErrorCopyWithImpl<$Res>
     Object? statusCode = null,
     Object? statusMessage = null,
   }) {
-    return _then(_$_ServerError(
+    return _then(_$ServerErrorImpl(
       success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_ServerErrorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ServerError implements _ServerError {
-  const _$_ServerError(
+class _$ServerErrorImpl implements _ServerError {
+  const _$ServerErrorImpl(
       {@JsonKey(name: 'success') this.success = false,
       @JsonKey(name: 'status_code') this.statusCode = -1,
       @JsonKey(name: 'status_message') this.statusMessage = ''});
 
-  factory _$_ServerError.fromJson(Map<String, dynamic> json) =>
-      _$$_ServerErrorFromJson(json);
+  factory _$ServerErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ServerErrorImplFromJson(json);
 
   @override
   @JsonKey(name: 'success')
@@ -152,10 +152,10 @@ class _$_ServerError implements _ServerError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerError &&
+            other is _$ServerErrorImpl &&
             (identical(other.success, success) || other.success == success) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode) &&
@@ -171,12 +171,12 @@ class _$_ServerError implements _ServerError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerErrorCopyWith<_$_ServerError> get copyWith =>
-      __$$_ServerErrorCopyWithImpl<_$_ServerError>(this, _$identity);
+  _$$ServerErrorImplCopyWith<_$ServerErrorImpl> get copyWith =>
+      __$$ServerErrorImplCopyWithImpl<_$ServerErrorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ServerErrorToJson(
+    return _$$ServerErrorImplToJson(
       this,
     );
   }
@@ -187,10 +187,10 @@ abstract class _ServerError implements ServerError {
           {@JsonKey(name: 'success') final bool success,
           @JsonKey(name: 'status_code') final int statusCode,
           @JsonKey(name: 'status_message') final String statusMessage}) =
-      _$_ServerError;
+      _$ServerErrorImpl;
 
   factory _ServerError.fromJson(Map<String, dynamic> json) =
-      _$_ServerError.fromJson;
+      _$ServerErrorImpl.fromJson;
 
   @override
   @JsonKey(name: 'success')
@@ -203,6 +203,6 @@ abstract class _ServerError implements ServerError {
   String get statusMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerErrorCopyWith<_$_ServerError> get copyWith =>
+  _$$ServerErrorImplCopyWith<_$ServerErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'movie_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MovieModel _$MovieModelFromJson(Map<String, dynamic> json) {
   return _MovieModel.fromJson(json);
@@ -112,11 +112,11 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
 }
 
 /// @nodoc
-abstract class _$$_MovieModelCopyWith<$Res>
+abstract class _$$MovieModelImplCopyWith<$Res>
     implements $MovieModelCopyWith<$Res> {
-  factory _$$_MovieModelCopyWith(
-          _$_MovieModel value, $Res Function(_$_MovieModel) then) =
-      __$$_MovieModelCopyWithImpl<$Res>;
+  factory _$$MovieModelImplCopyWith(
+          _$MovieModelImpl value, $Res Function(_$MovieModelImpl) then) =
+      __$$MovieModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -130,11 +130,11 @@ abstract class _$$_MovieModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MovieModelCopyWithImpl<$Res>
-    extends _$MovieModelCopyWithImpl<$Res, _$_MovieModel>
-    implements _$$_MovieModelCopyWith<$Res> {
-  __$$_MovieModelCopyWithImpl(
-      _$_MovieModel _value, $Res Function(_$_MovieModel) _then)
+class __$$MovieModelImplCopyWithImpl<$Res>
+    extends _$MovieModelCopyWithImpl<$Res, _$MovieModelImpl>
+    implements _$$MovieModelImplCopyWith<$Res> {
+  __$$MovieModelImplCopyWithImpl(
+      _$MovieModelImpl _value, $Res Function(_$MovieModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,7 +148,7 @@ class __$$_MovieModelCopyWithImpl<$Res>
     Object? genreIds = null,
     Object? releaseDate = null,
   }) {
-    return _then(_$_MovieModel(
+    return _then(_$MovieModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -183,8 +183,8 @@ class __$$_MovieModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieModel implements _MovieModel {
-  const _$_MovieModel(
+class _$MovieModelImpl implements _MovieModel {
+  const _$MovieModelImpl(
       {@JsonKey(name: 'id') this.id = -1,
       @JsonKey(name: 'title') this.title = '',
       @JsonKey(name: 'poster_path') this.posterPath = '',
@@ -194,8 +194,8 @@ class _$_MovieModel implements _MovieModel {
       @JsonKey(name: 'release_date') this.releaseDate = ''})
       : _genreIds = genreIds;
 
-  factory _$_MovieModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieModelFromJson(json);
+  factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -231,10 +231,10 @@ class _$_MovieModel implements _MovieModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieModel &&
+            other is _$MovieModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.posterPath, posterPath) ||
@@ -263,12 +263,12 @@ class _$_MovieModel implements _MovieModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieModelCopyWith<_$_MovieModel> get copyWith =>
-      __$$_MovieModelCopyWithImpl<_$_MovieModel>(this, _$identity);
+  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
+      __$$MovieModelImplCopyWithImpl<_$MovieModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieModelToJson(
+    return _$$MovieModelImplToJson(
       this,
     );
   }
@@ -276,16 +276,17 @@ class _$_MovieModel implements _MovieModel {
 
 abstract class _MovieModel implements MovieModel {
   const factory _MovieModel(
-      {@JsonKey(name: 'id') final int id,
-      @JsonKey(name: 'title') final String title,
-      @JsonKey(name: 'poster_path') final String posterPath,
-      @JsonKey(name: 'backdrop_path') final String backdropPath,
-      @JsonKey(name: 'vote_average') final double voteAverage,
-      @JsonKey(name: 'genre_ids') final List<int> genreIds,
-      @JsonKey(name: 'release_date') final String releaseDate}) = _$_MovieModel;
+          {@JsonKey(name: 'id') final int id,
+          @JsonKey(name: 'title') final String title,
+          @JsonKey(name: 'poster_path') final String posterPath,
+          @JsonKey(name: 'backdrop_path') final String backdropPath,
+          @JsonKey(name: 'vote_average') final double voteAverage,
+          @JsonKey(name: 'genre_ids') final List<int> genreIds,
+          @JsonKey(name: 'release_date') final String releaseDate}) =
+      _$MovieModelImpl;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
-      _$_MovieModel.fromJson;
+      _$MovieModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -310,6 +311,6 @@ abstract class _MovieModel implements MovieModel {
   String get releaseDate;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieModelCopyWith<_$_MovieModel> get copyWith =>
+  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

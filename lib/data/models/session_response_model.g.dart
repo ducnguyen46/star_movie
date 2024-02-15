@@ -6,14 +6,14 @@ part of 'session_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SessionResponseModel _$$_SessionResponseModelFromJson(
+_$SessionResponseModelImpl _$$SessionResponseModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SessionResponseModel(
+    _$SessionResponseModelImpl(
       sessionId: json['session_id'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_SessionResponseModelToJson(
-        _$_SessionResponseModel instance) =>
+Map<String, dynamic> _$$SessionResponseModelImplToJson(
+        _$SessionResponseModelImpl instance) =>
     <String, dynamic>{
       'session_id': instance.sessionId,
     };

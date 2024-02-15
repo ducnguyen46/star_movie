@@ -6,8 +6,8 @@ part of 'collection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Collection _$$_CollectionFromJson(Map<String, dynamic> json) =>
-    _$_Collection(
+_$CollectionImpl _$$CollectionImplFromJson(Map<String, dynamic> json) =>
+    _$CollectionImpl(
       adult: json['adult'] as bool,
       id: json['id'] as int,
       name: json['name'] as String,
@@ -17,7 +17,7 @@ _$_Collection _$$_CollectionFromJson(Map<String, dynamic> json) =>
       posterPath: json['posterPath'] as String,
     );
 
-Map<String, dynamic> _$$_CollectionToJson(_$_Collection instance) =>
+Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) =>
     <String, dynamic>{
       'adult': instance.adult,
       'id': instance.id,

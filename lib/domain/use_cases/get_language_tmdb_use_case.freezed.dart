@@ -12,7 +12,7 @@ part of 'get_language_tmdb_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetLanguageTMDBUseCaseParams {}
@@ -39,28 +39,29 @@ class _$GetLanguageTMDBUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetLanguageTMDBUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetLanguageTMDBUseCaseParamsCopyWith(
-          _$_GetLanguageTMDBUseCaseParams value,
-          $Res Function(_$_GetLanguageTMDBUseCaseParams) then) =
-      __$$_GetLanguageTMDBUseCaseParamsCopyWithImpl<$Res>;
+abstract class _$$GetLanguageTMDBUseCaseParamsImplCopyWith<$Res> {
+  factory _$$GetLanguageTMDBUseCaseParamsImplCopyWith(
+          _$GetLanguageTMDBUseCaseParamsImpl value,
+          $Res Function(_$GetLanguageTMDBUseCaseParamsImpl) then) =
+      __$$GetLanguageTMDBUseCaseParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetLanguageTMDBUseCaseParamsCopyWithImpl<$Res>
+class __$$GetLanguageTMDBUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetLanguageTMDBUseCaseParamsCopyWithImpl<$Res,
-        _$_GetLanguageTMDBUseCaseParams>
-    implements _$$_GetLanguageTMDBUseCaseParamsCopyWith<$Res> {
-  __$$_GetLanguageTMDBUseCaseParamsCopyWithImpl(
-      _$_GetLanguageTMDBUseCaseParams _value,
-      $Res Function(_$_GetLanguageTMDBUseCaseParams) _then)
+        _$GetLanguageTMDBUseCaseParamsImpl>
+    implements _$$GetLanguageTMDBUseCaseParamsImplCopyWith<$Res> {
+  __$$GetLanguageTMDBUseCaseParamsImplCopyWithImpl(
+      _$GetLanguageTMDBUseCaseParamsImpl _value,
+      $Res Function(_$GetLanguageTMDBUseCaseParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetLanguageTMDBUseCaseParams implements _GetLanguageTMDBUseCaseParams {
-  const _$_GetLanguageTMDBUseCaseParams();
+class _$GetLanguageTMDBUseCaseParamsImpl
+    implements _GetLanguageTMDBUseCaseParams {
+  const _$GetLanguageTMDBUseCaseParamsImpl();
 
   @override
   String toString() {
@@ -68,10 +69,10 @@ class _$_GetLanguageTMDBUseCaseParams implements _GetLanguageTMDBUseCaseParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetLanguageTMDBUseCaseParams);
+            other is _$GetLanguageTMDBUseCaseParamsImpl);
   }
 
   @override
@@ -81,5 +82,5 @@ class _$_GetLanguageTMDBUseCaseParams implements _GetLanguageTMDBUseCaseParams {
 abstract class _GetLanguageTMDBUseCaseParams
     implements GetLanguageTMDBUseCaseParams {
   const factory _GetLanguageTMDBUseCaseParams() =
-      _$_GetLanguageTMDBUseCaseParams;
+      _$GetLanguageTMDBUseCaseParamsImpl;
 }

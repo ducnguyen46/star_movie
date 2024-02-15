@@ -12,7 +12,7 @@ part of 'login_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginState {
@@ -117,23 +117,25 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$InitialCopyWith<$Res> {
-  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
-      __$$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$Initial>
-    implements _$$InitialCopyWith<$Res> {
-  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Initial implements Initial {
-  const _$Initial();
+class _$InitialImpl implements Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -141,9 +143,9 @@ class _$Initial implements Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -255,29 +257,29 @@ class _$Initial implements Initial {
 }
 
 abstract class Initial implements LoginState {
-  const factory Initial() = _$Initial;
+  const factory Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$RequestingTokenCopyWith<$Res> {
-  factory _$$RequestingTokenCopyWith(
-          _$RequestingToken value, $Res Function(_$RequestingToken) then) =
-      __$$RequestingTokenCopyWithImpl<$Res>;
+abstract class _$$RequestingTokenImplCopyWith<$Res> {
+  factory _$$RequestingTokenImplCopyWith(_$RequestingTokenImpl value,
+          $Res Function(_$RequestingTokenImpl) then) =
+      __$$RequestingTokenImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RequestingTokenCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$RequestingToken>
-    implements _$$RequestingTokenCopyWith<$Res> {
-  __$$RequestingTokenCopyWithImpl(
-      _$RequestingToken _value, $Res Function(_$RequestingToken) _then)
+class __$$RequestingTokenImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$RequestingTokenImpl>
+    implements _$$RequestingTokenImplCopyWith<$Res> {
+  __$$RequestingTokenImplCopyWithImpl(
+      _$RequestingTokenImpl _value, $Res Function(_$RequestingTokenImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RequestingToken implements RequestingToken {
-  const _$RequestingToken();
+class _$RequestingTokenImpl implements RequestingToken {
+  const _$RequestingTokenImpl();
 
   @override
   String toString() {
@@ -285,9 +287,9 @@ class _$RequestingToken implements RequestingToken {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RequestingToken);
+        (other.runtimeType == runtimeType && other is _$RequestingTokenImpl);
   }
 
   @override
@@ -399,23 +401,24 @@ class _$RequestingToken implements RequestingToken {
 }
 
 abstract class RequestingToken implements LoginState {
-  const factory RequestingToken() = _$RequestingToken;
+  const factory RequestingToken() = _$RequestingTokenImpl;
 }
 
 /// @nodoc
-abstract class _$$GotTokenCopyWith<$Res> {
-  factory _$$GotTokenCopyWith(
-          _$GotToken value, $Res Function(_$GotToken) then) =
-      __$$GotTokenCopyWithImpl<$Res>;
+abstract class _$$GotTokenImplCopyWith<$Res> {
+  factory _$$GotTokenImplCopyWith(
+          _$GotTokenImpl value, $Res Function(_$GotTokenImpl) then) =
+      __$$GotTokenImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String token});
 }
 
 /// @nodoc
-class __$$GotTokenCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$GotToken>
-    implements _$$GotTokenCopyWith<$Res> {
-  __$$GotTokenCopyWithImpl(_$GotToken _value, $Res Function(_$GotToken) _then)
+class __$$GotTokenImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$GotTokenImpl>
+    implements _$$GotTokenImplCopyWith<$Res> {
+  __$$GotTokenImplCopyWithImpl(
+      _$GotTokenImpl _value, $Res Function(_$GotTokenImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -423,7 +426,7 @@ class __$$GotTokenCopyWithImpl<$Res>
   $Res call({
     Object? token = null,
   }) {
-    return _then(_$GotToken(
+    return _then(_$GotTokenImpl(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -434,8 +437,8 @@ class __$$GotTokenCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GotToken implements GotToken {
-  const _$GotToken({required this.token});
+class _$GotTokenImpl implements GotToken {
+  const _$GotTokenImpl({required this.token});
 
   @override
   final String token;
@@ -446,10 +449,10 @@ class _$GotToken implements GotToken {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GotToken &&
+            other is _$GotTokenImpl &&
             (identical(other.token, token) || other.token == token));
   }
 
@@ -459,8 +462,8 @@ class _$GotToken implements GotToken {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GotTokenCopyWith<_$GotToken> get copyWith =>
-      __$$GotTokenCopyWithImpl<_$GotToken>(this, _$identity);
+  _$$GotTokenImplCopyWith<_$GotTokenImpl> get copyWith =>
+      __$$GotTokenImplCopyWithImpl<_$GotTokenImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -568,34 +571,35 @@ class _$GotToken implements GotToken {
 }
 
 abstract class GotToken implements LoginState {
-  const factory GotToken({required final String token}) = _$GotToken;
+  const factory GotToken({required final String token}) = _$GotTokenImpl;
 
   String get token;
   @JsonKey(ignore: true)
-  _$$GotTokenCopyWith<_$GotToken> get copyWith =>
+  _$$GotTokenImplCopyWith<_$GotTokenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RequestingTMDBSessionCopyWith<$Res> {
-  factory _$$RequestingTMDBSessionCopyWith(_$RequestingTMDBSession value,
-          $Res Function(_$RequestingTMDBSession) then) =
-      __$$RequestingTMDBSessionCopyWithImpl<$Res>;
+abstract class _$$RequestingTMDBSessionImplCopyWith<$Res> {
+  factory _$$RequestingTMDBSessionImplCopyWith(
+          _$RequestingTMDBSessionImpl value,
+          $Res Function(_$RequestingTMDBSessionImpl) then) =
+      __$$RequestingTMDBSessionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RequestingTMDBSessionCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$RequestingTMDBSession>
-    implements _$$RequestingTMDBSessionCopyWith<$Res> {
-  __$$RequestingTMDBSessionCopyWithImpl(_$RequestingTMDBSession _value,
-      $Res Function(_$RequestingTMDBSession) _then)
+class __$$RequestingTMDBSessionImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$RequestingTMDBSessionImpl>
+    implements _$$RequestingTMDBSessionImplCopyWith<$Res> {
+  __$$RequestingTMDBSessionImplCopyWithImpl(_$RequestingTMDBSessionImpl _value,
+      $Res Function(_$RequestingTMDBSessionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RequestingTMDBSession implements RequestingTMDBSession {
-  const _$RequestingTMDBSession();
+class _$RequestingTMDBSessionImpl implements RequestingTMDBSession {
+  const _$RequestingTMDBSessionImpl();
 
   @override
   String toString() {
@@ -603,9 +607,10 @@ class _$RequestingTMDBSession implements RequestingTMDBSession {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RequestingTMDBSession);
+        (other.runtimeType == runtimeType &&
+            other is _$RequestingTMDBSessionImpl);
   }
 
   @override
@@ -717,24 +722,24 @@ class _$RequestingTMDBSession implements RequestingTMDBSession {
 }
 
 abstract class RequestingTMDBSession implements LoginState {
-  const factory RequestingTMDBSession() = _$RequestingTMDBSession;
+  const factory RequestingTMDBSession() = _$RequestingTMDBSessionImpl;
 }
 
 /// @nodoc
-abstract class _$$GotTMDBSessionCopyWith<$Res> {
-  factory _$$GotTMDBSessionCopyWith(
-          _$GotTMDBSession value, $Res Function(_$GotTMDBSession) then) =
-      __$$GotTMDBSessionCopyWithImpl<$Res>;
+abstract class _$$GotTMDBSessionImplCopyWith<$Res> {
+  factory _$$GotTMDBSessionImplCopyWith(_$GotTMDBSessionImpl value,
+          $Res Function(_$GotTMDBSessionImpl) then) =
+      __$$GotTMDBSessionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String sessionId});
 }
 
 /// @nodoc
-class __$$GotTMDBSessionCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$GotTMDBSession>
-    implements _$$GotTMDBSessionCopyWith<$Res> {
-  __$$GotTMDBSessionCopyWithImpl(
-      _$GotTMDBSession _value, $Res Function(_$GotTMDBSession) _then)
+class __$$GotTMDBSessionImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$GotTMDBSessionImpl>
+    implements _$$GotTMDBSessionImplCopyWith<$Res> {
+  __$$GotTMDBSessionImplCopyWithImpl(
+      _$GotTMDBSessionImpl _value, $Res Function(_$GotTMDBSessionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -742,7 +747,7 @@ class __$$GotTMDBSessionCopyWithImpl<$Res>
   $Res call({
     Object? sessionId = null,
   }) {
-    return _then(_$GotTMDBSession(
+    return _then(_$GotTMDBSessionImpl(
       sessionId: null == sessionId
           ? _value.sessionId
           : sessionId // ignore: cast_nullable_to_non_nullable
@@ -753,8 +758,8 @@ class __$$GotTMDBSessionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GotTMDBSession implements GotTMDBSession {
-  const _$GotTMDBSession({required this.sessionId});
+class _$GotTMDBSessionImpl implements GotTMDBSession {
+  const _$GotTMDBSessionImpl({required this.sessionId});
 
   @override
   final String sessionId;
@@ -765,10 +770,10 @@ class _$GotTMDBSession implements GotTMDBSession {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GotTMDBSession &&
+            other is _$GotTMDBSessionImpl &&
             (identical(other.sessionId, sessionId) ||
                 other.sessionId == sessionId));
   }
@@ -779,8 +784,9 @@ class _$GotTMDBSession implements GotTMDBSession {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GotTMDBSessionCopyWith<_$GotTMDBSession> get copyWith =>
-      __$$GotTMDBSessionCopyWithImpl<_$GotTMDBSession>(this, _$identity);
+  _$$GotTMDBSessionImplCopyWith<_$GotTMDBSessionImpl> get copyWith =>
+      __$$GotTMDBSessionImplCopyWithImpl<_$GotTMDBSessionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -889,34 +895,34 @@ class _$GotTMDBSession implements GotTMDBSession {
 
 abstract class GotTMDBSession implements LoginState {
   const factory GotTMDBSession({required final String sessionId}) =
-      _$GotTMDBSession;
+      _$GotTMDBSessionImpl;
 
   String get sessionId;
   @JsonKey(ignore: true)
-  _$$GotTMDBSessionCopyWith<_$GotTMDBSession> get copyWith =>
+  _$$GotTMDBSessionImplCopyWith<_$GotTMDBSessionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RequestingGuestCopyWith<$Res> {
-  factory _$$RequestingGuestCopyWith(
-          _$RequestingGuest value, $Res Function(_$RequestingGuest) then) =
-      __$$RequestingGuestCopyWithImpl<$Res>;
+abstract class _$$RequestingGuestImplCopyWith<$Res> {
+  factory _$$RequestingGuestImplCopyWith(_$RequestingGuestImpl value,
+          $Res Function(_$RequestingGuestImpl) then) =
+      __$$RequestingGuestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RequestingGuestCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$RequestingGuest>
-    implements _$$RequestingGuestCopyWith<$Res> {
-  __$$RequestingGuestCopyWithImpl(
-      _$RequestingGuest _value, $Res Function(_$RequestingGuest) _then)
+class __$$RequestingGuestImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$RequestingGuestImpl>
+    implements _$$RequestingGuestImplCopyWith<$Res> {
+  __$$RequestingGuestImplCopyWithImpl(
+      _$RequestingGuestImpl _value, $Res Function(_$RequestingGuestImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RequestingGuest implements RequestingGuest {
-  const _$RequestingGuest();
+class _$RequestingGuestImpl implements RequestingGuest {
+  const _$RequestingGuestImpl();
 
   @override
   String toString() {
@@ -924,9 +930,9 @@ class _$RequestingGuest implements RequestingGuest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RequestingGuest);
+        (other.runtimeType == runtimeType && other is _$RequestingGuestImpl);
   }
 
   @override
@@ -1038,24 +1044,24 @@ class _$RequestingGuest implements RequestingGuest {
 }
 
 abstract class RequestingGuest implements LoginState {
-  const factory RequestingGuest() = _$RequestingGuest;
+  const factory RequestingGuest() = _$RequestingGuestImpl;
 }
 
 /// @nodoc
-abstract class _$$GotGuestSessionCopyWith<$Res> {
-  factory _$$GotGuestSessionCopyWith(
-          _$GotGuestSession value, $Res Function(_$GotGuestSession) then) =
-      __$$GotGuestSessionCopyWithImpl<$Res>;
+abstract class _$$GotGuestSessionImplCopyWith<$Res> {
+  factory _$$GotGuestSessionImplCopyWith(_$GotGuestSessionImpl value,
+          $Res Function(_$GotGuestSessionImpl) then) =
+      __$$GotGuestSessionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String guestSessionId});
 }
 
 /// @nodoc
-class __$$GotGuestSessionCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$GotGuestSession>
-    implements _$$GotGuestSessionCopyWith<$Res> {
-  __$$GotGuestSessionCopyWithImpl(
-      _$GotGuestSession _value, $Res Function(_$GotGuestSession) _then)
+class __$$GotGuestSessionImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$GotGuestSessionImpl>
+    implements _$$GotGuestSessionImplCopyWith<$Res> {
+  __$$GotGuestSessionImplCopyWithImpl(
+      _$GotGuestSessionImpl _value, $Res Function(_$GotGuestSessionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1063,7 +1069,7 @@ class __$$GotGuestSessionCopyWithImpl<$Res>
   $Res call({
     Object? guestSessionId = null,
   }) {
-    return _then(_$GotGuestSession(
+    return _then(_$GotGuestSessionImpl(
       guestSessionId: null == guestSessionId
           ? _value.guestSessionId
           : guestSessionId // ignore: cast_nullable_to_non_nullable
@@ -1074,8 +1080,8 @@ class __$$GotGuestSessionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GotGuestSession implements GotGuestSession {
-  const _$GotGuestSession({required this.guestSessionId});
+class _$GotGuestSessionImpl implements GotGuestSession {
+  const _$GotGuestSessionImpl({required this.guestSessionId});
 
   @override
   final String guestSessionId;
@@ -1086,10 +1092,10 @@ class _$GotGuestSession implements GotGuestSession {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GotGuestSession &&
+            other is _$GotGuestSessionImpl &&
             (identical(other.guestSessionId, guestSessionId) ||
                 other.guestSessionId == guestSessionId));
   }
@@ -1100,8 +1106,9 @@ class _$GotGuestSession implements GotGuestSession {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GotGuestSessionCopyWith<_$GotGuestSession> get copyWith =>
-      __$$GotGuestSessionCopyWithImpl<_$GotGuestSession>(this, _$identity);
+  _$$GotGuestSessionImplCopyWith<_$GotGuestSessionImpl> get copyWith =>
+      __$$GotGuestSessionImplCopyWithImpl<_$GotGuestSessionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1210,28 +1217,30 @@ class _$GotGuestSession implements GotGuestSession {
 
 abstract class GotGuestSession implements LoginState {
   const factory GotGuestSession({required final String guestSessionId}) =
-      _$GotGuestSession;
+      _$GotGuestSessionImpl;
 
   String get guestSessionId;
   @JsonKey(ignore: true)
-  _$$GotGuestSessionCopyWith<_$GotGuestSession> get copyWith =>
+  _$$GotGuestSessionImplCopyWith<_$GotGuestSessionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorCopyWith<$Res> {
-  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
-      __$$ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String message, AppException? exception, void Function()? onRetry});
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$Error>
-    implements _$$ErrorCopyWith<$Res> {
-  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1241,7 +1250,7 @@ class __$$ErrorCopyWithImpl<$Res>
     Object? exception = freezed,
     Object? onRetry = freezed,
   }) {
-    return _then(_$Error(
+    return _then(_$ErrorImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1260,8 +1269,8 @@ class __$$ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Error implements Error {
-  const _$Error({this.message = '', this.exception, this.onRetry});
+class _$ErrorImpl implements Error {
+  const _$ErrorImpl({this.message = '', this.exception, this.onRetry});
 
   @override
   @JsonKey()
@@ -1277,10 +1286,10 @@ class _$Error implements Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Error &&
+            other is _$ErrorImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.exception, exception) ||
                 other.exception == exception) &&
@@ -1293,8 +1302,8 @@ class _$Error implements Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorCopyWith<_$Error> get copyWith =>
-      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1405,11 +1414,12 @@ abstract class Error implements LoginState {
   const factory Error(
       {final String message,
       final AppException? exception,
-      final void Function()? onRetry}) = _$Error;
+      final void Function()? onRetry}) = _$ErrorImpl;
 
   String get message;
   AppException? get exception;
   void Function()? get onRetry;
   @JsonKey(ignore: true)
-  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

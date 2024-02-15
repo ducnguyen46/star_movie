@@ -12,7 +12,7 @@ part of 'login_tmdb_authenticated_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginTMDBAuthenticatedUseCaseParams {
@@ -61,25 +61,25 @@ class _$LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_LoginTMDBAuthenticatedUseCaseParamsCopyWith<$Res>
+abstract class _$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWith<$Res>
     implements $LoginTMDBAuthenticatedUseCaseParamsCopyWith<$Res> {
-  factory _$$_LoginTMDBAuthenticatedUseCaseParamsCopyWith(
-          _$_LoginTMDBAuthenticatedUseCaseParams value,
-          $Res Function(_$_LoginTMDBAuthenticatedUseCaseParams) then) =
-      __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWith(
+          _$LoginTMDBAuthenticatedUseCaseParamsImpl value,
+          $Res Function(_$LoginTMDBAuthenticatedUseCaseParamsImpl) then) =
+      __$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String requestToken});
 }
 
 /// @nodoc
-class __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res>
+class __$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWithImpl<$Res>
     extends _$LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res,
-        _$_LoginTMDBAuthenticatedUseCaseParams>
-    implements _$$_LoginTMDBAuthenticatedUseCaseParamsCopyWith<$Res> {
-  __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl(
-      _$_LoginTMDBAuthenticatedUseCaseParams _value,
-      $Res Function(_$_LoginTMDBAuthenticatedUseCaseParams) _then)
+        _$LoginTMDBAuthenticatedUseCaseParamsImpl>
+    implements _$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWith<$Res> {
+  __$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWithImpl(
+      _$LoginTMDBAuthenticatedUseCaseParamsImpl _value,
+      $Res Function(_$LoginTMDBAuthenticatedUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res>
   $Res call({
     Object? requestToken = null,
   }) {
-    return _then(_$_LoginTMDBAuthenticatedUseCaseParams(
+    return _then(_$LoginTMDBAuthenticatedUseCaseParamsImpl(
       requestToken: null == requestToken
           ? _value.requestToken
           : requestToken // ignore: cast_nullable_to_non_nullable
@@ -98,9 +98,9 @@ class __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginTMDBAuthenticatedUseCaseParams
+class _$LoginTMDBAuthenticatedUseCaseParamsImpl
     implements _LoginTMDBAuthenticatedUseCaseParams {
-  const _$_LoginTMDBAuthenticatedUseCaseParams({required this.requestToken});
+  const _$LoginTMDBAuthenticatedUseCaseParamsImpl({required this.requestToken});
 
   @override
   final String requestToken;
@@ -111,10 +111,10 @@ class _$_LoginTMDBAuthenticatedUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginTMDBAuthenticatedUseCaseParams &&
+            other is _$LoginTMDBAuthenticatedUseCaseParamsImpl &&
             (identical(other.requestToken, requestToken) ||
                 other.requestToken == requestToken));
   }
@@ -125,23 +125,23 @@ class _$_LoginTMDBAuthenticatedUseCaseParams
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginTMDBAuthenticatedUseCaseParamsCopyWith<
-          _$_LoginTMDBAuthenticatedUseCaseParams>
-      get copyWith => __$$_LoginTMDBAuthenticatedUseCaseParamsCopyWithImpl<
-          _$_LoginTMDBAuthenticatedUseCaseParams>(this, _$identity);
+  _$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWith<
+          _$LoginTMDBAuthenticatedUseCaseParamsImpl>
+      get copyWith => __$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWithImpl<
+          _$LoginTMDBAuthenticatedUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _LoginTMDBAuthenticatedUseCaseParams
     implements LoginTMDBAuthenticatedUseCaseParams {
   const factory _LoginTMDBAuthenticatedUseCaseParams(
           {required final String requestToken}) =
-      _$_LoginTMDBAuthenticatedUseCaseParams;
+      _$LoginTMDBAuthenticatedUseCaseParamsImpl;
 
   @override
   String get requestToken;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginTMDBAuthenticatedUseCaseParamsCopyWith<
-          _$_LoginTMDBAuthenticatedUseCaseParams>
+  _$$LoginTMDBAuthenticatedUseCaseParamsImplCopyWith<
+          _$LoginTMDBAuthenticatedUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

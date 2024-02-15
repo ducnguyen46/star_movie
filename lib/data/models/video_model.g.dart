@@ -6,15 +6,15 @@ part of 'video_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VideoModel _$$_VideoModelFromJson(Map<String, dynamic> json) =>
-    _$_VideoModel(
+_$VideoModelImpl _$$VideoModelImplFromJson(Map<String, dynamic> json) =>
+    _$VideoModelImpl(
       title: json['name'] as String? ?? '',
       key: json['key'] as String? ?? '',
       site: json['site'] as String? ?? '',
       isOfficialVid: json['official'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_VideoModelToJson(_$_VideoModel instance) =>
+Map<String, dynamic> _$$VideoModelImplToJson(_$VideoModelImpl instance) =>
     <String, dynamic>{
       'name': instance.title,
       'key': instance.key,

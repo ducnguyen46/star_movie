@@ -13,20 +13,31 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-            page: SplashRoute.page, path: RoutePath.splashPage, initial: true),
-        AutoRoute(page: LogInRoute.page, path: RoutePath.logInPage),
+          page: SplashRoute.page,
+          path: RoutePath.splashPage,
+          initial: true,
+        ),
         AutoRoute(
-            page: UserApprovalRoute.page,
-            path: '${RoutePath.userApprovalPage}/:token'),
+          page: LogInRoute.page,
+          path: RoutePath.logInPage,
+        ),
+        AutoRoute(
+          page: UserApprovalRoute.page,
+          path: '${RoutePath.userApprovalPage}/:token',
+        ),
         AutoRoute(
           page: HomeRoute.page,
           path: RoutePath.homePage,
           children: [
             RedirectRoute(path: '', redirectTo: RoutePath.moviePage),
             AutoRoute(
-                page: MovieRoute.page, path: RoutePath.moviePage.isSubPage),
+              page: MovieRoute.page,
+              path: RoutePath.moviePage.isSubPage,
+            ),
             AutoRoute(
-                page: ProfileRoute.page, path: RoutePath.profilePage.isSubPage),
+              page: ProfileRoute.page,
+              path: RoutePath.profilePage.isSubPage,
+            ),
           ],
         ),
         AutoRoute(
@@ -37,5 +48,9 @@ class AppRouter extends _$AppRouter {
           page: MovieDetailRoute.page,
           path: '${RoutePath.movieDetail}/:movie_id',
         ),
+        AutoRoute(
+          page: VideoPlayerRoute.page,
+          path: '${RoutePath.videoPlayer}/:video_key',
+        )
       ];
 }

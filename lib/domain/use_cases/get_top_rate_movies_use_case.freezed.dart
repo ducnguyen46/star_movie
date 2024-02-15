@@ -12,7 +12,7 @@ part of 'get_top_rate_movies_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetTopRateMoviesUseCaseParams {
@@ -72,25 +72,25 @@ class _$GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetTopRateMoviesUseCaseParamsCopyWith<$Res>
+abstract class _$$GetTopRateMoviesUseCaseParamsImplCopyWith<$Res>
     implements $GetTopRateMoviesUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetTopRateMoviesUseCaseParamsCopyWith(
-          _$_GetTopRateMoviesUseCaseParams value,
-          $Res Function(_$_GetTopRateMoviesUseCaseParams) then) =
-      __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$GetTopRateMoviesUseCaseParamsImplCopyWith(
+          _$GetTopRateMoviesUseCaseParamsImpl value,
+          $Res Function(_$GetTopRateMoviesUseCaseParamsImpl) then) =
+      __$$GetTopRateMoviesUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int page, String language, String region});
 }
 
 /// @nodoc
-class __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res>
+class __$$GetTopRateMoviesUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res,
-        _$_GetTopRateMoviesUseCaseParams>
-    implements _$$_GetTopRateMoviesUseCaseParamsCopyWith<$Res> {
-  __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl(
-      _$_GetTopRateMoviesUseCaseParams _value,
-      $Res Function(_$_GetTopRateMoviesUseCaseParams) _then)
+        _$GetTopRateMoviesUseCaseParamsImpl>
+    implements _$$GetTopRateMoviesUseCaseParamsImplCopyWith<$Res> {
+  __$$GetTopRateMoviesUseCaseParamsImplCopyWithImpl(
+      _$GetTopRateMoviesUseCaseParamsImpl _value,
+      $Res Function(_$GetTopRateMoviesUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res>
     Object? language = null,
     Object? region = null,
   }) {
-    return _then(_$_GetTopRateMoviesUseCaseParams(
+    return _then(_$GetTopRateMoviesUseCaseParamsImpl(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -119,9 +119,9 @@ class __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetTopRateMoviesUseCaseParams
+class _$GetTopRateMoviesUseCaseParamsImpl
     implements _GetTopRateMoviesUseCaseParams {
-  const _$_GetTopRateMoviesUseCaseParams(
+  const _$GetTopRateMoviesUseCaseParamsImpl(
       {this.page = 1, this.language = '', this.region = ''});
 
   @override
@@ -140,10 +140,10 @@ class _$_GetTopRateMoviesUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetTopRateMoviesUseCaseParams &&
+            other is _$GetTopRateMoviesUseCaseParamsImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.language, language) ||
                 other.language == language) &&
@@ -156,9 +156,10 @@ class _$_GetTopRateMoviesUseCaseParams
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetTopRateMoviesUseCaseParamsCopyWith<_$_GetTopRateMoviesUseCaseParams>
-      get copyWith => __$$_GetTopRateMoviesUseCaseParamsCopyWithImpl<
-          _$_GetTopRateMoviesUseCaseParams>(this, _$identity);
+  _$$GetTopRateMoviesUseCaseParamsImplCopyWith<
+          _$GetTopRateMoviesUseCaseParamsImpl>
+      get copyWith => __$$GetTopRateMoviesUseCaseParamsImplCopyWithImpl<
+          _$GetTopRateMoviesUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _GetTopRateMoviesUseCaseParams
@@ -166,7 +167,7 @@ abstract class _GetTopRateMoviesUseCaseParams
   const factory _GetTopRateMoviesUseCaseParams(
       {final int page,
       final String language,
-      final String region}) = _$_GetTopRateMoviesUseCaseParams;
+      final String region}) = _$GetTopRateMoviesUseCaseParamsImpl;
 
   @override
   int get page;
@@ -176,6 +177,7 @@ abstract class _GetTopRateMoviesUseCaseParams
   String get region;
   @override
   @JsonKey(ignore: true)
-  _$$_GetTopRateMoviesUseCaseParamsCopyWith<_$_GetTopRateMoviesUseCaseParams>
+  _$$GetTopRateMoviesUseCaseParamsImplCopyWith<
+          _$GetTopRateMoviesUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'language_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 LanguageModel _$LanguageModelFromJson(Map<String, dynamic> json) {
   return _LanguageModel.fromJson(json);
@@ -80,11 +80,11 @@ class _$LanguageModelCopyWithImpl<$Res, $Val extends LanguageModel>
 }
 
 /// @nodoc
-abstract class _$$_LanguageModelCopyWith<$Res>
+abstract class _$$LanguageModelImplCopyWith<$Res>
     implements $LanguageModelCopyWith<$Res> {
-  factory _$$_LanguageModelCopyWith(
-          _$_LanguageModel value, $Res Function(_$_LanguageModel) then) =
-      __$$_LanguageModelCopyWithImpl<$Res>;
+  factory _$$LanguageModelImplCopyWith(
+          _$LanguageModelImpl value, $Res Function(_$LanguageModelImpl) then) =
+      __$$LanguageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_LanguageModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LanguageModelCopyWithImpl<$Res>
-    extends _$LanguageModelCopyWithImpl<$Res, _$_LanguageModel>
-    implements _$$_LanguageModelCopyWith<$Res> {
-  __$$_LanguageModelCopyWithImpl(
-      _$_LanguageModel _value, $Res Function(_$_LanguageModel) _then)
+class __$$LanguageModelImplCopyWithImpl<$Res>
+    extends _$LanguageModelCopyWithImpl<$Res, _$LanguageModelImpl>
+    implements _$$LanguageModelImplCopyWith<$Res> {
+  __$$LanguageModelImplCopyWithImpl(
+      _$LanguageModelImpl _value, $Res Function(_$LanguageModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_LanguageModelCopyWithImpl<$Res>
     Object? englishName = null,
     Object? nativeName = null,
   }) {
-    return _then(_$_LanguageModel(
+    return _then(_$LanguageModelImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_LanguageModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LanguageModel implements _LanguageModel {
-  const _$_LanguageModel(
+class _$LanguageModelImpl implements _LanguageModel {
+  const _$LanguageModelImpl(
       {@JsonKey(name: 'iso_639_1') this.code = '',
       @JsonKey(name: 'english_name') this.englishName = '',
       @JsonKey(name: 'name') this.nativeName = ''});
 
-  factory _$_LanguageModel.fromJson(Map<String, dynamic> json) =>
-      _$$_LanguageModelFromJson(json);
+  factory _$LanguageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LanguageModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'iso_639_1')
@@ -152,10 +152,10 @@ class _$_LanguageModel implements _LanguageModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LanguageModel &&
+            other is _$LanguageModelImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.englishName, englishName) ||
                 other.englishName == englishName) &&
@@ -170,12 +170,12 @@ class _$_LanguageModel implements _LanguageModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LanguageModelCopyWith<_$_LanguageModel> get copyWith =>
-      __$$_LanguageModelCopyWithImpl<_$_LanguageModel>(this, _$identity);
+  _$$LanguageModelImplCopyWith<_$LanguageModelImpl> get copyWith =>
+      __$$LanguageModelImplCopyWithImpl<_$LanguageModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LanguageModelToJson(
+    return _$$LanguageModelImplToJson(
       this,
     );
   }
@@ -185,10 +185,10 @@ abstract class _LanguageModel implements LanguageModel {
   const factory _LanguageModel(
       {@JsonKey(name: 'iso_639_1') final String code,
       @JsonKey(name: 'english_name') final String englishName,
-      @JsonKey(name: 'name') final String nativeName}) = _$_LanguageModel;
+      @JsonKey(name: 'name') final String nativeName}) = _$LanguageModelImpl;
 
   factory _LanguageModel.fromJson(Map<String, dynamic> json) =
-      _$_LanguageModel.fromJson;
+      _$LanguageModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'iso_639_1')
@@ -201,7 +201,7 @@ abstract class _LanguageModel implements LanguageModel {
   String get nativeName;
   @override
   @JsonKey(ignore: true)
-  _$$_LanguageModelCopyWith<_$_LanguageModel> get copyWith =>
+  _$$LanguageModelImplCopyWith<_$LanguageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -248,22 +248,22 @@ class _$LanguagesModelCopyWithImpl<$Res, $Val extends LanguagesModel>
 }
 
 /// @nodoc
-abstract class _$$_LanguagesModelCopyWith<$Res>
+abstract class _$$LanguagesModelImplCopyWith<$Res>
     implements $LanguagesModelCopyWith<$Res> {
-  factory _$$_LanguagesModelCopyWith(
-          _$_LanguagesModel value, $Res Function(_$_LanguagesModel) then) =
-      __$$_LanguagesModelCopyWithImpl<$Res>;
+  factory _$$LanguagesModelImplCopyWith(_$LanguagesModelImpl value,
+          $Res Function(_$LanguagesModelImpl) then) =
+      __$$LanguagesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<LanguageModel> languages});
 }
 
 /// @nodoc
-class __$$_LanguagesModelCopyWithImpl<$Res>
-    extends _$LanguagesModelCopyWithImpl<$Res, _$_LanguagesModel>
-    implements _$$_LanguagesModelCopyWith<$Res> {
-  __$$_LanguagesModelCopyWithImpl(
-      _$_LanguagesModel _value, $Res Function(_$_LanguagesModel) _then)
+class __$$LanguagesModelImplCopyWithImpl<$Res>
+    extends _$LanguagesModelCopyWithImpl<$Res, _$LanguagesModelImpl>
+    implements _$$LanguagesModelImplCopyWith<$Res> {
+  __$$LanguagesModelImplCopyWithImpl(
+      _$LanguagesModelImpl _value, $Res Function(_$LanguagesModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -271,7 +271,7 @@ class __$$_LanguagesModelCopyWithImpl<$Res>
   $Res call({
     Object? languages = null,
   }) {
-    return _then(_$_LanguagesModel(
+    return _then(_$LanguagesModelImpl(
       languages: null == languages
           ? _value._languages
           : languages // ignore: cast_nullable_to_non_nullable
@@ -282,8 +282,8 @@ class __$$_LanguagesModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LanguagesModel implements _LanguagesModel {
-  const _$_LanguagesModel({final List<LanguageModel> languages = const []})
+class _$LanguagesModelImpl implements _LanguagesModel {
+  const _$LanguagesModelImpl({final List<LanguageModel> languages = const []})
       : _languages = languages;
 
   final List<LanguageModel> _languages;
@@ -301,10 +301,10 @@ class _$_LanguagesModel implements _LanguagesModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LanguagesModel &&
+            other is _$LanguagesModelImpl &&
             const DeepCollectionEquality()
                 .equals(other._languages, _languages));
   }
@@ -316,18 +316,19 @@ class _$_LanguagesModel implements _LanguagesModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LanguagesModelCopyWith<_$_LanguagesModel> get copyWith =>
-      __$$_LanguagesModelCopyWithImpl<_$_LanguagesModel>(this, _$identity);
+  _$$LanguagesModelImplCopyWith<_$LanguagesModelImpl> get copyWith =>
+      __$$LanguagesModelImplCopyWithImpl<_$LanguagesModelImpl>(
+          this, _$identity);
 }
 
 abstract class _LanguagesModel implements LanguagesModel {
   const factory _LanguagesModel({final List<LanguageModel> languages}) =
-      _$_LanguagesModel;
+      _$LanguagesModelImpl;
 
   @override
   List<LanguageModel> get languages;
   @override
   @JsonKey(ignore: true)
-  _$$_LanguagesModelCopyWith<_$_LanguagesModel> get copyWith =>
+  _$$LanguagesModelImplCopyWith<_$LanguagesModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

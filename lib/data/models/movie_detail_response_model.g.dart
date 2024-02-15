@@ -6,9 +6,9 @@ part of 'movie_detail_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MovieDetailResponseModel _$$_MovieDetailResponseModelFromJson(
+_$MovieDetailResponseModelImpl _$$MovieDetailResponseModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MovieDetailResponseModel(
+    _$MovieDetailResponseModelImpl(
       id: json['id'] as int? ?? -1,
       imdbId: json['imdb_id'] as String? ?? '',
       originalTitle: json['original_title'] as String? ?? '',
@@ -57,8 +57,8 @@ _$_MovieDetailResponseModel _$$_MovieDetailResponseModelFromJson(
           : VideoResponseModel.fromJson(json['videos'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MovieDetailResponseModelToJson(
-        _$_MovieDetailResponseModel instance) =>
+Map<String, dynamic> _$$MovieDetailResponseModelImplToJson(
+        _$MovieDetailResponseModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'imdb_id': instance.imdbId,

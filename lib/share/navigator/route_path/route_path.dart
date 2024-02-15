@@ -9,6 +9,7 @@ class RoutePath {
   static const homeProfilePage = '$homePage$profilePage';
   static const listHomeMoviesPage = '/list-home-movies';
   static const movieDetail = '/movie-detail';
+  static const videoPlayer = '/video-player';
 }
 
 extension $RoutePath on String {

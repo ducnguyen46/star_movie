@@ -12,7 +12,7 @@ part of 'error_state_common.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ErrorStateCommon {
@@ -72,11 +72,11 @@ class _$ErrorStateCommonCopyWithImpl<$Res, $Val extends ErrorStateCommon>
 }
 
 /// @nodoc
-abstract class _$$_ErrorStateCommonCopyWith<$Res>
+abstract class _$$ErrorStateCommonImplCopyWith<$Res>
     implements $ErrorStateCommonCopyWith<$Res> {
-  factory _$$_ErrorStateCommonCopyWith(
-          _$_ErrorStateCommon value, $Res Function(_$_ErrorStateCommon) then) =
-      __$$_ErrorStateCommonCopyWithImpl<$Res>;
+  factory _$$ErrorStateCommonImplCopyWith(_$ErrorStateCommonImpl value,
+          $Res Function(_$ErrorStateCommonImpl) then) =
+      __$$ErrorStateCommonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -86,11 +86,11 @@ abstract class _$$_ErrorStateCommonCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ErrorStateCommonCopyWithImpl<$Res>
-    extends _$ErrorStateCommonCopyWithImpl<$Res, _$_ErrorStateCommon>
-    implements _$$_ErrorStateCommonCopyWith<$Res> {
-  __$$_ErrorStateCommonCopyWithImpl(
-      _$_ErrorStateCommon _value, $Res Function(_$_ErrorStateCommon) _then)
+class __$$ErrorStateCommonImplCopyWithImpl<$Res>
+    extends _$ErrorStateCommonCopyWithImpl<$Res, _$ErrorStateCommonImpl>
+    implements _$$ErrorStateCommonImplCopyWith<$Res> {
+  __$$ErrorStateCommonImplCopyWithImpl(_$ErrorStateCommonImpl _value,
+      $Res Function(_$ErrorStateCommonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_ErrorStateCommonCopyWithImpl<$Res>
     Object? exception = freezed,
     Object? onRetry = freezed,
   }) {
-    return _then(_$_ErrorStateCommon(
+    return _then(_$ErrorStateCommonImpl(
       errorMessages: null == errorMessages
           ? _value.errorMessages
           : errorMessages // ignore: cast_nullable_to_non_nullable
@@ -119,8 +119,8 @@ class __$$_ErrorStateCommonCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ErrorStateCommon implements _ErrorStateCommon {
-  const _$_ErrorStateCommon(
+class _$ErrorStateCommonImpl implements _ErrorStateCommon {
+  const _$ErrorStateCommonImpl(
       {this.errorMessages = '', this.exception, this.onRetry});
 
   @override
@@ -137,10 +137,10 @@ class _$_ErrorStateCommon implements _ErrorStateCommon {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ErrorStateCommon &&
+            other is _$ErrorStateCommonImpl &&
             (identical(other.errorMessages, errorMessages) ||
                 other.errorMessages == errorMessages) &&
             (identical(other.exception, exception) ||
@@ -155,15 +155,16 @@ class _$_ErrorStateCommon implements _ErrorStateCommon {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorStateCommonCopyWith<_$_ErrorStateCommon> get copyWith =>
-      __$$_ErrorStateCommonCopyWithImpl<_$_ErrorStateCommon>(this, _$identity);
+  _$$ErrorStateCommonImplCopyWith<_$ErrorStateCommonImpl> get copyWith =>
+      __$$ErrorStateCommonImplCopyWithImpl<_$ErrorStateCommonImpl>(
+          this, _$identity);
 }
 
 abstract class _ErrorStateCommon implements ErrorStateCommon {
   const factory _ErrorStateCommon(
       {final String errorMessages,
       final AppException? exception,
-      final void Function()? onRetry}) = _$_ErrorStateCommon;
+      final void Function()? onRetry}) = _$ErrorStateCommonImpl;
 
   @override
   String get errorMessages;
@@ -173,6 +174,6 @@ abstract class _ErrorStateCommon implements ErrorStateCommon {
   void Function()? get onRetry;
   @override
   @JsonKey(ignore: true)
-  _$$_ErrorStateCommonCopyWith<_$_ErrorStateCommon> get copyWith =>
+  _$$ErrorStateCommonImplCopyWith<_$ErrorStateCommonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

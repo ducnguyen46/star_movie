@@ -12,7 +12,7 @@ part of 'crew.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Crew _$CrewFromJson(Map<String, dynamic> json) {
   return _Crew.fromJson(json);
@@ -117,9 +117,10 @@ class _$CrewCopyWithImpl<$Res, $Val extends Crew>
 }
 
 /// @nodoc
-abstract class _$$_CrewCopyWith<$Res> implements $CrewCopyWith<$Res> {
-  factory _$$_CrewCopyWith(_$_Crew value, $Res Function(_$_Crew) then) =
-      __$$_CrewCopyWithImpl<$Res>;
+abstract class _$$CrewImplCopyWith<$Res> implements $CrewCopyWith<$Res> {
+  factory _$$CrewImplCopyWith(
+          _$CrewImpl value, $Res Function(_$CrewImpl) then) =
+      __$$CrewImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -135,9 +136,10 @@ abstract class _$$_CrewCopyWith<$Res> implements $CrewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res, _$_Crew>
-    implements _$$_CrewCopyWith<$Res> {
-  __$$_CrewCopyWithImpl(_$_Crew _value, $Res Function(_$_Crew) _then)
+class __$$CrewImplCopyWithImpl<$Res>
+    extends _$CrewCopyWithImpl<$Res, _$CrewImpl>
+    implements _$$CrewImplCopyWith<$Res> {
+  __$$CrewImplCopyWithImpl(_$CrewImpl _value, $Res Function(_$CrewImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,7 +155,7 @@ class __$$_CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res, _$_Crew>
     Object? popularity = null,
     Object? gender = null,
   }) {
-    return _then(_$_Crew(
+    return _then(_$CrewImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -196,8 +198,8 @@ class __$$_CrewCopyWithImpl<$Res> extends _$CrewCopyWithImpl<$Res, _$_Crew>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Crew implements _Crew {
-  const _$_Crew(
+class _$CrewImpl implements _Crew {
+  const _$CrewImpl(
       {required this.id,
       required this.castId,
       required this.creditId,
@@ -208,7 +210,8 @@ class _$_Crew implements _Crew {
       required this.popularity,
       required this.gender});
 
-  factory _$_Crew.fromJson(Map<String, dynamic> json) => _$$_CrewFromJson(json);
+  factory _$CrewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CrewImplFromJson(json);
 
   @override
   final int id;
@@ -235,10 +238,10 @@ class _$_Crew implements _Crew {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Crew &&
+            other is _$CrewImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.castId, castId) || other.castId == castId) &&
             (identical(other.creditId, creditId) ||
@@ -262,12 +265,12 @@ class _$_Crew implements _Crew {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CrewCopyWith<_$_Crew> get copyWith =>
-      __$$_CrewCopyWithImpl<_$_Crew>(this, _$identity);
+  _$$CrewImplCopyWith<_$CrewImpl> get copyWith =>
+      __$$CrewImplCopyWithImpl<_$CrewImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CrewToJson(
+    return _$$CrewImplToJson(
       this,
     );
   }
@@ -283,9 +286,9 @@ abstract class _Crew implements Crew {
       required final String department,
       required final String profilePath,
       required final double popularity,
-      required final Gender gender}) = _$_Crew;
+      required final Gender gender}) = _$CrewImpl;
 
-  factory _Crew.fromJson(Map<String, dynamic> json) = _$_Crew.fromJson;
+  factory _Crew.fromJson(Map<String, dynamic> json) = _$CrewImpl.fromJson;
 
   @override
   int get id;
@@ -307,5 +310,6 @@ abstract class _Crew implements Crew {
   Gender get gender;
   @override
   @JsonKey(ignore: true)
-  _$$_CrewCopyWith<_$_Crew> get copyWith => throw _privateConstructorUsedError;
+  _$$CrewImplCopyWith<_$CrewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

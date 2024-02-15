@@ -12,7 +12,7 @@ part of 'cast_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CastModel _$CastModelFromJson(Map<String, dynamic> json) {
   return _CastModel.fromJson(json);
@@ -135,10 +135,11 @@ class _$CastModelCopyWithImpl<$Res, $Val extends CastModel>
 }
 
 /// @nodoc
-abstract class _$$_CastModelCopyWith<$Res> implements $CastModelCopyWith<$Res> {
-  factory _$$_CastModelCopyWith(
-          _$_CastModel value, $Res Function(_$_CastModel) then) =
-      __$$_CastModelCopyWithImpl<$Res>;
+abstract class _$$CastModelImplCopyWith<$Res>
+    implements $CastModelCopyWith<$Res> {
+  factory _$$CastModelImplCopyWith(
+          _$CastModelImpl value, $Res Function(_$CastModelImpl) then) =
+      __$$CastModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -155,11 +156,11 @@ abstract class _$$_CastModelCopyWith<$Res> implements $CastModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CastModelCopyWithImpl<$Res>
-    extends _$CastModelCopyWithImpl<$Res, _$_CastModel>
-    implements _$$_CastModelCopyWith<$Res> {
-  __$$_CastModelCopyWithImpl(
-      _$_CastModel _value, $Res Function(_$_CastModel) _then)
+class __$$CastModelImplCopyWithImpl<$Res>
+    extends _$CastModelCopyWithImpl<$Res, _$CastModelImpl>
+    implements _$$CastModelImplCopyWith<$Res> {
+  __$$CastModelImplCopyWithImpl(
+      _$CastModelImpl _value, $Res Function(_$CastModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -176,7 +177,7 @@ class __$$_CastModelCopyWithImpl<$Res>
     Object? order = null,
     Object? gender = null,
   }) {
-    return _then(_$_CastModel(
+    return _then(_$CastModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -223,8 +224,8 @@ class __$$_CastModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CastModel implements _CastModel {
-  const _$_CastModel(
+class _$CastModelImpl implements _CastModel {
+  const _$CastModelImpl(
       {@JsonKey(name: 'id') this.id = -1,
       @JsonKey(name: 'cast_id') this.castId = -1,
       @JsonKey(name: 'credit_id') this.creditId = '',
@@ -236,8 +237,8 @@ class _$_CastModel implements _CastModel {
       @JsonKey(name: 'order') this.order = -1,
       @JsonKey(name: 'gender') this.gender = -1});
 
-  factory _$_CastModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CastModelFromJson(json);
+  factory _$CastModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CastModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -276,10 +277,10 @@ class _$_CastModel implements _CastModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CastModel &&
+            other is _$CastModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.castId, castId) || other.castId == castId) &&
             (identical(other.creditId, creditId) ||
@@ -305,12 +306,12 @@ class _$_CastModel implements _CastModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CastModelCopyWith<_$_CastModel> get copyWith =>
-      __$$_CastModelCopyWithImpl<_$_CastModel>(this, _$identity);
+  _$$CastModelImplCopyWith<_$CastModelImpl> get copyWith =>
+      __$$CastModelImplCopyWithImpl<_$CastModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CastModelToJson(
+    return _$$CastModelImplToJson(
       this,
     );
   }
@@ -327,10 +328,10 @@ abstract class _CastModel implements CastModel {
       @JsonKey(name: 'profile_path') final String profilePath,
       @JsonKey(name: 'popularity') final double popularity,
       @JsonKey(name: 'order') final int order,
-      @JsonKey(name: 'gender') final int gender}) = _$_CastModel;
+      @JsonKey(name: 'gender') final int gender}) = _$CastModelImpl;
 
   factory _CastModel.fromJson(Map<String, dynamic> json) =
-      _$_CastModel.fromJson;
+      _$CastModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -364,6 +365,6 @@ abstract class _CastModel implements CastModel {
   int get gender;
   @override
   @JsonKey(ignore: true)
-  _$$_CastModelCopyWith<_$_CastModel> get copyWith =>
+  _$$CastModelImplCopyWith<_$CastModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

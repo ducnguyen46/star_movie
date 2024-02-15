@@ -12,7 +12,7 @@ part of 'company.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Company _$CompanyFromJson(Map<String, dynamic> json) {
   return _Company.fromJson(json);
@@ -72,20 +72,21 @@ class _$CompanyCopyWithImpl<$Res, $Val extends Company>
 }
 
 /// @nodoc
-abstract class _$$_CompanyCopyWith<$Res> implements $CompanyCopyWith<$Res> {
-  factory _$$_CompanyCopyWith(
-          _$_Company value, $Res Function(_$_Company) then) =
-      __$$_CompanyCopyWithImpl<$Res>;
+abstract class _$$CompanyImplCopyWith<$Res> implements $CompanyCopyWith<$Res> {
+  factory _$$CompanyImplCopyWith(
+          _$CompanyImpl value, $Res Function(_$CompanyImpl) then) =
+      __$$CompanyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String name, String logoPath});
 }
 
 /// @nodoc
-class __$$_CompanyCopyWithImpl<$Res>
-    extends _$CompanyCopyWithImpl<$Res, _$_Company>
-    implements _$$_CompanyCopyWith<$Res> {
-  __$$_CompanyCopyWithImpl(_$_Company _value, $Res Function(_$_Company) _then)
+class __$$CompanyImplCopyWithImpl<$Res>
+    extends _$CompanyCopyWithImpl<$Res, _$CompanyImpl>
+    implements _$$CompanyImplCopyWith<$Res> {
+  __$$CompanyImplCopyWithImpl(
+      _$CompanyImpl _value, $Res Function(_$CompanyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +96,7 @@ class __$$_CompanyCopyWithImpl<$Res>
     Object? name = null,
     Object? logoPath = null,
   }) {
-    return _then(_$_Company(
+    return _then(_$CompanyImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -114,12 +115,12 @@ class __$$_CompanyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Company implements _Company {
-  const _$_Company(
+class _$CompanyImpl implements _Company {
+  const _$CompanyImpl(
       {required this.id, required this.name, required this.logoPath});
 
-  factory _$_Company.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyFromJson(json);
+  factory _$CompanyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CompanyImplFromJson(json);
 
   @override
   final int id;
@@ -134,10 +135,10 @@ class _$_Company implements _Company {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Company &&
+            other is _$CompanyImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logoPath, logoPath) ||
@@ -151,12 +152,12 @@ class _$_Company implements _Company {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompanyCopyWith<_$_Company> get copyWith =>
-      __$$_CompanyCopyWithImpl<_$_Company>(this, _$identity);
+  _$$CompanyImplCopyWith<_$CompanyImpl> get copyWith =>
+      __$$CompanyImplCopyWithImpl<_$CompanyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompanyToJson(
+    return _$$CompanyImplToJson(
       this,
     );
   }
@@ -166,9 +167,9 @@ abstract class _Company implements Company {
   const factory _Company(
       {required final int id,
       required final String name,
-      required final String logoPath}) = _$_Company;
+      required final String logoPath}) = _$CompanyImpl;
 
-  factory _Company.fromJson(Map<String, dynamic> json) = _$_Company.fromJson;
+  factory _Company.fromJson(Map<String, dynamic> json) = _$CompanyImpl.fromJson;
 
   @override
   int get id;
@@ -178,6 +179,6 @@ abstract class _Company implements Company {
   String get logoPath;
   @override
   @JsonKey(ignore: true)
-  _$$_CompanyCopyWith<_$_Company> get copyWith =>
+  _$$CompanyImplCopyWith<_$CompanyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

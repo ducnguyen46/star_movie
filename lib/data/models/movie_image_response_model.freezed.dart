@@ -12,7 +12,7 @@ part of 'movie_image_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MovieImageResponseModel _$MovieImageResponseModelFromJson(
     Map<String, dynamic> json) {
@@ -82,11 +82,12 @@ class _$MovieImageResponseModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_MovieImageResponseModelCopyWith<$Res>
+abstract class _$$MovieImageResponseModelImplCopyWith<$Res>
     implements $MovieImageResponseModelCopyWith<$Res> {
-  factory _$$_MovieImageResponseModelCopyWith(_$_MovieImageResponseModel value,
-          $Res Function(_$_MovieImageResponseModel) then) =
-      __$$_MovieImageResponseModelCopyWithImpl<$Res>;
+  factory _$$MovieImageResponseModelImplCopyWith(
+          _$MovieImageResponseModelImpl value,
+          $Res Function(_$MovieImageResponseModelImpl) then) =
+      __$$MovieImageResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -96,12 +97,13 @@ abstract class _$$_MovieImageResponseModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MovieImageResponseModelCopyWithImpl<$Res>
+class __$$MovieImageResponseModelImplCopyWithImpl<$Res>
     extends _$MovieImageResponseModelCopyWithImpl<$Res,
-        _$_MovieImageResponseModel>
-    implements _$$_MovieImageResponseModelCopyWith<$Res> {
-  __$$_MovieImageResponseModelCopyWithImpl(_$_MovieImageResponseModel _value,
-      $Res Function(_$_MovieImageResponseModel) _then)
+        _$MovieImageResponseModelImpl>
+    implements _$$MovieImageResponseModelImplCopyWith<$Res> {
+  __$$MovieImageResponseModelImplCopyWithImpl(
+      _$MovieImageResponseModelImpl _value,
+      $Res Function(_$MovieImageResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -111,7 +113,7 @@ class __$$_MovieImageResponseModelCopyWithImpl<$Res>
     Object? logos = null,
     Object? posters = null,
   }) {
-    return _then(_$_MovieImageResponseModel(
+    return _then(_$MovieImageResponseModelImpl(
       backdrops: null == backdrops
           ? _value._backdrops
           : backdrops // ignore: cast_nullable_to_non_nullable
@@ -130,20 +132,20 @@ class __$$_MovieImageResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieImageResponseModel implements _MovieImageResponseModel {
-  const _$_MovieImageResponseModel(
+class _$MovieImageResponseModelImpl implements _MovieImageResponseModel {
+  const _$MovieImageResponseModelImpl(
       {@JsonKey(name: 'backdrops')
-          final List<MovieImageModel> backdrops = const <MovieImageModel>[],
+      final List<MovieImageModel> backdrops = const <MovieImageModel>[],
       @JsonKey(name: 'logos')
-          final List<MovieImageModel> logos = const <MovieImageModel>[],
+      final List<MovieImageModel> logos = const <MovieImageModel>[],
       @JsonKey(name: 'posters')
-          final List<MovieImageModel> posters = const <MovieImageModel>[]})
+      final List<MovieImageModel> posters = const <MovieImageModel>[]})
       : _backdrops = backdrops,
         _logos = logos,
         _posters = posters;
 
-  factory _$_MovieImageResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieImageResponseModelFromJson(json);
+  factory _$MovieImageResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieImageResponseModelImplFromJson(json);
 
   final List<MovieImageModel> _backdrops;
   @override
@@ -178,10 +180,10 @@ class _$_MovieImageResponseModel implements _MovieImageResponseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieImageResponseModel &&
+            other is _$MovieImageResponseModelImpl &&
             const DeepCollectionEquality()
                 .equals(other._backdrops, _backdrops) &&
             const DeepCollectionEquality().equals(other._logos, _logos) &&
@@ -199,14 +201,13 @@ class _$_MovieImageResponseModel implements _MovieImageResponseModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieImageResponseModelCopyWith<_$_MovieImageResponseModel>
-      get copyWith =>
-          __$$_MovieImageResponseModelCopyWithImpl<_$_MovieImageResponseModel>(
-              this, _$identity);
+  _$$MovieImageResponseModelImplCopyWith<_$MovieImageResponseModelImpl>
+      get copyWith => __$$MovieImageResponseModelImplCopyWithImpl<
+          _$MovieImageResponseModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieImageResponseModelToJson(
+    return _$$MovieImageResponseModelImplToJson(
       this,
     );
   }
@@ -217,10 +218,10 @@ abstract class _MovieImageResponseModel implements MovieImageResponseModel {
           {@JsonKey(name: 'backdrops') final List<MovieImageModel> backdrops,
           @JsonKey(name: 'logos') final List<MovieImageModel> logos,
           @JsonKey(name: 'posters') final List<MovieImageModel> posters}) =
-      _$_MovieImageResponseModel;
+      _$MovieImageResponseModelImpl;
 
   factory _MovieImageResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_MovieImageResponseModel.fromJson;
+      _$MovieImageResponseModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'backdrops')
@@ -233,6 +234,6 @@ abstract class _MovieImageResponseModel implements MovieImageResponseModel {
   List<MovieImageModel> get posters;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieImageResponseModelCopyWith<_$_MovieImageResponseModel>
+  _$$MovieImageResponseModelImplCopyWith<_$MovieImageResponseModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,17 +6,17 @@ part of 'video_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VideoResponseModel _$$_VideoResponseModelFromJson(
+_$VideoResponseModelImpl _$$VideoResponseModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_VideoResponseModel(
+    _$VideoResponseModelImpl(
       videos: (json['results'] as List<dynamic>?)
               ?.map((e) => VideoModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <VideoModel>[],
     );
 
-Map<String, dynamic> _$$_VideoResponseModelToJson(
-        _$_VideoResponseModel instance) =>
+Map<String, dynamic> _$$VideoResponseModelImplToJson(
+        _$VideoResponseModelImpl instance) =>
     <String, dynamic>{
       'results': instance.videos,
     };

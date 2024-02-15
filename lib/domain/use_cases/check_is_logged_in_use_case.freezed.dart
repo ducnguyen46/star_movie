@@ -12,7 +12,7 @@ part of 'check_is_logged_in_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CheckIsLoggedInParams {}
@@ -37,25 +37,27 @@ class _$CheckIsLoggedInParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CheckIsLoggedInParamsCopyWith<$Res> {
-  factory _$$_CheckIsLoggedInParamsCopyWith(_$_CheckIsLoggedInParams value,
-          $Res Function(_$_CheckIsLoggedInParams) then) =
-      __$$_CheckIsLoggedInParamsCopyWithImpl<$Res>;
+abstract class _$$CheckIsLoggedInParamsImplCopyWith<$Res> {
+  factory _$$CheckIsLoggedInParamsImplCopyWith(
+          _$CheckIsLoggedInParamsImpl value,
+          $Res Function(_$CheckIsLoggedInParamsImpl) then) =
+      __$$CheckIsLoggedInParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CheckIsLoggedInParamsCopyWithImpl<$Res>
-    extends _$CheckIsLoggedInParamsCopyWithImpl<$Res, _$_CheckIsLoggedInParams>
-    implements _$$_CheckIsLoggedInParamsCopyWith<$Res> {
-  __$$_CheckIsLoggedInParamsCopyWithImpl(_$_CheckIsLoggedInParams _value,
-      $Res Function(_$_CheckIsLoggedInParams) _then)
+class __$$CheckIsLoggedInParamsImplCopyWithImpl<$Res>
+    extends _$CheckIsLoggedInParamsCopyWithImpl<$Res,
+        _$CheckIsLoggedInParamsImpl>
+    implements _$$CheckIsLoggedInParamsImplCopyWith<$Res> {
+  __$$CheckIsLoggedInParamsImplCopyWithImpl(_$CheckIsLoggedInParamsImpl _value,
+      $Res Function(_$CheckIsLoggedInParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CheckIsLoggedInParams implements _CheckIsLoggedInParams {
-  const _$_CheckIsLoggedInParams();
+class _$CheckIsLoggedInParamsImpl implements _CheckIsLoggedInParams {
+  const _$CheckIsLoggedInParamsImpl();
 
   @override
   String toString() {
@@ -63,9 +65,10 @@ class _$_CheckIsLoggedInParams implements _CheckIsLoggedInParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CheckIsLoggedInParams);
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIsLoggedInParamsImpl);
   }
 
   @override
@@ -73,5 +76,5 @@ class _$_CheckIsLoggedInParams implements _CheckIsLoggedInParams {
 }
 
 abstract class _CheckIsLoggedInParams implements CheckIsLoggedInParams {
-  const factory _CheckIsLoggedInParams() = _$_CheckIsLoggedInParams;
+  const factory _CheckIsLoggedInParams() = _$CheckIsLoggedInParamsImpl;
 }

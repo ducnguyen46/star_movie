@@ -12,7 +12,7 @@ part of 'company_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
   return _CompanyModel.fromJson(json);
@@ -88,11 +88,11 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
 }
 
 /// @nodoc
-abstract class _$$_CompanyModelCopyWith<$Res>
+abstract class _$$CompanyModelImplCopyWith<$Res>
     implements $CompanyModelCopyWith<$Res> {
-  factory _$$_CompanyModelCopyWith(
-          _$_CompanyModel value, $Res Function(_$_CompanyModel) then) =
-      __$$_CompanyModelCopyWithImpl<$Res>;
+  factory _$$CompanyModelImplCopyWith(
+          _$CompanyModelImpl value, $Res Function(_$CompanyModelImpl) then) =
+      __$$CompanyModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_CompanyModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CompanyModelCopyWithImpl<$Res>
-    extends _$CompanyModelCopyWithImpl<$Res, _$_CompanyModel>
-    implements _$$_CompanyModelCopyWith<$Res> {
-  __$$_CompanyModelCopyWithImpl(
-      _$_CompanyModel _value, $Res Function(_$_CompanyModel) _then)
+class __$$CompanyModelImplCopyWithImpl<$Res>
+    extends _$CompanyModelCopyWithImpl<$Res, _$CompanyModelImpl>
+    implements _$$CompanyModelImplCopyWith<$Res> {
+  __$$CompanyModelImplCopyWithImpl(
+      _$CompanyModelImpl _value, $Res Function(_$CompanyModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_CompanyModelCopyWithImpl<$Res>
     Object? logoPath = null,
     Object? countryCode = null,
   }) {
-    return _then(_$_CompanyModel(
+    return _then(_$CompanyModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -141,15 +141,15 @@ class __$$_CompanyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CompanyModel implements _CompanyModel {
-  const _$_CompanyModel(
+class _$CompanyModelImpl implements _CompanyModel {
+  const _$CompanyModelImpl(
       {@JsonKey(name: 'id') this.id = -1,
       @JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'logo_path') this.logoPath = '',
       @JsonKey(name: 'origin_country') this.countryCode = ''});
 
-  factory _$_CompanyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyModelFromJson(json);
+  factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CompanyModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -170,10 +170,10 @@ class _$_CompanyModel implements _CompanyModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CompanyModel &&
+            other is _$CompanyModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logoPath, logoPath) ||
@@ -189,12 +189,12 @@ class _$_CompanyModel implements _CompanyModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
-      __$$_CompanyModelCopyWithImpl<_$_CompanyModel>(this, _$identity);
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
+      __$$CompanyModelImplCopyWithImpl<_$CompanyModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompanyModelToJson(
+    return _$$CompanyModelImplToJson(
       this,
     );
   }
@@ -206,10 +206,10 @@ abstract class _CompanyModel implements CompanyModel {
           @JsonKey(name: 'name') final String name,
           @JsonKey(name: 'logo_path') final String logoPath,
           @JsonKey(name: 'origin_country') final String countryCode}) =
-      _$_CompanyModel;
+      _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
-      _$_CompanyModel.fromJson;
+      _$CompanyModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -225,6 +225,6 @@ abstract class _CompanyModel implements CompanyModel {
   String get countryCode;
   @override
   @JsonKey(ignore: true)
-  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'collection.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Collection _$CollectionFromJson(Map<String, dynamic> json) {
   return _Collection.fromJson(json);
@@ -105,11 +105,11 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
 }
 
 /// @nodoc
-abstract class _$$_CollectionCopyWith<$Res>
+abstract class _$$CollectionImplCopyWith<$Res>
     implements $CollectionCopyWith<$Res> {
-  factory _$$_CollectionCopyWith(
-          _$_Collection value, $Res Function(_$_Collection) then) =
-      __$$_CollectionCopyWithImpl<$Res>;
+  factory _$$CollectionImplCopyWith(
+          _$CollectionImpl value, $Res Function(_$CollectionImpl) then) =
+      __$$CollectionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,11 +123,11 @@ abstract class _$$_CollectionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CollectionCopyWithImpl<$Res>
-    extends _$CollectionCopyWithImpl<$Res, _$_Collection>
-    implements _$$_CollectionCopyWith<$Res> {
-  __$$_CollectionCopyWithImpl(
-      _$_Collection _value, $Res Function(_$_Collection) _then)
+class __$$CollectionImplCopyWithImpl<$Res>
+    extends _$CollectionCopyWithImpl<$Res, _$CollectionImpl>
+    implements _$$CollectionImplCopyWith<$Res> {
+  __$$CollectionImplCopyWithImpl(
+      _$CollectionImpl _value, $Res Function(_$CollectionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +141,7 @@ class __$$_CollectionCopyWithImpl<$Res>
     Object? backdropPath = null,
     Object? posterPath = null,
   }) {
-    return _then(_$_Collection(
+    return _then(_$CollectionImpl(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
@@ -176,8 +176,8 @@ class __$$_CollectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Collection implements _Collection {
-  const _$_Collection(
+class _$CollectionImpl implements _Collection {
+  const _$CollectionImpl(
       {required this.adult,
       required this.id,
       required this.name,
@@ -186,8 +186,8 @@ class _$_Collection implements _Collection {
       required this.backdropPath,
       required this.posterPath});
 
-  factory _$_Collection.fromJson(Map<String, dynamic> json) =>
-      _$$_CollectionFromJson(json);
+  factory _$CollectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CollectionImplFromJson(json);
 
   @override
   final bool adult;
@@ -210,10 +210,10 @@ class _$_Collection implements _Collection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Collection &&
+            other is _$CollectionImpl &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
@@ -235,12 +235,12 @@ class _$_Collection implements _Collection {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CollectionCopyWith<_$_Collection> get copyWith =>
-      __$$_CollectionCopyWithImpl<_$_Collection>(this, _$identity);
+  _$$CollectionImplCopyWith<_$CollectionImpl> get copyWith =>
+      __$$CollectionImplCopyWithImpl<_$CollectionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CollectionToJson(
+    return _$$CollectionImplToJson(
       this,
     );
   }
@@ -254,10 +254,10 @@ abstract class _Collection implements Collection {
       required final String originalName,
       required final String overview,
       required final String backdropPath,
-      required final String posterPath}) = _$_Collection;
+      required final String posterPath}) = _$CollectionImpl;
 
   factory _Collection.fromJson(Map<String, dynamic> json) =
-      _$_Collection.fromJson;
+      _$CollectionImpl.fromJson;
 
   @override
   bool get adult;
@@ -275,6 +275,6 @@ abstract class _Collection implements Collection {
   String get posterPath;
   @override
   @JsonKey(ignore: true)
-  _$$_CollectionCopyWith<_$_Collection> get copyWith =>
+  _$$CollectionImplCopyWith<_$CollectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

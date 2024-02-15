@@ -12,7 +12,7 @@ part of 'movie_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MovieImage _$MovieImageFromJson(Map<String, dynamic> json) {
   return _MovieImage.fromJson(json);
@@ -74,22 +74,22 @@ class _$MovieImageCopyWithImpl<$Res, $Val extends MovieImage>
 }
 
 /// @nodoc
-abstract class _$$_MovieImageCopyWith<$Res>
+abstract class _$$MovieImageImplCopyWith<$Res>
     implements $MovieImageCopyWith<$Res> {
-  factory _$$_MovieImageCopyWith(
-          _$_MovieImage value, $Res Function(_$_MovieImage) then) =
-      __$$_MovieImageCopyWithImpl<$Res>;
+  factory _$$MovieImageImplCopyWith(
+          _$MovieImageImpl value, $Res Function(_$MovieImageImpl) then) =
+      __$$MovieImageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int height, int width, String filePath});
 }
 
 /// @nodoc
-class __$$_MovieImageCopyWithImpl<$Res>
-    extends _$MovieImageCopyWithImpl<$Res, _$_MovieImage>
-    implements _$$_MovieImageCopyWith<$Res> {
-  __$$_MovieImageCopyWithImpl(
-      _$_MovieImage _value, $Res Function(_$_MovieImage) _then)
+class __$$MovieImageImplCopyWithImpl<$Res>
+    extends _$MovieImageCopyWithImpl<$Res, _$MovieImageImpl>
+    implements _$$MovieImageImplCopyWith<$Res> {
+  __$$MovieImageImplCopyWithImpl(
+      _$MovieImageImpl _value, $Res Function(_$MovieImageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_MovieImageCopyWithImpl<$Res>
     Object? width = null,
     Object? filePath = null,
   }) {
-    return _then(_$_MovieImage(
+    return _then(_$MovieImageImpl(
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -118,12 +118,12 @@ class __$$_MovieImageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieImage implements _MovieImage {
-  const _$_MovieImage(
+class _$MovieImageImpl implements _MovieImage {
+  const _$MovieImageImpl(
       {required this.height, required this.width, required this.filePath});
 
-  factory _$_MovieImage.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieImageFromJson(json);
+  factory _$MovieImageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieImageImplFromJson(json);
 
   @override
   final int height;
@@ -138,10 +138,10 @@ class _$_MovieImage implements _MovieImage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieImage &&
+            other is _$MovieImageImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.filePath, filePath) ||
@@ -155,12 +155,12 @@ class _$_MovieImage implements _MovieImage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieImageCopyWith<_$_MovieImage> get copyWith =>
-      __$$_MovieImageCopyWithImpl<_$_MovieImage>(this, _$identity);
+  _$$MovieImageImplCopyWith<_$MovieImageImpl> get copyWith =>
+      __$$MovieImageImplCopyWithImpl<_$MovieImageImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieImageToJson(
+    return _$$MovieImageImplToJson(
       this,
     );
   }
@@ -170,10 +170,10 @@ abstract class _MovieImage implements MovieImage {
   const factory _MovieImage(
       {required final int height,
       required final int width,
-      required final String filePath}) = _$_MovieImage;
+      required final String filePath}) = _$MovieImageImpl;
 
   factory _MovieImage.fromJson(Map<String, dynamic> json) =
-      _$_MovieImage.fromJson;
+      _$MovieImageImpl.fromJson;
 
   @override
   int get height;
@@ -183,6 +183,6 @@ abstract class _MovieImage implements MovieImage {
   String get filePath;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieImageCopyWith<_$_MovieImage> get copyWith =>
+  _$$MovieImageImplCopyWith<_$MovieImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

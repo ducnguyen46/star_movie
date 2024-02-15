@@ -12,7 +12,7 @@ part of 'external_id_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ExternalIdModel _$ExternalIdModelFromJson(Map<String, dynamic> json) {
   return _ExternalIdModel.fromJson(json);
@@ -96,11 +96,11 @@ class _$ExternalIdModelCopyWithImpl<$Res, $Val extends ExternalIdModel>
 }
 
 /// @nodoc
-abstract class _$$_ExternalIdModelCopyWith<$Res>
+abstract class _$$ExternalIdModelImplCopyWith<$Res>
     implements $ExternalIdModelCopyWith<$Res> {
-  factory _$$_ExternalIdModelCopyWith(
-          _$_ExternalIdModel value, $Res Function(_$_ExternalIdModel) then) =
-      __$$_ExternalIdModelCopyWithImpl<$Res>;
+  factory _$$ExternalIdModelImplCopyWith(_$ExternalIdModelImpl value,
+          $Res Function(_$ExternalIdModelImpl) then) =
+      __$$ExternalIdModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_ExternalIdModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ExternalIdModelCopyWithImpl<$Res>
-    extends _$ExternalIdModelCopyWithImpl<$Res, _$_ExternalIdModel>
-    implements _$$_ExternalIdModelCopyWith<$Res> {
-  __$$_ExternalIdModelCopyWithImpl(
-      _$_ExternalIdModel _value, $Res Function(_$_ExternalIdModel) _then)
+class __$$ExternalIdModelImplCopyWithImpl<$Res>
+    extends _$ExternalIdModelCopyWithImpl<$Res, _$ExternalIdModelImpl>
+    implements _$$ExternalIdModelImplCopyWith<$Res> {
+  __$$ExternalIdModelImplCopyWithImpl(
+      _$ExternalIdModelImpl _value, $Res Function(_$ExternalIdModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_ExternalIdModelCopyWithImpl<$Res>
     Object? instagramId = null,
     Object? twitterId = null,
   }) {
-    return _then(_$_ExternalIdModel(
+    return _then(_$ExternalIdModelImpl(
       imdbId: null == imdbId
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
@@ -155,16 +155,16 @@ class __$$_ExternalIdModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ExternalIdModel implements _ExternalIdModel {
-  const _$_ExternalIdModel(
+class _$ExternalIdModelImpl implements _ExternalIdModel {
+  const _$ExternalIdModelImpl(
       {@JsonKey(name: 'imdb_id') this.imdbId = '',
       @JsonKey(name: 'wikidata_id') this.wikiId = '',
       @JsonKey(name: 'facebook_id') this.facebookId = '',
       @JsonKey(name: 'instagram_id') this.instagramId = '',
       @JsonKey(name: 'twitter_id') this.twitterId = ''});
 
-  factory _$_ExternalIdModel.fromJson(Map<String, dynamic> json) =>
-      _$$_ExternalIdModelFromJson(json);
+  factory _$ExternalIdModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ExternalIdModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'imdb_id')
@@ -188,10 +188,10 @@ class _$_ExternalIdModel implements _ExternalIdModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ExternalIdModel &&
+            other is _$ExternalIdModelImpl &&
             (identical(other.imdbId, imdbId) || other.imdbId == imdbId) &&
             (identical(other.wikiId, wikiId) || other.wikiId == wikiId) &&
             (identical(other.facebookId, facebookId) ||
@@ -210,12 +210,13 @@ class _$_ExternalIdModel implements _ExternalIdModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ExternalIdModelCopyWith<_$_ExternalIdModel> get copyWith =>
-      __$$_ExternalIdModelCopyWithImpl<_$_ExternalIdModel>(this, _$identity);
+  _$$ExternalIdModelImplCopyWith<_$ExternalIdModelImpl> get copyWith =>
+      __$$ExternalIdModelImplCopyWithImpl<_$ExternalIdModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExternalIdModelToJson(
+    return _$$ExternalIdModelImplToJson(
       this,
     );
   }
@@ -228,10 +229,10 @@ abstract class _ExternalIdModel implements ExternalIdModel {
           @JsonKey(name: 'facebook_id') final String facebookId,
           @JsonKey(name: 'instagram_id') final String instagramId,
           @JsonKey(name: 'twitter_id') final String twitterId}) =
-      _$_ExternalIdModel;
+      _$ExternalIdModelImpl;
 
   factory _ExternalIdModel.fromJson(Map<String, dynamic> json) =
-      _$_ExternalIdModel.fromJson;
+      _$ExternalIdModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'imdb_id')
@@ -250,6 +251,6 @@ abstract class _ExternalIdModel implements ExternalIdModel {
   String get twitterId;
   @override
   @JsonKey(ignore: true)
-  _$$_ExternalIdModelCopyWith<_$_ExternalIdModel> get copyWith =>
+  _$$ExternalIdModelImplCopyWith<_$ExternalIdModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

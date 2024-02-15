@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'models.dart';
 
 part 'movie_detail_response_model.freezed.dart';
+
 part 'movie_detail_response_model.g.dart';
 
 @freezed

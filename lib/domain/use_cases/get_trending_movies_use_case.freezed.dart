@@ -12,7 +12,7 @@ part of 'get_trending_movies_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetTrendingMoviesUseCaseParams {
@@ -74,25 +74,25 @@ class _$GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetTrendingMoviesUseCaseParamsCopyWith<$Res>
+abstract class _$$GetTrendingMoviesUseCaseParamsImplCopyWith<$Res>
     implements $GetTrendingMoviesUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetTrendingMoviesUseCaseParamsCopyWith(
-          _$_GetTrendingMoviesUseCaseParams value,
-          $Res Function(_$_GetTrendingMoviesUseCaseParams) then) =
-      __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$GetTrendingMoviesUseCaseParamsImplCopyWith(
+          _$GetTrendingMoviesUseCaseParamsImpl value,
+          $Res Function(_$GetTrendingMoviesUseCaseParamsImpl) then) =
+      __$$GetTrendingMoviesUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String timeWindow, int page, String language});
 }
 
 /// @nodoc
-class __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res>
+class __$$GetTrendingMoviesUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res,
-        _$_GetTrendingMoviesUseCaseParams>
-    implements _$$_GetTrendingMoviesUseCaseParamsCopyWith<$Res> {
-  __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl(
-      _$_GetTrendingMoviesUseCaseParams _value,
-      $Res Function(_$_GetTrendingMoviesUseCaseParams) _then)
+        _$GetTrendingMoviesUseCaseParamsImpl>
+    implements _$$GetTrendingMoviesUseCaseParamsImplCopyWith<$Res> {
+  __$$GetTrendingMoviesUseCaseParamsImplCopyWithImpl(
+      _$GetTrendingMoviesUseCaseParamsImpl _value,
+      $Res Function(_$GetTrendingMoviesUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res>
     Object? page = null,
     Object? language = null,
   }) {
-    return _then(_$_GetTrendingMoviesUseCaseParams(
+    return _then(_$GetTrendingMoviesUseCaseParamsImpl(
       timeWindow: null == timeWindow
           ? _value.timeWindow
           : timeWindow // ignore: cast_nullable_to_non_nullable
@@ -121,9 +121,9 @@ class __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetTrendingMoviesUseCaseParams
+class _$GetTrendingMoviesUseCaseParamsImpl
     implements _GetTrendingMoviesUseCaseParams {
-  const _$_GetTrendingMoviesUseCaseParams(
+  const _$GetTrendingMoviesUseCaseParamsImpl(
       {this.timeWindow = 'week', this.page = 1, this.language = ''});
 
 // path
@@ -145,10 +145,10 @@ class _$_GetTrendingMoviesUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetTrendingMoviesUseCaseParams &&
+            other is _$GetTrendingMoviesUseCaseParamsImpl &&
             (identical(other.timeWindow, timeWindow) ||
                 other.timeWindow == timeWindow) &&
             (identical(other.page, page) || other.page == page) &&
@@ -162,9 +162,10 @@ class _$_GetTrendingMoviesUseCaseParams
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetTrendingMoviesUseCaseParamsCopyWith<_$_GetTrendingMoviesUseCaseParams>
-      get copyWith => __$$_GetTrendingMoviesUseCaseParamsCopyWithImpl<
-          _$_GetTrendingMoviesUseCaseParams>(this, _$identity);
+  _$$GetTrendingMoviesUseCaseParamsImplCopyWith<
+          _$GetTrendingMoviesUseCaseParamsImpl>
+      get copyWith => __$$GetTrendingMoviesUseCaseParamsImplCopyWithImpl<
+          _$GetTrendingMoviesUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _GetTrendingMoviesUseCaseParams
@@ -172,7 +173,7 @@ abstract class _GetTrendingMoviesUseCaseParams
   const factory _GetTrendingMoviesUseCaseParams(
       {final String timeWindow,
       final int page,
-      final String language}) = _$_GetTrendingMoviesUseCaseParams;
+      final String language}) = _$GetTrendingMoviesUseCaseParamsImpl;
 
   @override // path
 // week/day
@@ -183,6 +184,7 @@ abstract class _GetTrendingMoviesUseCaseParams
   String get language;
   @override
   @JsonKey(ignore: true)
-  _$$_GetTrendingMoviesUseCaseParamsCopyWith<_$_GetTrendingMoviesUseCaseParams>
+  _$$GetTrendingMoviesUseCaseParamsImplCopyWith<
+          _$GetTrendingMoviesUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'movies_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MoviesResponseModel _$MoviesResponseModelFromJson(Map<String, dynamic> json) {
   return _MoviesResponseModel.fromJson(json);
@@ -80,11 +80,11 @@ class _$MoviesResponseModelCopyWithImpl<$Res, $Val extends MoviesResponseModel>
 }
 
 /// @nodoc
-abstract class _$$_MoviesResponseModelCopyWith<$Res>
+abstract class _$$MoviesResponseModelImplCopyWith<$Res>
     implements $MoviesResponseModelCopyWith<$Res> {
-  factory _$$_MoviesResponseModelCopyWith(_$_MoviesResponseModel value,
-          $Res Function(_$_MoviesResponseModel) then) =
-      __$$_MoviesResponseModelCopyWithImpl<$Res>;
+  factory _$$MoviesResponseModelImplCopyWith(_$MoviesResponseModelImpl value,
+          $Res Function(_$MoviesResponseModelImpl) then) =
+      __$$MoviesResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_MoviesResponseModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MoviesResponseModelCopyWithImpl<$Res>
-    extends _$MoviesResponseModelCopyWithImpl<$Res, _$_MoviesResponseModel>
-    implements _$$_MoviesResponseModelCopyWith<$Res> {
-  __$$_MoviesResponseModelCopyWithImpl(_$_MoviesResponseModel _value,
-      $Res Function(_$_MoviesResponseModel) _then)
+class __$$MoviesResponseModelImplCopyWithImpl<$Res>
+    extends _$MoviesResponseModelCopyWithImpl<$Res, _$MoviesResponseModelImpl>
+    implements _$$MoviesResponseModelImplCopyWith<$Res> {
+  __$$MoviesResponseModelImplCopyWithImpl(_$MoviesResponseModelImpl _value,
+      $Res Function(_$MoviesResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_MoviesResponseModelCopyWithImpl<$Res>
     Object? totalPage = null,
     Object? movies = null,
   }) {
-    return _then(_$_MoviesResponseModel(
+    return _then(_$MoviesResponseModelImpl(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -127,18 +127,16 @@ class __$$_MoviesResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MoviesResponseModel implements _MoviesResponseModel {
-  const _$_MoviesResponseModel(
-      {@JsonKey(name: 'page')
-          this.page = 0,
-      @JsonKey(name: 'total_pages')
-          this.totalPage = 0,
+class _$MoviesResponseModelImpl implements _MoviesResponseModel {
+  const _$MoviesResponseModelImpl(
+      {@JsonKey(name: 'page') this.page = 0,
+      @JsonKey(name: 'total_pages') this.totalPage = 0,
       @JsonKey(name: 'results')
-          final List<MovieModel> movies = const <MovieModel>[]})
+      final List<MovieModel> movies = const <MovieModel>[]})
       : _movies = movies;
 
-  factory _$_MoviesResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MoviesResponseModelFromJson(json);
+  factory _$MoviesResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MoviesResponseModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'page')
@@ -161,10 +159,10 @@ class _$_MoviesResponseModel implements _MoviesResponseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MoviesResponseModel &&
+            other is _$MoviesResponseModelImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.totalPage, totalPage) ||
                 other.totalPage == totalPage) &&
@@ -179,13 +177,13 @@ class _$_MoviesResponseModel implements _MoviesResponseModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MoviesResponseModelCopyWith<_$_MoviesResponseModel> get copyWith =>
-      __$$_MoviesResponseModelCopyWithImpl<_$_MoviesResponseModel>(
+  _$$MoviesResponseModelImplCopyWith<_$MoviesResponseModelImpl> get copyWith =>
+      __$$MoviesResponseModelImplCopyWithImpl<_$MoviesResponseModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MoviesResponseModelToJson(
+    return _$$MoviesResponseModelImplToJson(
       this,
     );
   }
@@ -196,10 +194,10 @@ abstract class _MoviesResponseModel implements MoviesResponseModel {
           {@JsonKey(name: 'page') final int page,
           @JsonKey(name: 'total_pages') final int totalPage,
           @JsonKey(name: 'results') final List<MovieModel> movies}) =
-      _$_MoviesResponseModel;
+      _$MoviesResponseModelImpl;
 
   factory _MoviesResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_MoviesResponseModel.fromJson;
+      _$MoviesResponseModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'page')
@@ -212,6 +210,6 @@ abstract class _MoviesResponseModel implements MoviesResponseModel {
   List<MovieModel> get movies;
   @override
   @JsonKey(ignore: true)
-  _$$_MoviesResponseModelCopyWith<_$_MoviesResponseModel> get copyWith =>
+  _$$MoviesResponseModelImplCopyWith<_$MoviesResponseModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

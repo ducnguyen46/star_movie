@@ -8,6 +8,7 @@ import 'data_source.dart';
 @Injectable(as: RemoteDataSource)
 class RemoteDataSourceImpl implements RemoteDataSource {
   const RemoteDataSourceImpl({required this.apiClient});
+
   final AppRestApiClient apiClient;
 
   @override
@@ -224,7 +225,43 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         return null;
       }
 
-      return MovieDetailResponseModel.fromJson(response.data);
+      final movieDetail = MovieDetailResponseModel.fromJson(response.data);
+      var editedCast = <CastModel>[];
+      var editedCrew = <CrewModel>[];
+
+      /// Add all character of cast to one line
+      for (CastModel cast in movieDetail.credit.casts) {
+        int indexOfCast = editedCast.indexWhere((e) => e.id == cast.id);
+        if (indexOfCast >= 0) {
+          var newCast = editedCast[indexOfCast].copyWith(
+              character:
+                  '${editedCast[indexOfCast].character}, ${cast.character}');
+          editedCast.removeAt(indexOfCast);
+          editedCast.insert(indexOfCast, newCast);
+        } else {
+          editedCast.add(cast);
+        }
+      }
+
+      /// Add all job of crew to one line
+      for (CrewModel crew in movieDetail.credit.crews) {
+        int indexOfCrew = editedCrew.indexWhere((e) => e.id == crew.id);
+        if (indexOfCrew >= 0) {
+          var newCrew = editedCrew[indexOfCrew].copyWith(
+              job: '${editedCrew[indexOfCrew].job}, ${crew.job}');
+          editedCrew.removeAt(indexOfCrew);
+          editedCrew.insert(indexOfCrew, newCrew);
+        } else {
+          editedCrew.add(crew);
+        }
+      }
+
+      return movieDetail.copyWith(
+        credit: CreditModel(
+          casts: editedCast,
+          crews: editedCrew,
+        ),
+      );
     } catch (_) {
       rethrow;
     }

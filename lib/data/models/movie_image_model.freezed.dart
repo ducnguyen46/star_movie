@@ -12,7 +12,7 @@ part of 'movie_image_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MovieImageModel _$MovieImageModelFromJson(Map<String, dynamic> json) {
   return _MovieImageModel.fromJson(json);
@@ -80,11 +80,11 @@ class _$MovieImageModelCopyWithImpl<$Res, $Val extends MovieImageModel>
 }
 
 /// @nodoc
-abstract class _$$_MovieImageModelCopyWith<$Res>
+abstract class _$$MovieImageModelImplCopyWith<$Res>
     implements $MovieImageModelCopyWith<$Res> {
-  factory _$$_MovieImageModelCopyWith(
-          _$_MovieImageModel value, $Res Function(_$_MovieImageModel) then) =
-      __$$_MovieImageModelCopyWithImpl<$Res>;
+  factory _$$MovieImageModelImplCopyWith(_$MovieImageModelImpl value,
+          $Res Function(_$MovieImageModelImpl) then) =
+      __$$MovieImageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_MovieImageModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MovieImageModelCopyWithImpl<$Res>
-    extends _$MovieImageModelCopyWithImpl<$Res, _$_MovieImageModel>
-    implements _$$_MovieImageModelCopyWith<$Res> {
-  __$$_MovieImageModelCopyWithImpl(
-      _$_MovieImageModel _value, $Res Function(_$_MovieImageModel) _then)
+class __$$MovieImageModelImplCopyWithImpl<$Res>
+    extends _$MovieImageModelCopyWithImpl<$Res, _$MovieImageModelImpl>
+    implements _$$MovieImageModelImplCopyWith<$Res> {
+  __$$MovieImageModelImplCopyWithImpl(
+      _$MovieImageModelImpl _value, $Res Function(_$MovieImageModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_MovieImageModelCopyWithImpl<$Res>
     Object? width = null,
     Object? filePath = null,
   }) {
-    return _then(_$_MovieImageModel(
+    return _then(_$MovieImageModelImpl(
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_MovieImageModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieImageModel implements _MovieImageModel {
-  const _$_MovieImageModel(
+class _$MovieImageModelImpl implements _MovieImageModel {
+  const _$MovieImageModelImpl(
       {@JsonKey(name: 'height') this.height = 0,
       @JsonKey(name: 'width') this.width = 0,
       @JsonKey(name: 'file_path') this.filePath = ''});
 
-  factory _$_MovieImageModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieImageModelFromJson(json);
+  factory _$MovieImageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieImageModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'height')
@@ -152,10 +152,10 @@ class _$_MovieImageModel implements _MovieImageModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieImageModel &&
+            other is _$MovieImageModelImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.filePath, filePath) ||
@@ -169,12 +169,13 @@ class _$_MovieImageModel implements _MovieImageModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieImageModelCopyWith<_$_MovieImageModel> get copyWith =>
-      __$$_MovieImageModelCopyWithImpl<_$_MovieImageModel>(this, _$identity);
+  _$$MovieImageModelImplCopyWith<_$MovieImageModelImpl> get copyWith =>
+      __$$MovieImageModelImplCopyWithImpl<_$MovieImageModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieImageModelToJson(
+    return _$$MovieImageModelImplToJson(
       this,
     );
   }
@@ -182,12 +183,13 @@ class _$_MovieImageModel implements _MovieImageModel {
 
 abstract class _MovieImageModel implements MovieImageModel {
   const factory _MovieImageModel(
-      {@JsonKey(name: 'height') final int height,
-      @JsonKey(name: 'width') final int width,
-      @JsonKey(name: 'file_path') final String filePath}) = _$_MovieImageModel;
+          {@JsonKey(name: 'height') final int height,
+          @JsonKey(name: 'width') final int width,
+          @JsonKey(name: 'file_path') final String filePath}) =
+      _$MovieImageModelImpl;
 
   factory _MovieImageModel.fromJson(Map<String, dynamic> json) =
-      _$_MovieImageModel.fromJson;
+      _$MovieImageModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'height')
@@ -200,6 +202,6 @@ abstract class _MovieImageModel implements MovieImageModel {
   String get filePath;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieImageModelCopyWith<_$_MovieImageModel> get copyWith =>
+  _$$MovieImageModelImplCopyWith<_$MovieImageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

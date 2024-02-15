@@ -12,7 +12,7 @@ part of 'get_movie_detail_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetMovieDetailUseCaseParams {
@@ -60,25 +60,25 @@ class _$GetMovieDetailUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetMovieDetailUseCaseParamsCopyWith<$Res>
+abstract class _$$GetMovieDetailUseCaseParamsImplCopyWith<$Res>
     implements $GetMovieDetailUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetMovieDetailUseCaseParamsCopyWith(
-          _$_GetMovieDetailUseCaseParams value,
-          $Res Function(_$_GetMovieDetailUseCaseParams) then) =
-      __$$_GetMovieDetailUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$GetMovieDetailUseCaseParamsImplCopyWith(
+          _$GetMovieDetailUseCaseParamsImpl value,
+          $Res Function(_$GetMovieDetailUseCaseParamsImpl) then) =
+      __$$GetMovieDetailUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String movieId});
 }
 
 /// @nodoc
-class __$$_GetMovieDetailUseCaseParamsCopyWithImpl<$Res>
+class __$$GetMovieDetailUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetMovieDetailUseCaseParamsCopyWithImpl<$Res,
-        _$_GetMovieDetailUseCaseParams>
-    implements _$$_GetMovieDetailUseCaseParamsCopyWith<$Res> {
-  __$$_GetMovieDetailUseCaseParamsCopyWithImpl(
-      _$_GetMovieDetailUseCaseParams _value,
-      $Res Function(_$_GetMovieDetailUseCaseParams) _then)
+        _$GetMovieDetailUseCaseParamsImpl>
+    implements _$$GetMovieDetailUseCaseParamsImplCopyWith<$Res> {
+  __$$GetMovieDetailUseCaseParamsImplCopyWithImpl(
+      _$GetMovieDetailUseCaseParamsImpl _value,
+      $Res Function(_$GetMovieDetailUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_GetMovieDetailUseCaseParamsCopyWithImpl<$Res>
   $Res call({
     Object? movieId = null,
   }) {
-    return _then(_$_GetMovieDetailUseCaseParams(
+    return _then(_$GetMovieDetailUseCaseParamsImpl(
       movieId: null == movieId
           ? _value.movieId
           : movieId // ignore: cast_nullable_to_non_nullable
@@ -97,8 +97,9 @@ class __$$_GetMovieDetailUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetMovieDetailUseCaseParams implements _GetMovieDetailUseCaseParams {
-  const _$_GetMovieDetailUseCaseParams({required this.movieId});
+class _$GetMovieDetailUseCaseParamsImpl
+    implements _GetMovieDetailUseCaseParams {
+  const _$GetMovieDetailUseCaseParamsImpl({required this.movieId});
 
   @override
   final String movieId;
@@ -109,10 +110,10 @@ class _$_GetMovieDetailUseCaseParams implements _GetMovieDetailUseCaseParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetMovieDetailUseCaseParams &&
+            other is _$GetMovieDetailUseCaseParamsImpl &&
             (identical(other.movieId, movieId) || other.movieId == movieId));
   }
 
@@ -122,20 +123,20 @@ class _$_GetMovieDetailUseCaseParams implements _GetMovieDetailUseCaseParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetMovieDetailUseCaseParamsCopyWith<_$_GetMovieDetailUseCaseParams>
-      get copyWith => __$$_GetMovieDetailUseCaseParamsCopyWithImpl<
-          _$_GetMovieDetailUseCaseParams>(this, _$identity);
+  _$$GetMovieDetailUseCaseParamsImplCopyWith<_$GetMovieDetailUseCaseParamsImpl>
+      get copyWith => __$$GetMovieDetailUseCaseParamsImplCopyWithImpl<
+          _$GetMovieDetailUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _GetMovieDetailUseCaseParams
     implements GetMovieDetailUseCaseParams {
   const factory _GetMovieDetailUseCaseParams({required final String movieId}) =
-      _$_GetMovieDetailUseCaseParams;
+      _$GetMovieDetailUseCaseParamsImpl;
 
   @override
   String get movieId;
   @override
   @JsonKey(ignore: true)
-  _$$_GetMovieDetailUseCaseParamsCopyWith<_$_GetMovieDetailUseCaseParams>
+  _$$GetMovieDetailUseCaseParamsImplCopyWith<_$GetMovieDetailUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

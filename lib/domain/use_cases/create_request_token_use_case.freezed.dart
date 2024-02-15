@@ -12,7 +12,7 @@ part of 'create_request_token_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CreateRequestTokenUseCaseParams {}
@@ -39,29 +39,29 @@ class _$CreateRequestTokenUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CreateRequestTokenUseCaseParamsCopyWith<$Res> {
-  factory _$$_CreateRequestTokenUseCaseParamsCopyWith(
-          _$_CreateRequestTokenUseCaseParams value,
-          $Res Function(_$_CreateRequestTokenUseCaseParams) then) =
-      __$$_CreateRequestTokenUseCaseParamsCopyWithImpl<$Res>;
+abstract class _$$CreateRequestTokenUseCaseParamsImplCopyWith<$Res> {
+  factory _$$CreateRequestTokenUseCaseParamsImplCopyWith(
+          _$CreateRequestTokenUseCaseParamsImpl value,
+          $Res Function(_$CreateRequestTokenUseCaseParamsImpl) then) =
+      __$$CreateRequestTokenUseCaseParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CreateRequestTokenUseCaseParamsCopyWithImpl<$Res>
+class __$$CreateRequestTokenUseCaseParamsImplCopyWithImpl<$Res>
     extends _$CreateRequestTokenUseCaseParamsCopyWithImpl<$Res,
-        _$_CreateRequestTokenUseCaseParams>
-    implements _$$_CreateRequestTokenUseCaseParamsCopyWith<$Res> {
-  __$$_CreateRequestTokenUseCaseParamsCopyWithImpl(
-      _$_CreateRequestTokenUseCaseParams _value,
-      $Res Function(_$_CreateRequestTokenUseCaseParams) _then)
+        _$CreateRequestTokenUseCaseParamsImpl>
+    implements _$$CreateRequestTokenUseCaseParamsImplCopyWith<$Res> {
+  __$$CreateRequestTokenUseCaseParamsImplCopyWithImpl(
+      _$CreateRequestTokenUseCaseParamsImpl _value,
+      $Res Function(_$CreateRequestTokenUseCaseParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CreateRequestTokenUseCaseParams
+class _$CreateRequestTokenUseCaseParamsImpl
     implements _CreateRequestTokenUseCaseParams {
-  const _$_CreateRequestTokenUseCaseParams();
+  const _$CreateRequestTokenUseCaseParamsImpl();
 
   @override
   String toString() {
@@ -69,10 +69,10 @@ class _$_CreateRequestTokenUseCaseParams
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreateRequestTokenUseCaseParams);
+            other is _$CreateRequestTokenUseCaseParamsImpl);
   }
 
   @override
@@ -82,5 +82,5 @@ class _$_CreateRequestTokenUseCaseParams
 abstract class _CreateRequestTokenUseCaseParams
     implements CreateRequestTokenUseCaseParams {
   const factory _CreateRequestTokenUseCaseParams() =
-      _$_CreateRequestTokenUseCaseParams;
+      _$CreateRequestTokenUseCaseParamsImpl;
 }

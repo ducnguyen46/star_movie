@@ -12,7 +12,7 @@ part of 'app_setting_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AppSettingModel _$AppSettingModelFromJson(Map<String, dynamic> json) {
   return _AppSettingModel.fromJson(json);
@@ -80,11 +80,11 @@ class _$AppSettingModelCopyWithImpl<$Res, $Val extends AppSettingModel>
 }
 
 /// @nodoc
-abstract class _$$_AppSettingModelCopyWith<$Res>
+abstract class _$$AppSettingModelImplCopyWith<$Res>
     implements $AppSettingModelCopyWith<$Res> {
-  factory _$$_AppSettingModelCopyWith(
-          _$_AppSettingModel value, $Res Function(_$_AppSettingModel) then) =
-      __$$_AppSettingModelCopyWithImpl<$Res>;
+  factory _$$AppSettingModelImplCopyWith(_$AppSettingModelImpl value,
+          $Res Function(_$AppSettingModelImpl) then) =
+      __$$AppSettingModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_AppSettingModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AppSettingModelCopyWithImpl<$Res>
-    extends _$AppSettingModelCopyWithImpl<$Res, _$_AppSettingModel>
-    implements _$$_AppSettingModelCopyWith<$Res> {
-  __$$_AppSettingModelCopyWithImpl(
-      _$_AppSettingModel _value, $Res Function(_$_AppSettingModel) _then)
+class __$$AppSettingModelImplCopyWithImpl<$Res>
+    extends _$AppSettingModelCopyWithImpl<$Res, _$AppSettingModelImpl>
+    implements _$$AppSettingModelImplCopyWith<$Res> {
+  __$$AppSettingModelImplCopyWithImpl(
+      _$AppSettingModelImpl _value, $Res Function(_$AppSettingModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_AppSettingModelCopyWithImpl<$Res>
     Object? isDarkMode = null,
     Object? isOpened = null,
   }) {
-    return _then(_$_AppSettingModel(
+    return _then(_$AppSettingModelImpl(
       languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_AppSettingModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppSettingModel implements _AppSettingModel {
-  const _$_AppSettingModel(
+class _$AppSettingModelImpl implements _AppSettingModel {
+  const _$AppSettingModelImpl(
       {@JsonKey(name: 'language_code') this.languageCode = 'en',
       @JsonKey(name: 'is_dark_mode') this.isDarkMode = false,
       @JsonKey(name: 'is_opened') this.isOpened = false});
 
-  factory _$_AppSettingModel.fromJson(Map<String, dynamic> json) =>
-      _$$_AppSettingModelFromJson(json);
+  factory _$AppSettingModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppSettingModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'language_code')
@@ -152,10 +152,10 @@ class _$_AppSettingModel implements _AppSettingModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppSettingModel &&
+            other is _$AppSettingModelImpl &&
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode) &&
             (identical(other.isDarkMode, isDarkMode) ||
@@ -172,12 +172,13 @@ class _$_AppSettingModel implements _AppSettingModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppSettingModelCopyWith<_$_AppSettingModel> get copyWith =>
-      __$$_AppSettingModelCopyWithImpl<_$_AppSettingModel>(this, _$identity);
+  _$$AppSettingModelImplCopyWith<_$AppSettingModelImpl> get copyWith =>
+      __$$AppSettingModelImplCopyWithImpl<_$AppSettingModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AppSettingModelToJson(
+    return _$$AppSettingModelImplToJson(
       this,
     );
   }
@@ -187,10 +188,10 @@ abstract class _AppSettingModel implements AppSettingModel {
   const factory _AppSettingModel(
       {@JsonKey(name: 'language_code') final String languageCode,
       @JsonKey(name: 'is_dark_mode') final bool isDarkMode,
-      @JsonKey(name: 'is_opened') final bool isOpened}) = _$_AppSettingModel;
+      @JsonKey(name: 'is_opened') final bool isOpened}) = _$AppSettingModelImpl;
 
   factory _AppSettingModel.fromJson(Map<String, dynamic> json) =
-      _$_AppSettingModel.fromJson;
+      _$AppSettingModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'language_code')
@@ -203,6 +204,6 @@ abstract class _AppSettingModel implements AppSettingModel {
   bool get isOpened;
   @override
   @JsonKey(ignore: true)
-  _$$_AppSettingModelCopyWith<_$_AppSettingModel> get copyWith =>
+  _$$AppSettingModelImplCopyWith<_$AppSettingModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

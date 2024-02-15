@@ -430,6 +430,10 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                       videoKey: video.key,
                                       videoTitle: video.title,
                                       height: Dimens.d120,
+                                      onPressed: () {
+                                        context.router.pushNamed(
+                                            '${RoutePath.videoPlayer}/${video.key}');
+                                      },
                                     ),
                                     const Gap(Dimens.d16)
                                   ],

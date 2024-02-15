@@ -6,7 +6,7 @@ part of 'cast.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Cast _$$_CastFromJson(Map<String, dynamic> json) => _$_Cast(
+_$CastImpl _$$CastImplFromJson(Map<String, dynamic> json) => _$CastImpl(
       id: json['id'] as int,
       castId: json['castId'] as int,
       creditId: json['creditId'] as String,
@@ -19,7 +19,8 @@ _$_Cast _$$_CastFromJson(Map<String, dynamic> json) => _$_Cast(
       gender: $enumDecode(_$GenderEnumMap, json['gender']),
     );
 
-Map<String, dynamic> _$$_CastToJson(_$_Cast instance) => <String, dynamic>{
+Map<String, dynamic> _$$CastImplToJson(_$CastImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'castId': instance.castId,
       'creditId': instance.creditId,

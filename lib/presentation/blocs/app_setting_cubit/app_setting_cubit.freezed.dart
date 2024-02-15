@@ -12,7 +12,7 @@ part of 'app_setting_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppSettingState {
@@ -88,25 +88,25 @@ class _$AppSettingStateCopyWithImpl<$Res, $Val extends AppSettingState>
 }
 
 /// @nodoc
-abstract class _$$AppSettingLoadingCopyWith<$Res> {
-  factory _$$AppSettingLoadingCopyWith(
-          _$AppSettingLoading value, $Res Function(_$AppSettingLoading) then) =
-      __$$AppSettingLoadingCopyWithImpl<$Res>;
+abstract class _$$AppSettingLoadingImplCopyWith<$Res> {
+  factory _$$AppSettingLoadingImplCopyWith(_$AppSettingLoadingImpl value,
+          $Res Function(_$AppSettingLoadingImpl) then) =
+      __$$AppSettingLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppSettingLoadingCopyWithImpl<$Res>
-    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingLoading>
-    implements _$$AppSettingLoadingCopyWith<$Res> {
-  __$$AppSettingLoadingCopyWithImpl(
-      _$AppSettingLoading _value, $Res Function(_$AppSettingLoading) _then)
+class __$$AppSettingLoadingImplCopyWithImpl<$Res>
+    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingLoadingImpl>
+    implements _$$AppSettingLoadingImplCopyWith<$Res> {
+  __$$AppSettingLoadingImplCopyWithImpl(_$AppSettingLoadingImpl _value,
+      $Res Function(_$AppSettingLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppSettingLoading implements AppSettingLoading {
-  const _$AppSettingLoading();
+class _$AppSettingLoadingImpl implements AppSettingLoading {
+  const _$AppSettingLoadingImpl();
 
   @override
   String toString() {
@@ -114,9 +114,9 @@ class _$AppSettingLoading implements AppSettingLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppSettingLoading);
+        (other.runtimeType == runtimeType && other is _$AppSettingLoadingImpl);
   }
 
   @override
@@ -199,29 +199,29 @@ class _$AppSettingLoading implements AppSettingLoading {
 }
 
 abstract class AppSettingLoading implements AppSettingState {
-  const factory AppSettingLoading() = _$AppSettingLoading;
+  const factory AppSettingLoading() = _$AppSettingLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$AppSettingChangingCopyWith<$Res> {
-  factory _$$AppSettingChangingCopyWith(_$AppSettingChanging value,
-          $Res Function(_$AppSettingChanging) then) =
-      __$$AppSettingChangingCopyWithImpl<$Res>;
+abstract class _$$AppSettingChangingImplCopyWith<$Res> {
+  factory _$$AppSettingChangingImplCopyWith(_$AppSettingChangingImpl value,
+          $Res Function(_$AppSettingChangingImpl) then) =
+      __$$AppSettingChangingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppSettingChangingCopyWithImpl<$Res>
-    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingChanging>
-    implements _$$AppSettingChangingCopyWith<$Res> {
-  __$$AppSettingChangingCopyWithImpl(
-      _$AppSettingChanging _value, $Res Function(_$AppSettingChanging) _then)
+class __$$AppSettingChangingImplCopyWithImpl<$Res>
+    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingChangingImpl>
+    implements _$$AppSettingChangingImplCopyWith<$Res> {
+  __$$AppSettingChangingImplCopyWithImpl(_$AppSettingChangingImpl _value,
+      $Res Function(_$AppSettingChangingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppSettingChanging implements AppSettingChanging {
-  const _$AppSettingChanging();
+class _$AppSettingChangingImpl implements AppSettingChanging {
+  const _$AppSettingChangingImpl();
 
   @override
   String toString() {
@@ -229,9 +229,9 @@ class _$AppSettingChanging implements AppSettingChanging {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppSettingChanging);
+        (other.runtimeType == runtimeType && other is _$AppSettingChangingImpl);
   }
 
   @override
@@ -314,24 +314,24 @@ class _$AppSettingChanging implements AppSettingChanging {
 }
 
 abstract class AppSettingChanging implements AppSettingState {
-  const factory AppSettingChanging() = _$AppSettingChanging;
+  const factory AppSettingChanging() = _$AppSettingChangingImpl;
 }
 
 /// @nodoc
-abstract class _$$AppSettingAppliedCopyWith<$Res> {
-  factory _$$AppSettingAppliedCopyWith(
-          _$AppSettingApplied value, $Res Function(_$AppSettingApplied) then) =
-      __$$AppSettingAppliedCopyWithImpl<$Res>;
+abstract class _$$AppSettingAppliedImplCopyWith<$Res> {
+  factory _$$AppSettingAppliedImplCopyWith(_$AppSettingAppliedImpl value,
+          $Res Function(_$AppSettingAppliedImpl) then) =
+      __$$AppSettingAppliedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool? isDarkMode, LanguageCode? language});
 }
 
 /// @nodoc
-class __$$AppSettingAppliedCopyWithImpl<$Res>
-    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingApplied>
-    implements _$$AppSettingAppliedCopyWith<$Res> {
-  __$$AppSettingAppliedCopyWithImpl(
-      _$AppSettingApplied _value, $Res Function(_$AppSettingApplied) _then)
+class __$$AppSettingAppliedImplCopyWithImpl<$Res>
+    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingAppliedImpl>
+    implements _$$AppSettingAppliedImplCopyWith<$Res> {
+  __$$AppSettingAppliedImplCopyWithImpl(_$AppSettingAppliedImpl _value,
+      $Res Function(_$AppSettingAppliedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -340,7 +340,7 @@ class __$$AppSettingAppliedCopyWithImpl<$Res>
     Object? isDarkMode = freezed,
     Object? language = freezed,
   }) {
-    return _then(_$AppSettingApplied(
+    return _then(_$AppSettingAppliedImpl(
       isDarkMode: freezed == isDarkMode
           ? _value.isDarkMode
           : isDarkMode // ignore: cast_nullable_to_non_nullable
@@ -355,8 +355,8 @@ class __$$AppSettingAppliedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppSettingApplied implements AppSettingApplied {
-  const _$AppSettingApplied({this.isDarkMode, this.language});
+class _$AppSettingAppliedImpl implements AppSettingApplied {
+  const _$AppSettingAppliedImpl({this.isDarkMode, this.language});
 
   @override
   final bool? isDarkMode;
@@ -369,10 +369,10 @@ class _$AppSettingApplied implements AppSettingApplied {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppSettingApplied &&
+            other is _$AppSettingAppliedImpl &&
             (identical(other.isDarkMode, isDarkMode) ||
                 other.isDarkMode == isDarkMode) &&
             (identical(other.language, language) ||
@@ -385,8 +385,9 @@ class _$AppSettingApplied implements AppSettingApplied {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppSettingAppliedCopyWith<_$AppSettingApplied> get copyWith =>
-      __$$AppSettingAppliedCopyWithImpl<_$AppSettingApplied>(this, _$identity);
+  _$$AppSettingAppliedImplCopyWith<_$AppSettingAppliedImpl> get copyWith =>
+      __$$AppSettingAppliedImplCopyWithImpl<_$AppSettingAppliedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -467,30 +468,30 @@ class _$AppSettingApplied implements AppSettingApplied {
 abstract class AppSettingApplied implements AppSettingState {
   const factory AppSettingApplied(
       {final bool? isDarkMode,
-      final LanguageCode? language}) = _$AppSettingApplied;
+      final LanguageCode? language}) = _$AppSettingAppliedImpl;
 
   bool? get isDarkMode;
   LanguageCode? get language;
   @JsonKey(ignore: true)
-  _$$AppSettingAppliedCopyWith<_$AppSettingApplied> get copyWith =>
+  _$$AppSettingAppliedImplCopyWith<_$AppSettingAppliedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AppSettingErrorCopyWith<$Res> {
-  factory _$$AppSettingErrorCopyWith(
-          _$AppSettingError value, $Res Function(_$AppSettingError) then) =
-      __$$AppSettingErrorCopyWithImpl<$Res>;
+abstract class _$$AppSettingErrorImplCopyWith<$Res> {
+  factory _$$AppSettingErrorImplCopyWith(_$AppSettingErrorImpl value,
+          $Res Function(_$AppSettingErrorImpl) then) =
+      __$$AppSettingErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppException? appException, String messages});
 }
 
 /// @nodoc
-class __$$AppSettingErrorCopyWithImpl<$Res>
-    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingError>
-    implements _$$AppSettingErrorCopyWith<$Res> {
-  __$$AppSettingErrorCopyWithImpl(
-      _$AppSettingError _value, $Res Function(_$AppSettingError) _then)
+class __$$AppSettingErrorImplCopyWithImpl<$Res>
+    extends _$AppSettingStateCopyWithImpl<$Res, _$AppSettingErrorImpl>
+    implements _$$AppSettingErrorImplCopyWith<$Res> {
+  __$$AppSettingErrorImplCopyWithImpl(
+      _$AppSettingErrorImpl _value, $Res Function(_$AppSettingErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -499,7 +500,7 @@ class __$$AppSettingErrorCopyWithImpl<$Res>
     Object? appException = freezed,
     Object? messages = null,
   }) {
-    return _then(_$AppSettingError(
+    return _then(_$AppSettingErrorImpl(
       appException: freezed == appException
           ? _value.appException
           : appException // ignore: cast_nullable_to_non_nullable
@@ -514,8 +515,8 @@ class __$$AppSettingErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppSettingError implements AppSettingError {
-  const _$AppSettingError({this.appException, this.messages = ''});
+class _$AppSettingErrorImpl implements AppSettingError {
+  const _$AppSettingErrorImpl({this.appException, this.messages = ''});
 
   @override
   final AppException? appException;
@@ -529,10 +530,10 @@ class _$AppSettingError implements AppSettingError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppSettingError &&
+            other is _$AppSettingErrorImpl &&
             (identical(other.appException, appException) ||
                 other.appException == appException) &&
             (identical(other.messages, messages) ||
@@ -545,8 +546,9 @@ class _$AppSettingError implements AppSettingError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppSettingErrorCopyWith<_$AppSettingError> get copyWith =>
-      __$$AppSettingErrorCopyWithImpl<_$AppSettingError>(this, _$identity);
+  _$$AppSettingErrorImplCopyWith<_$AppSettingErrorImpl> get copyWith =>
+      __$$AppSettingErrorImplCopyWithImpl<_$AppSettingErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -627,11 +629,11 @@ class _$AppSettingError implements AppSettingError {
 abstract class AppSettingError implements AppSettingState {
   const factory AppSettingError(
       {final AppException? appException,
-      final String messages}) = _$AppSettingError;
+      final String messages}) = _$AppSettingErrorImpl;
 
   AppException? get appException;
   String get messages;
   @JsonKey(ignore: true)
-  _$$AppSettingErrorCopyWith<_$AppSettingError> get copyWith =>
+  _$$AppSettingErrorImplCopyWith<_$AppSettingErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

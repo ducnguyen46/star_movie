@@ -6,9 +6,9 @@ part of 'movie_image_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MovieImageResponseModel _$$_MovieImageResponseModelFromJson(
+_$MovieImageResponseModelImpl _$$MovieImageResponseModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MovieImageResponseModel(
+    _$MovieImageResponseModelImpl(
       backdrops: (json['backdrops'] as List<dynamic>?)
               ?.map((e) => MovieImageModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -23,8 +23,8 @@ _$_MovieImageResponseModel _$$_MovieImageResponseModelFromJson(
           const <MovieImageModel>[],
     );
 
-Map<String, dynamic> _$$_MovieImageResponseModelToJson(
-        _$_MovieImageResponseModel instance) =>
+Map<String, dynamic> _$$MovieImageResponseModelImplToJson(
+        _$MovieImageResponseModelImpl instance) =>
     <String, dynamic>{
       'backdrops': instance.backdrops,
       'logos': instance.logos,

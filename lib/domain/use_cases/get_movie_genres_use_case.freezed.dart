@@ -12,7 +12,7 @@ part of 'get_movie_genres_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetMovieGenresUseCaseParams {
@@ -60,25 +60,25 @@ class _$GetMovieGenresUseCaseParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetMovieGenresUseCaseParamsCopyWith<$Res>
+abstract class _$$GetMovieGenresUseCaseParamsImplCopyWith<$Res>
     implements $GetMovieGenresUseCaseParamsCopyWith<$Res> {
-  factory _$$_GetMovieGenresUseCaseParamsCopyWith(
-          _$_GetMovieGenresUseCaseParams value,
-          $Res Function(_$_GetMovieGenresUseCaseParams) then) =
-      __$$_GetMovieGenresUseCaseParamsCopyWithImpl<$Res>;
+  factory _$$GetMovieGenresUseCaseParamsImplCopyWith(
+          _$GetMovieGenresUseCaseParamsImpl value,
+          $Res Function(_$GetMovieGenresUseCaseParamsImpl) then) =
+      __$$GetMovieGenresUseCaseParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String language});
 }
 
 /// @nodoc
-class __$$_GetMovieGenresUseCaseParamsCopyWithImpl<$Res>
+class __$$GetMovieGenresUseCaseParamsImplCopyWithImpl<$Res>
     extends _$GetMovieGenresUseCaseParamsCopyWithImpl<$Res,
-        _$_GetMovieGenresUseCaseParams>
-    implements _$$_GetMovieGenresUseCaseParamsCopyWith<$Res> {
-  __$$_GetMovieGenresUseCaseParamsCopyWithImpl(
-      _$_GetMovieGenresUseCaseParams _value,
-      $Res Function(_$_GetMovieGenresUseCaseParams) _then)
+        _$GetMovieGenresUseCaseParamsImpl>
+    implements _$$GetMovieGenresUseCaseParamsImplCopyWith<$Res> {
+  __$$GetMovieGenresUseCaseParamsImplCopyWithImpl(
+      _$GetMovieGenresUseCaseParamsImpl _value,
+      $Res Function(_$GetMovieGenresUseCaseParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_GetMovieGenresUseCaseParamsCopyWithImpl<$Res>
   $Res call({
     Object? language = null,
   }) {
-    return _then(_$_GetMovieGenresUseCaseParams(
+    return _then(_$GetMovieGenresUseCaseParamsImpl(
       language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -97,8 +97,9 @@ class __$$_GetMovieGenresUseCaseParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetMovieGenresUseCaseParams implements _GetMovieGenresUseCaseParams {
-  const _$_GetMovieGenresUseCaseParams({this.language = ''});
+class _$GetMovieGenresUseCaseParamsImpl
+    implements _GetMovieGenresUseCaseParams {
+  const _$GetMovieGenresUseCaseParamsImpl({this.language = ''});
 
   @override
   @JsonKey()
@@ -110,10 +111,10 @@ class _$_GetMovieGenresUseCaseParams implements _GetMovieGenresUseCaseParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetMovieGenresUseCaseParams &&
+            other is _$GetMovieGenresUseCaseParamsImpl &&
             (identical(other.language, language) ||
                 other.language == language));
   }
@@ -124,20 +125,20 @@ class _$_GetMovieGenresUseCaseParams implements _GetMovieGenresUseCaseParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetMovieGenresUseCaseParamsCopyWith<_$_GetMovieGenresUseCaseParams>
-      get copyWith => __$$_GetMovieGenresUseCaseParamsCopyWithImpl<
-          _$_GetMovieGenresUseCaseParams>(this, _$identity);
+  _$$GetMovieGenresUseCaseParamsImplCopyWith<_$GetMovieGenresUseCaseParamsImpl>
+      get copyWith => __$$GetMovieGenresUseCaseParamsImplCopyWithImpl<
+          _$GetMovieGenresUseCaseParamsImpl>(this, _$identity);
 }
 
 abstract class _GetMovieGenresUseCaseParams
     implements GetMovieGenresUseCaseParams {
   const factory _GetMovieGenresUseCaseParams({final String language}) =
-      _$_GetMovieGenresUseCaseParams;
+      _$GetMovieGenresUseCaseParamsImpl;
 
   @override
   String get language;
   @override
   @JsonKey(ignore: true)
-  _$$_GetMovieGenresUseCaseParamsCopyWith<_$_GetMovieGenresUseCaseParams>
+  _$$GetMovieGenresUseCaseParamsImplCopyWith<_$GetMovieGenresUseCaseParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'app_auth_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppAuthState {
@@ -93,25 +93,25 @@ class _$AppAuthStateCopyWithImpl<$Res, $Val extends AppAuthState>
 }
 
 /// @nodoc
-abstract class _$$AppAuthLoadingCopyWith<$Res> {
-  factory _$$AppAuthLoadingCopyWith(
-          _$AppAuthLoading value, $Res Function(_$AppAuthLoading) then) =
-      __$$AppAuthLoadingCopyWithImpl<$Res>;
+abstract class _$$AppAuthLoadingImplCopyWith<$Res> {
+  factory _$$AppAuthLoadingImplCopyWith(_$AppAuthLoadingImpl value,
+          $Res Function(_$AppAuthLoadingImpl) then) =
+      __$$AppAuthLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppAuthLoadingCopyWithImpl<$Res>
-    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthLoading>
-    implements _$$AppAuthLoadingCopyWith<$Res> {
-  __$$AppAuthLoadingCopyWithImpl(
-      _$AppAuthLoading _value, $Res Function(_$AppAuthLoading) _then)
+class __$$AppAuthLoadingImplCopyWithImpl<$Res>
+    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthLoadingImpl>
+    implements _$$AppAuthLoadingImplCopyWith<$Res> {
+  __$$AppAuthLoadingImplCopyWithImpl(
+      _$AppAuthLoadingImpl _value, $Res Function(_$AppAuthLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppAuthLoading implements AppAuthLoading {
-  const _$AppAuthLoading();
+class _$AppAuthLoadingImpl implements AppAuthLoading {
+  const _$AppAuthLoadingImpl();
 
   @override
   String toString() {
@@ -119,9 +119,9 @@ class _$AppAuthLoading implements AppAuthLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppAuthLoading);
+        (other.runtimeType == runtimeType && other is _$AppAuthLoadingImpl);
   }
 
   @override
@@ -209,24 +209,24 @@ class _$AppAuthLoading implements AppAuthLoading {
 }
 
 abstract class AppAuthLoading implements AppAuthState {
-  const factory AppAuthLoading() = _$AppAuthLoading;
+  const factory AppAuthLoading() = _$AppAuthLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$AppAuthAuthenticatedCopyWith<$Res> {
-  factory _$$AppAuthAuthenticatedCopyWith(_$AppAuthAuthenticated value,
-          $Res Function(_$AppAuthAuthenticated) then) =
-      __$$AppAuthAuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AppAuthAuthenticatedImplCopyWith<$Res> {
+  factory _$$AppAuthAuthenticatedImplCopyWith(_$AppAuthAuthenticatedImpl value,
+          $Res Function(_$AppAuthAuthenticatedImpl) then) =
+      __$$AppAuthAuthenticatedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String sessionId});
 }
 
 /// @nodoc
-class __$$AppAuthAuthenticatedCopyWithImpl<$Res>
-    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthAuthenticated>
-    implements _$$AppAuthAuthenticatedCopyWith<$Res> {
-  __$$AppAuthAuthenticatedCopyWithImpl(_$AppAuthAuthenticated _value,
-      $Res Function(_$AppAuthAuthenticated) _then)
+class __$$AppAuthAuthenticatedImplCopyWithImpl<$Res>
+    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthAuthenticatedImpl>
+    implements _$$AppAuthAuthenticatedImplCopyWith<$Res> {
+  __$$AppAuthAuthenticatedImplCopyWithImpl(_$AppAuthAuthenticatedImpl _value,
+      $Res Function(_$AppAuthAuthenticatedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -234,7 +234,7 @@ class __$$AppAuthAuthenticatedCopyWithImpl<$Res>
   $Res call({
     Object? sessionId = null,
   }) {
-    return _then(_$AppAuthAuthenticated(
+    return _then(_$AppAuthAuthenticatedImpl(
       sessionId: null == sessionId
           ? _value.sessionId
           : sessionId // ignore: cast_nullable_to_non_nullable
@@ -245,8 +245,8 @@ class __$$AppAuthAuthenticatedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppAuthAuthenticated implements AppAuthAuthenticated {
-  const _$AppAuthAuthenticated({required this.sessionId});
+class _$AppAuthAuthenticatedImpl implements AppAuthAuthenticated {
+  const _$AppAuthAuthenticatedImpl({required this.sessionId});
 
   @override
   final String sessionId;
@@ -257,10 +257,10 @@ class _$AppAuthAuthenticated implements AppAuthAuthenticated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppAuthAuthenticated &&
+            other is _$AppAuthAuthenticatedImpl &&
             (identical(other.sessionId, sessionId) ||
                 other.sessionId == sessionId));
   }
@@ -271,9 +271,10 @@ class _$AppAuthAuthenticated implements AppAuthAuthenticated {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppAuthAuthenticatedCopyWith<_$AppAuthAuthenticated> get copyWith =>
-      __$$AppAuthAuthenticatedCopyWithImpl<_$AppAuthAuthenticated>(
-          this, _$identity);
+  _$$AppAuthAuthenticatedImplCopyWith<_$AppAuthAuthenticatedImpl>
+      get copyWith =>
+          __$$AppAuthAuthenticatedImplCopyWithImpl<_$AppAuthAuthenticatedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -358,29 +359,29 @@ class _$AppAuthAuthenticated implements AppAuthAuthenticated {
 
 abstract class AppAuthAuthenticated implements AppAuthState {
   const factory AppAuthAuthenticated({required final String sessionId}) =
-      _$AppAuthAuthenticated;
+      _$AppAuthAuthenticatedImpl;
 
   String get sessionId;
   @JsonKey(ignore: true)
-  _$$AppAuthAuthenticatedCopyWith<_$AppAuthAuthenticated> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppAuthAuthenticatedImplCopyWith<_$AppAuthAuthenticatedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AppAuthGuestCopyWith<$Res> {
-  factory _$$AppAuthGuestCopyWith(
-          _$AppAuthGuest value, $Res Function(_$AppAuthGuest) then) =
-      __$$AppAuthGuestCopyWithImpl<$Res>;
+abstract class _$$AppAuthGuestImplCopyWith<$Res> {
+  factory _$$AppAuthGuestImplCopyWith(
+          _$AppAuthGuestImpl value, $Res Function(_$AppAuthGuestImpl) then) =
+      __$$AppAuthGuestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String guestSessionId, String expiresAt});
 }
 
 /// @nodoc
-class __$$AppAuthGuestCopyWithImpl<$Res>
-    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthGuest>
-    implements _$$AppAuthGuestCopyWith<$Res> {
-  __$$AppAuthGuestCopyWithImpl(
-      _$AppAuthGuest _value, $Res Function(_$AppAuthGuest) _then)
+class __$$AppAuthGuestImplCopyWithImpl<$Res>
+    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthGuestImpl>
+    implements _$$AppAuthGuestImplCopyWith<$Res> {
+  __$$AppAuthGuestImplCopyWithImpl(
+      _$AppAuthGuestImpl _value, $Res Function(_$AppAuthGuestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -389,7 +390,7 @@ class __$$AppAuthGuestCopyWithImpl<$Res>
     Object? guestSessionId = null,
     Object? expiresAt = null,
   }) {
-    return _then(_$AppAuthGuest(
+    return _then(_$AppAuthGuestImpl(
       guestSessionId: null == guestSessionId
           ? _value.guestSessionId
           : guestSessionId // ignore: cast_nullable_to_non_nullable
@@ -404,8 +405,9 @@ class __$$AppAuthGuestCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppAuthGuest implements AppAuthGuest {
-  const _$AppAuthGuest({required this.guestSessionId, required this.expiresAt});
+class _$AppAuthGuestImpl implements AppAuthGuest {
+  const _$AppAuthGuestImpl(
+      {required this.guestSessionId, required this.expiresAt});
 
   @override
   final String guestSessionId;
@@ -418,10 +420,10 @@ class _$AppAuthGuest implements AppAuthGuest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppAuthGuest &&
+            other is _$AppAuthGuestImpl &&
             (identical(other.guestSessionId, guestSessionId) ||
                 other.guestSessionId == guestSessionId) &&
             (identical(other.expiresAt, expiresAt) ||
@@ -434,8 +436,8 @@ class _$AppAuthGuest implements AppAuthGuest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppAuthGuestCopyWith<_$AppAuthGuest> get copyWith =>
-      __$$AppAuthGuestCopyWithImpl<_$AppAuthGuest>(this, _$identity);
+  _$$AppAuthGuestImplCopyWith<_$AppAuthGuestImpl> get copyWith =>
+      __$$AppAuthGuestImplCopyWithImpl<_$AppAuthGuestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -521,30 +523,30 @@ class _$AppAuthGuest implements AppAuthGuest {
 abstract class AppAuthGuest implements AppAuthState {
   const factory AppAuthGuest(
       {required final String guestSessionId,
-      required final String expiresAt}) = _$AppAuthGuest;
+      required final String expiresAt}) = _$AppAuthGuestImpl;
 
   String get guestSessionId;
   String get expiresAt;
   @JsonKey(ignore: true)
-  _$$AppAuthGuestCopyWith<_$AppAuthGuest> get copyWith =>
+  _$$AppAuthGuestImplCopyWith<_$AppAuthGuestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AppAuthErrorCopyWith<$Res> {
-  factory _$$AppAuthErrorCopyWith(
-          _$AppAuthError value, $Res Function(_$AppAuthError) then) =
-      __$$AppAuthErrorCopyWithImpl<$Res>;
+abstract class _$$AppAuthErrorImplCopyWith<$Res> {
+  factory _$$AppAuthErrorImplCopyWith(
+          _$AppAuthErrorImpl value, $Res Function(_$AppAuthErrorImpl) then) =
+      __$$AppAuthErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, AppException? exception});
 }
 
 /// @nodoc
-class __$$AppAuthErrorCopyWithImpl<$Res>
-    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthError>
-    implements _$$AppAuthErrorCopyWith<$Res> {
-  __$$AppAuthErrorCopyWithImpl(
-      _$AppAuthError _value, $Res Function(_$AppAuthError) _then)
+class __$$AppAuthErrorImplCopyWithImpl<$Res>
+    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthErrorImpl>
+    implements _$$AppAuthErrorImplCopyWith<$Res> {
+  __$$AppAuthErrorImplCopyWithImpl(
+      _$AppAuthErrorImpl _value, $Res Function(_$AppAuthErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -553,7 +555,7 @@ class __$$AppAuthErrorCopyWithImpl<$Res>
     Object? message = null,
     Object? exception = freezed,
   }) {
-    return _then(_$AppAuthError(
+    return _then(_$AppAuthErrorImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -568,8 +570,8 @@ class __$$AppAuthErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppAuthError implements AppAuthError {
-  const _$AppAuthError({this.message = '', this.exception});
+class _$AppAuthErrorImpl implements AppAuthError {
+  const _$AppAuthErrorImpl({this.message = '', this.exception});
 
   @override
   @JsonKey()
@@ -583,10 +585,10 @@ class _$AppAuthError implements AppAuthError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppAuthError &&
+            other is _$AppAuthErrorImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
@@ -598,8 +600,8 @@ class _$AppAuthError implements AppAuthError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppAuthErrorCopyWith<_$AppAuthError> get copyWith =>
-      __$$AppAuthErrorCopyWithImpl<_$AppAuthError>(this, _$identity);
+  _$$AppAuthErrorImplCopyWith<_$AppAuthErrorImpl> get copyWith =>
+      __$$AppAuthErrorImplCopyWithImpl<_$AppAuthErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -684,35 +686,36 @@ class _$AppAuthError implements AppAuthError {
 
 abstract class AppAuthError implements AppAuthState {
   const factory AppAuthError(
-      {final String message, final AppException? exception}) = _$AppAuthError;
+      {final String message,
+      final AppException? exception}) = _$AppAuthErrorImpl;
 
   String get message;
   AppException? get exception;
   @JsonKey(ignore: true)
-  _$$AppAuthErrorCopyWith<_$AppAuthError> get copyWith =>
+  _$$AppAuthErrorImplCopyWith<_$AppAuthErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AppAuthNotLogInCopyWith<$Res> {
-  factory _$$AppAuthNotLogInCopyWith(
-          _$AppAuthNotLogIn value, $Res Function(_$AppAuthNotLogIn) then) =
-      __$$AppAuthNotLogInCopyWithImpl<$Res>;
+abstract class _$$AppAuthNotLogInImplCopyWith<$Res> {
+  factory _$$AppAuthNotLogInImplCopyWith(_$AppAuthNotLogInImpl value,
+          $Res Function(_$AppAuthNotLogInImpl) then) =
+      __$$AppAuthNotLogInImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppAuthNotLogInCopyWithImpl<$Res>
-    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthNotLogIn>
-    implements _$$AppAuthNotLogInCopyWith<$Res> {
-  __$$AppAuthNotLogInCopyWithImpl(
-      _$AppAuthNotLogIn _value, $Res Function(_$AppAuthNotLogIn) _then)
+class __$$AppAuthNotLogInImplCopyWithImpl<$Res>
+    extends _$AppAuthStateCopyWithImpl<$Res, _$AppAuthNotLogInImpl>
+    implements _$$AppAuthNotLogInImplCopyWith<$Res> {
+  __$$AppAuthNotLogInImplCopyWithImpl(
+      _$AppAuthNotLogInImpl _value, $Res Function(_$AppAuthNotLogInImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppAuthNotLogIn implements AppAuthNotLogIn {
-  const _$AppAuthNotLogIn();
+class _$AppAuthNotLogInImpl implements AppAuthNotLogIn {
+  const _$AppAuthNotLogInImpl();
 
   @override
   String toString() {
@@ -720,9 +723,9 @@ class _$AppAuthNotLogIn implements AppAuthNotLogIn {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppAuthNotLogIn);
+        (other.runtimeType == runtimeType && other is _$AppAuthNotLogInImpl);
   }
 
   @override
@@ -810,5 +813,5 @@ class _$AppAuthNotLogIn implements AppAuthNotLogIn {
 }
 
 abstract class AppAuthNotLogIn implements AppAuthState {
-  const factory AppAuthNotLogIn() = _$AppAuthNotLogIn;
+  const factory AppAuthNotLogIn() = _$AppAuthNotLogInImpl;
 }

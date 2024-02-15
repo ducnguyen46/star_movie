@@ -12,7 +12,7 @@ part of 'genre_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 GenreModel _$GenreModelFromJson(Map<String, dynamic> json) {
   return _GenreModel.fromJson(json);
@@ -70,22 +70,22 @@ class _$GenreModelCopyWithImpl<$Res, $Val extends GenreModel>
 }
 
 /// @nodoc
-abstract class _$$_GenreModelCopyWith<$Res>
+abstract class _$$GenreModelImplCopyWith<$Res>
     implements $GenreModelCopyWith<$Res> {
-  factory _$$_GenreModelCopyWith(
-          _$_GenreModel value, $Res Function(_$_GenreModel) then) =
-      __$$_GenreModelCopyWithImpl<$Res>;
+  factory _$$GenreModelImplCopyWith(
+          _$GenreModelImpl value, $Res Function(_$GenreModelImpl) then) =
+      __$$GenreModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'id') int id, @JsonKey(name: 'name') String name});
 }
 
 /// @nodoc
-class __$$_GenreModelCopyWithImpl<$Res>
-    extends _$GenreModelCopyWithImpl<$Res, _$_GenreModel>
-    implements _$$_GenreModelCopyWith<$Res> {
-  __$$_GenreModelCopyWithImpl(
-      _$_GenreModel _value, $Res Function(_$_GenreModel) _then)
+class __$$GenreModelImplCopyWithImpl<$Res>
+    extends _$GenreModelCopyWithImpl<$Res, _$GenreModelImpl>
+    implements _$$GenreModelImplCopyWith<$Res> {
+  __$$GenreModelImplCopyWithImpl(
+      _$GenreModelImpl _value, $Res Function(_$GenreModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_GenreModelCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
   }) {
-    return _then(_$_GenreModel(
+    return _then(_$GenreModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -109,13 +109,13 @@ class __$$_GenreModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GenreModel implements _GenreModel {
-  const _$_GenreModel(
+class _$GenreModelImpl implements _GenreModel {
+  const _$GenreModelImpl(
       {@JsonKey(name: 'id') this.id = -1,
       @JsonKey(name: 'name') this.name = ''});
 
-  factory _$_GenreModel.fromJson(Map<String, dynamic> json) =>
-      _$$_GenreModelFromJson(json);
+  factory _$GenreModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GenreModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -130,10 +130,10 @@ class _$_GenreModel implements _GenreModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GenreModel &&
+            other is _$GenreModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
@@ -145,12 +145,12 @@ class _$_GenreModel implements _GenreModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GenreModelCopyWith<_$_GenreModel> get copyWith =>
-      __$$_GenreModelCopyWithImpl<_$_GenreModel>(this, _$identity);
+  _$$GenreModelImplCopyWith<_$GenreModelImpl> get copyWith =>
+      __$$GenreModelImplCopyWithImpl<_$GenreModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GenreModelToJson(
+    return _$$GenreModelImplToJson(
       this,
     );
   }
@@ -159,10 +159,10 @@ class _$_GenreModel implements _GenreModel {
 abstract class _GenreModel implements GenreModel {
   const factory _GenreModel(
       {@JsonKey(name: 'id') final int id,
-      @JsonKey(name: 'name') final String name}) = _$_GenreModel;
+      @JsonKey(name: 'name') final String name}) = _$GenreModelImpl;
 
   factory _GenreModel.fromJson(Map<String, dynamic> json) =
-      _$_GenreModel.fromJson;
+      _$GenreModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -172,6 +172,6 @@ abstract class _GenreModel implements GenreModel {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_GenreModelCopyWith<_$_GenreModel> get copyWith =>
+  _$$GenreModelImplCopyWith<_$GenreModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

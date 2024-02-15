@@ -6,7 +6,7 @@ part of 'crew.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Crew _$$_CrewFromJson(Map<String, dynamic> json) => _$_Crew(
+_$CrewImpl _$$CrewImplFromJson(Map<String, dynamic> json) => _$CrewImpl(
       id: json['id'] as int,
       castId: json['castId'] as int,
       creditId: json['creditId'] as String,
@@ -18,7 +18,8 @@ _$_Crew _$$_CrewFromJson(Map<String, dynamic> json) => _$_Crew(
       gender: $enumDecode(_$GenderEnumMap, json['gender']),
     );
 
-Map<String, dynamic> _$$_CrewToJson(_$_Crew instance) => <String, dynamic>{
+Map<String, dynamic> _$$CrewImplToJson(_$CrewImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'castId': instance.castId,
       'creditId': instance.creditId,

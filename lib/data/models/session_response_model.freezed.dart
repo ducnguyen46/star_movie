@@ -12,7 +12,7 @@ part of 'session_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SessionResponseModel _$SessionResponseModelFromJson(Map<String, dynamic> json) {
   return _SessionResponseModel.fromJson(json);
@@ -64,22 +64,22 @@ class _$SessionResponseModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SessionResponseModelCopyWith<$Res>
+abstract class _$$SessionResponseModelImplCopyWith<$Res>
     implements $SessionResponseModelCopyWith<$Res> {
-  factory _$$_SessionResponseModelCopyWith(_$_SessionResponseModel value,
-          $Res Function(_$_SessionResponseModel) then) =
-      __$$_SessionResponseModelCopyWithImpl<$Res>;
+  factory _$$SessionResponseModelImplCopyWith(_$SessionResponseModelImpl value,
+          $Res Function(_$SessionResponseModelImpl) then) =
+      __$$SessionResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'session_id') String sessionId});
 }
 
 /// @nodoc
-class __$$_SessionResponseModelCopyWithImpl<$Res>
-    extends _$SessionResponseModelCopyWithImpl<$Res, _$_SessionResponseModel>
-    implements _$$_SessionResponseModelCopyWith<$Res> {
-  __$$_SessionResponseModelCopyWithImpl(_$_SessionResponseModel _value,
-      $Res Function(_$_SessionResponseModel) _then)
+class __$$SessionResponseModelImplCopyWithImpl<$Res>
+    extends _$SessionResponseModelCopyWithImpl<$Res, _$SessionResponseModelImpl>
+    implements _$$SessionResponseModelImplCopyWith<$Res> {
+  __$$SessionResponseModelImplCopyWithImpl(_$SessionResponseModelImpl _value,
+      $Res Function(_$SessionResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_SessionResponseModelCopyWithImpl<$Res>
   $Res call({
     Object? sessionId = null,
   }) {
-    return _then(_$_SessionResponseModel(
+    return _then(_$SessionResponseModelImpl(
       sessionId: null == sessionId
           ? _value.sessionId
           : sessionId // ignore: cast_nullable_to_non_nullable
@@ -98,12 +98,12 @@ class __$$_SessionResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SessionResponseModel implements _SessionResponseModel {
-  const _$_SessionResponseModel(
+class _$SessionResponseModelImpl implements _SessionResponseModel {
+  const _$SessionResponseModelImpl(
       {@JsonKey(name: 'session_id') this.sessionId = ''});
 
-  factory _$_SessionResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_SessionResponseModelFromJson(json);
+  factory _$SessionResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SessionResponseModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'session_id')
@@ -115,10 +115,10 @@ class _$_SessionResponseModel implements _SessionResponseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SessionResponseModel &&
+            other is _$SessionResponseModelImpl &&
             (identical(other.sessionId, sessionId) ||
                 other.sessionId == sessionId));
   }
@@ -130,13 +130,14 @@ class _$_SessionResponseModel implements _SessionResponseModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SessionResponseModelCopyWith<_$_SessionResponseModel> get copyWith =>
-      __$$_SessionResponseModelCopyWithImpl<_$_SessionResponseModel>(
-          this, _$identity);
+  _$$SessionResponseModelImplCopyWith<_$SessionResponseModelImpl>
+      get copyWith =>
+          __$$SessionResponseModelImplCopyWithImpl<_$SessionResponseModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionResponseModelToJson(
+    return _$$SessionResponseModelImplToJson(
       this,
     );
   }
@@ -145,16 +146,16 @@ class _$_SessionResponseModel implements _SessionResponseModel {
 abstract class _SessionResponseModel implements SessionResponseModel {
   const factory _SessionResponseModel(
           {@JsonKey(name: 'session_id') final String sessionId}) =
-      _$_SessionResponseModel;
+      _$SessionResponseModelImpl;
 
   factory _SessionResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_SessionResponseModel.fromJson;
+      _$SessionResponseModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'session_id')
   String get sessionId;
   @override
   @JsonKey(ignore: true)
-  _$$_SessionResponseModelCopyWith<_$_SessionResponseModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SessionResponseModelImplCopyWith<_$SessionResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

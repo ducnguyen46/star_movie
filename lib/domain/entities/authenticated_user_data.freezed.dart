@@ -12,7 +12,7 @@ part of 'authenticated_user_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AuthenticatedUserData _$AuthenticatedUserDataFromJson(
     Map<String, dynamic> json) {
@@ -86,11 +86,12 @@ class _$AuthenticatedUserDataCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AuthenticatedUserDataCopyWith<$Res>
+abstract class _$$AuthenticatedUserDataImplCopyWith<$Res>
     implements $AuthenticatedUserDataCopyWith<$Res> {
-  factory _$$_AuthenticatedUserDataCopyWith(_$_AuthenticatedUserData value,
-          $Res Function(_$_AuthenticatedUserData) then) =
-      __$$_AuthenticatedUserDataCopyWithImpl<$Res>;
+  factory _$$AuthenticatedUserDataImplCopyWith(
+          _$AuthenticatedUserDataImpl value,
+          $Res Function(_$AuthenticatedUserDataImpl) then) =
+      __$$AuthenticatedUserDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,11 +102,12 @@ abstract class _$$_AuthenticatedUserDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AuthenticatedUserDataCopyWithImpl<$Res>
-    extends _$AuthenticatedUserDataCopyWithImpl<$Res, _$_AuthenticatedUserData>
-    implements _$$_AuthenticatedUserDataCopyWith<$Res> {
-  __$$_AuthenticatedUserDataCopyWithImpl(_$_AuthenticatedUserData _value,
-      $Res Function(_$_AuthenticatedUserData) _then)
+class __$$AuthenticatedUserDataImplCopyWithImpl<$Res>
+    extends _$AuthenticatedUserDataCopyWithImpl<$Res,
+        _$AuthenticatedUserDataImpl>
+    implements _$$AuthenticatedUserDataImplCopyWith<$Res> {
+  __$$AuthenticatedUserDataImplCopyWithImpl(_$AuthenticatedUserDataImpl _value,
+      $Res Function(_$AuthenticatedUserDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +118,7 @@ class __$$_AuthenticatedUserDataCopyWithImpl<$Res>
     Object? guestSessionId = null,
     Object? expiresAt = null,
   }) {
-    return _then(_$_AuthenticatedUserData(
+    return _then(_$AuthenticatedUserDataImpl(
       isAuthenticatedUser: null == isAuthenticatedUser
           ? _value.isAuthenticatedUser
           : isAuthenticatedUser // ignore: cast_nullable_to_non_nullable
@@ -139,15 +141,15 @@ class __$$_AuthenticatedUserDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AuthenticatedUserData implements _AuthenticatedUserData {
-  const _$_AuthenticatedUserData(
+class _$AuthenticatedUserDataImpl implements _AuthenticatedUserData {
+  const _$AuthenticatedUserDataImpl(
       {this.isAuthenticatedUser = false,
       this.sessionId = '',
       this.guestSessionId = '',
       this.expiresAt = ''});
 
-  factory _$_AuthenticatedUserData.fromJson(Map<String, dynamic> json) =>
-      _$$_AuthenticatedUserDataFromJson(json);
+  factory _$AuthenticatedUserDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthenticatedUserDataImplFromJson(json);
 
   @override
   @JsonKey()
@@ -168,10 +170,10 @@ class _$_AuthenticatedUserData implements _AuthenticatedUserData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthenticatedUserData &&
+            other is _$AuthenticatedUserDataImpl &&
             (identical(other.isAuthenticatedUser, isAuthenticatedUser) ||
                 other.isAuthenticatedUser == isAuthenticatedUser) &&
             (identical(other.sessionId, sessionId) ||
@@ -190,13 +192,13 @@ class _$_AuthenticatedUserData implements _AuthenticatedUserData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthenticatedUserDataCopyWith<_$_AuthenticatedUserData> get copyWith =>
-      __$$_AuthenticatedUserDataCopyWithImpl<_$_AuthenticatedUserData>(
-          this, _$identity);
+  _$$AuthenticatedUserDataImplCopyWith<_$AuthenticatedUserDataImpl>
+      get copyWith => __$$AuthenticatedUserDataImplCopyWithImpl<
+          _$AuthenticatedUserDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthenticatedUserDataToJson(
+    return _$$AuthenticatedUserDataImplToJson(
       this,
     );
   }
@@ -207,10 +209,10 @@ abstract class _AuthenticatedUserData implements AuthenticatedUserData {
       {final bool isAuthenticatedUser,
       final String sessionId,
       final String guestSessionId,
-      final String expiresAt}) = _$_AuthenticatedUserData;
+      final String expiresAt}) = _$AuthenticatedUserDataImpl;
 
   factory _AuthenticatedUserData.fromJson(Map<String, dynamic> json) =
-      _$_AuthenticatedUserData.fromJson;
+      _$AuthenticatedUserDataImpl.fromJson;
 
   @override
   bool get isAuthenticatedUser;
@@ -222,6 +224,6 @@ abstract class _AuthenticatedUserData implements AuthenticatedUserData {
   String get expiresAt;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthenticatedUserDataCopyWith<_$_AuthenticatedUserData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AuthenticatedUserDataImplCopyWith<_$AuthenticatedUserDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

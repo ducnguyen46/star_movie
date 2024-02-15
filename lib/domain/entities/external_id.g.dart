@@ -6,8 +6,8 @@ part of 'external_id.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ExternalId _$$_ExternalIdFromJson(Map<String, dynamic> json) =>
-    _$_ExternalId(
+_$ExternalIdImpl _$$ExternalIdImplFromJson(Map<String, dynamic> json) =>
+    _$ExternalIdImpl(
       imdbId: json['imdbId'] as String,
       wikiId: json['wikiId'] as String,
       facebookId: json['facebookId'] as String,
@@ -15,7 +15,7 @@ _$_ExternalId _$$_ExternalIdFromJson(Map<String, dynamic> json) =>
       twitterId: json['twitterId'] as String,
     );
 
-Map<String, dynamic> _$$_ExternalIdToJson(_$_ExternalId instance) =>
+Map<String, dynamic> _$$ExternalIdImplToJson(_$ExternalIdImpl instance) =>
     <String, dynamic>{
       'imdbId': instance.imdbId,
       'wikiId': instance.wikiId,

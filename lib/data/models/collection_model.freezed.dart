@@ -12,7 +12,7 @@ part of 'collection_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CollectionModel _$CollectionModelFromJson(Map<String, dynamic> json) {
   return _CollectionModel.fromJson(json);
@@ -112,11 +112,11 @@ class _$CollectionModelCopyWithImpl<$Res, $Val extends CollectionModel>
 }
 
 /// @nodoc
-abstract class _$$_CollectionModelCopyWith<$Res>
+abstract class _$$CollectionModelImplCopyWith<$Res>
     implements $CollectionModelCopyWith<$Res> {
-  factory _$$_CollectionModelCopyWith(
-          _$_CollectionModel value, $Res Function(_$_CollectionModel) then) =
-      __$$_CollectionModelCopyWithImpl<$Res>;
+  factory _$$CollectionModelImplCopyWith(_$CollectionModelImpl value,
+          $Res Function(_$CollectionModelImpl) then) =
+      __$$CollectionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -130,11 +130,11 @@ abstract class _$$_CollectionModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CollectionModelCopyWithImpl<$Res>
-    extends _$CollectionModelCopyWithImpl<$Res, _$_CollectionModel>
-    implements _$$_CollectionModelCopyWith<$Res> {
-  __$$_CollectionModelCopyWithImpl(
-      _$_CollectionModel _value, $Res Function(_$_CollectionModel) _then)
+class __$$CollectionModelImplCopyWithImpl<$Res>
+    extends _$CollectionModelCopyWithImpl<$Res, _$CollectionModelImpl>
+    implements _$$CollectionModelImplCopyWith<$Res> {
+  __$$CollectionModelImplCopyWithImpl(
+      _$CollectionModelImpl _value, $Res Function(_$CollectionModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,7 +148,7 @@ class __$$_CollectionModelCopyWithImpl<$Res>
     Object? backdropPath = null,
     Object? posterPath = null,
   }) {
-    return _then(_$_CollectionModel(
+    return _then(_$CollectionModelImpl(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
@@ -183,8 +183,8 @@ class __$$_CollectionModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CollectionModel implements _CollectionModel {
-  const _$_CollectionModel(
+class _$CollectionModelImpl implements _CollectionModel {
+  const _$CollectionModelImpl(
       {@JsonKey(name: 'adult') this.adult = false,
       @JsonKey(name: 'id') this.id = -1,
       @JsonKey(name: 'name') this.name = '',
@@ -193,8 +193,8 @@ class _$_CollectionModel implements _CollectionModel {
       @JsonKey(name: 'backdrop_path') this.backdropPath = '',
       @JsonKey(name: 'poster_path') this.posterPath = ''});
 
-  factory _$_CollectionModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CollectionModelFromJson(json);
+  factory _$CollectionModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CollectionModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'adult')
@@ -224,10 +224,10 @@ class _$_CollectionModel implements _CollectionModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CollectionModel &&
+            other is _$CollectionModelImpl &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
@@ -249,12 +249,13 @@ class _$_CollectionModel implements _CollectionModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CollectionModelCopyWith<_$_CollectionModel> get copyWith =>
-      __$$_CollectionModelCopyWithImpl<_$_CollectionModel>(this, _$identity);
+  _$$CollectionModelImplCopyWith<_$CollectionModelImpl> get copyWith =>
+      __$$CollectionModelImplCopyWithImpl<_$CollectionModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CollectionModelToJson(
+    return _$$CollectionModelImplToJson(
       this,
     );
   }
@@ -269,10 +270,10 @@ abstract class _CollectionModel implements CollectionModel {
           @JsonKey(name: 'overview') final String overview,
           @JsonKey(name: 'backdrop_path') final String backdropPath,
           @JsonKey(name: 'poster_path') final String posterPath}) =
-      _$_CollectionModel;
+      _$CollectionModelImpl;
 
   factory _CollectionModel.fromJson(Map<String, dynamic> json) =
-      _$_CollectionModel.fromJson;
+      _$CollectionModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'adult')
@@ -297,6 +298,6 @@ abstract class _CollectionModel implements CollectionModel {
   String get posterPath;
   @override
   @JsonKey(ignore: true)
-  _$$_CollectionModelCopyWith<_$_CollectionModel> get copyWith =>
+  _$$CollectionModelImplCopyWith<_$CollectionModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

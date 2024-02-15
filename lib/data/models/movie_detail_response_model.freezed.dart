@@ -12,7 +12,7 @@ part of 'movie_detail_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MovieDetailResponseModel _$MovieDetailResponseModelFromJson(
     Map<String, dynamic> json) {
@@ -84,54 +84,31 @@ abstract class $MovieDetailResponseModelCopyWith<$Res> {
       _$MovieDetailResponseModelCopyWithImpl<$Res, MovieDetailResponseModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id')
-          int id,
-      @JsonKey(name: 'imdb_id')
-          String imdbId,
-      @JsonKey(name: 'original_title')
-          String originalTitle,
-      @JsonKey(name: 'original_language')
-          String originalLanguage,
-      @JsonKey(name: 'title')
-          String title,
-      @JsonKey(name: 'tagline')
-          String tagline,
-      @JsonKey(name: 'homepage')
-          String homepage,
-      @JsonKey(name: 'overview')
-          String overview,
-      @JsonKey(name: 'genres')
-          List<GenreModel> genres,
-      @JsonKey(name: 'backdrop_path')
-          String backdropPath,
-      @JsonKey(name: 'poster_path')
-          String posterPath,
-      @JsonKey(name: 'budget')
-          double budget,
-      @JsonKey(name: 'revenue')
-          double revenue,
-      @JsonKey(name: 'release_date')
-          String releaseDate,
-      @JsonKey(name: 'status')
-          String status,
-      @JsonKey(name: 'runtime')
-          int runtime,
-      @JsonKey(name: 'vote_average')
-          double voteAverage,
-      @JsonKey(name: 'belongs_to_collection')
-          CollectionModel collection,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'imdb_id') String imdbId,
+      @JsonKey(name: 'original_title') String originalTitle,
+      @JsonKey(name: 'original_language') String originalLanguage,
+      @JsonKey(name: 'title') String title,
+      @JsonKey(name: 'tagline') String tagline,
+      @JsonKey(name: 'homepage') String homepage,
+      @JsonKey(name: 'overview') String overview,
+      @JsonKey(name: 'genres') List<GenreModel> genres,
+      @JsonKey(name: 'backdrop_path') String backdropPath,
+      @JsonKey(name: 'poster_path') String posterPath,
+      @JsonKey(name: 'budget') double budget,
+      @JsonKey(name: 'revenue') double revenue,
+      @JsonKey(name: 'release_date') String releaseDate,
+      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'runtime') int runtime,
+      @JsonKey(name: 'vote_average') double voteAverage,
+      @JsonKey(name: 'belongs_to_collection') CollectionModel collection,
       @JsonKey(name: 'production_companies')
-          List<CompanyModel> productionCompanies,
-      @JsonKey(name: 'credits')
-          CreditModel credit,
-      @JsonKey(name: 'images')
-          MovieImageResponseModel images,
-      @JsonKey(name: 'recommendations')
-          MoviesResponseModel recommendations,
-      @JsonKey(name: 'similar')
-          MoviesResponseModel similar,
-      @JsonKey(name: 'videos')
-          VideoResponseModel video});
+      List<CompanyModel> productionCompanies,
+      @JsonKey(name: 'credits') CreditModel credit,
+      @JsonKey(name: 'images') MovieImageResponseModel images,
+      @JsonKey(name: 'recommendations') MoviesResponseModel recommendations,
+      @JsonKey(name: 'similar') MoviesResponseModel similar,
+      @JsonKey(name: 'videos') VideoResponseModel video});
 
   $CollectionModelCopyWith<$Res> get collection;
   $CreditModelCopyWith<$Res> get credit;
@@ -330,63 +307,40 @@ class _$MovieDetailResponseModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_MovieDetailResponseModelCopyWith<$Res>
+abstract class _$$MovieDetailResponseModelImplCopyWith<$Res>
     implements $MovieDetailResponseModelCopyWith<$Res> {
-  factory _$$_MovieDetailResponseModelCopyWith(
-          _$_MovieDetailResponseModel value,
-          $Res Function(_$_MovieDetailResponseModel) then) =
-      __$$_MovieDetailResponseModelCopyWithImpl<$Res>;
+  factory _$$MovieDetailResponseModelImplCopyWith(
+          _$MovieDetailResponseModelImpl value,
+          $Res Function(_$MovieDetailResponseModelImpl) then) =
+      __$$MovieDetailResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id')
-          int id,
-      @JsonKey(name: 'imdb_id')
-          String imdbId,
-      @JsonKey(name: 'original_title')
-          String originalTitle,
-      @JsonKey(name: 'original_language')
-          String originalLanguage,
-      @JsonKey(name: 'title')
-          String title,
-      @JsonKey(name: 'tagline')
-          String tagline,
-      @JsonKey(name: 'homepage')
-          String homepage,
-      @JsonKey(name: 'overview')
-          String overview,
-      @JsonKey(name: 'genres')
-          List<GenreModel> genres,
-      @JsonKey(name: 'backdrop_path')
-          String backdropPath,
-      @JsonKey(name: 'poster_path')
-          String posterPath,
-      @JsonKey(name: 'budget')
-          double budget,
-      @JsonKey(name: 'revenue')
-          double revenue,
-      @JsonKey(name: 'release_date')
-          String releaseDate,
-      @JsonKey(name: 'status')
-          String status,
-      @JsonKey(name: 'runtime')
-          int runtime,
-      @JsonKey(name: 'vote_average')
-          double voteAverage,
-      @JsonKey(name: 'belongs_to_collection')
-          CollectionModel collection,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'imdb_id') String imdbId,
+      @JsonKey(name: 'original_title') String originalTitle,
+      @JsonKey(name: 'original_language') String originalLanguage,
+      @JsonKey(name: 'title') String title,
+      @JsonKey(name: 'tagline') String tagline,
+      @JsonKey(name: 'homepage') String homepage,
+      @JsonKey(name: 'overview') String overview,
+      @JsonKey(name: 'genres') List<GenreModel> genres,
+      @JsonKey(name: 'backdrop_path') String backdropPath,
+      @JsonKey(name: 'poster_path') String posterPath,
+      @JsonKey(name: 'budget') double budget,
+      @JsonKey(name: 'revenue') double revenue,
+      @JsonKey(name: 'release_date') String releaseDate,
+      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'runtime') int runtime,
+      @JsonKey(name: 'vote_average') double voteAverage,
+      @JsonKey(name: 'belongs_to_collection') CollectionModel collection,
       @JsonKey(name: 'production_companies')
-          List<CompanyModel> productionCompanies,
-      @JsonKey(name: 'credits')
-          CreditModel credit,
-      @JsonKey(name: 'images')
-          MovieImageResponseModel images,
-      @JsonKey(name: 'recommendations')
-          MoviesResponseModel recommendations,
-      @JsonKey(name: 'similar')
-          MoviesResponseModel similar,
-      @JsonKey(name: 'videos')
-          VideoResponseModel video});
+      List<CompanyModel> productionCompanies,
+      @JsonKey(name: 'credits') CreditModel credit,
+      @JsonKey(name: 'images') MovieImageResponseModel images,
+      @JsonKey(name: 'recommendations') MoviesResponseModel recommendations,
+      @JsonKey(name: 'similar') MoviesResponseModel similar,
+      @JsonKey(name: 'videos') VideoResponseModel video});
 
   @override
   $CollectionModelCopyWith<$Res> get collection;
@@ -403,12 +357,13 @@ abstract class _$$_MovieDetailResponseModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MovieDetailResponseModelCopyWithImpl<$Res>
+class __$$MovieDetailResponseModelImplCopyWithImpl<$Res>
     extends _$MovieDetailResponseModelCopyWithImpl<$Res,
-        _$_MovieDetailResponseModel>
-    implements _$$_MovieDetailResponseModelCopyWith<$Res> {
-  __$$_MovieDetailResponseModelCopyWithImpl(_$_MovieDetailResponseModel _value,
-      $Res Function(_$_MovieDetailResponseModel) _then)
+        _$MovieDetailResponseModelImpl>
+    implements _$$MovieDetailResponseModelImplCopyWith<$Res> {
+  __$$MovieDetailResponseModelImplCopyWithImpl(
+      _$MovieDetailResponseModelImpl _value,
+      $Res Function(_$MovieDetailResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -439,7 +394,7 @@ class __$$_MovieDetailResponseModelCopyWithImpl<$Res>
     Object? similar = null,
     Object? video = null,
   }) {
-    return _then(_$_MovieDetailResponseModel(
+    return _then(_$MovieDetailResponseModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -542,61 +497,41 @@ class __$$_MovieDetailResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MovieDetailResponseModel implements _MovieDetailResponseModel {
-  const _$_MovieDetailResponseModel(
-      {@JsonKey(name: 'id')
-          this.id = -1,
-      @JsonKey(name: 'imdb_id')
-          this.imdbId = '',
-      @JsonKey(name: 'original_title')
-          this.originalTitle = '',
-      @JsonKey(name: 'original_language')
-          this.originalLanguage = '',
-      @JsonKey(name: 'title')
-          this.title = '',
-      @JsonKey(name: 'tagline')
-          this.tagline = '',
-      @JsonKey(name: 'homepage')
-          this.homepage = '',
-      @JsonKey(name: 'overview')
-          this.overview = '',
+class _$MovieDetailResponseModelImpl implements _MovieDetailResponseModel {
+  const _$MovieDetailResponseModelImpl(
+      {@JsonKey(name: 'id') this.id = -1,
+      @JsonKey(name: 'imdb_id') this.imdbId = '',
+      @JsonKey(name: 'original_title') this.originalTitle = '',
+      @JsonKey(name: 'original_language') this.originalLanguage = '',
+      @JsonKey(name: 'title') this.title = '',
+      @JsonKey(name: 'tagline') this.tagline = '',
+      @JsonKey(name: 'homepage') this.homepage = '',
+      @JsonKey(name: 'overview') this.overview = '',
       @JsonKey(name: 'genres')
-          final List<GenreModel> genres = const <GenreModel>[],
-      @JsonKey(name: 'backdrop_path')
-          this.backdropPath = '',
-      @JsonKey(name: 'poster_path')
-          this.posterPath = '',
-      @JsonKey(name: 'budget')
-          this.budget = 0,
-      @JsonKey(name: 'revenue')
-          this.revenue = 0,
-      @JsonKey(name: 'release_date')
-          this.releaseDate = '',
-      @JsonKey(name: 'status')
-          this.status = '',
-      @JsonKey(name: 'runtime')
-          this.runtime = 0,
-      @JsonKey(name: 'vote_average')
-          this.voteAverage = 0,
+      final List<GenreModel> genres = const <GenreModel>[],
+      @JsonKey(name: 'backdrop_path') this.backdropPath = '',
+      @JsonKey(name: 'poster_path') this.posterPath = '',
+      @JsonKey(name: 'budget') this.budget = 0,
+      @JsonKey(name: 'revenue') this.revenue = 0,
+      @JsonKey(name: 'release_date') this.releaseDate = '',
+      @JsonKey(name: 'status') this.status = '',
+      @JsonKey(name: 'runtime') this.runtime = 0,
+      @JsonKey(name: 'vote_average') this.voteAverage = 0,
       @JsonKey(name: 'belongs_to_collection')
-          this.collection = const CollectionModel(),
+      this.collection = const CollectionModel(),
       @JsonKey(name: 'production_companies')
-          final List<CompanyModel> productionCompanies = const <CompanyModel>[],
-      @JsonKey(name: 'credits')
-          this.credit = const CreditModel(),
-      @JsonKey(name: 'images')
-          this.images = const MovieImageResponseModel(),
+      final List<CompanyModel> productionCompanies = const <CompanyModel>[],
+      @JsonKey(name: 'credits') this.credit = const CreditModel(),
+      @JsonKey(name: 'images') this.images = const MovieImageResponseModel(),
       @JsonKey(name: 'recommendations')
-          this.recommendations = const MoviesResponseModel(),
-      @JsonKey(name: 'similar')
-          this.similar = const MoviesResponseModel(),
-      @JsonKey(name: 'videos')
-          this.video = const VideoResponseModel()})
+      this.recommendations = const MoviesResponseModel(),
+      @JsonKey(name: 'similar') this.similar = const MoviesResponseModel(),
+      @JsonKey(name: 'videos') this.video = const VideoResponseModel()})
       : _genres = genres,
         _productionCompanies = productionCompanies;
 
-  factory _$_MovieDetailResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MovieDetailResponseModelFromJson(json);
+  factory _$MovieDetailResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieDetailResponseModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -690,10 +625,10 @@ class _$_MovieDetailResponseModel implements _MovieDetailResponseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MovieDetailResponseModel &&
+            other is _$MovieDetailResponseModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.imdbId, imdbId) || other.imdbId == imdbId) &&
             (identical(other.originalTitle, originalTitle) ||
@@ -764,13 +699,13 @@ class _$_MovieDetailResponseModel implements _MovieDetailResponseModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieDetailResponseModelCopyWith<_$_MovieDetailResponseModel>
-      get copyWith => __$$_MovieDetailResponseModelCopyWithImpl<
-          _$_MovieDetailResponseModel>(this, _$identity);
+  _$$MovieDetailResponseModelImplCopyWith<_$MovieDetailResponseModelImpl>
+      get copyWith => __$$MovieDetailResponseModelImplCopyWithImpl<
+          _$MovieDetailResponseModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieDetailResponseModelToJson(
+    return _$$MovieDetailResponseModelImplToJson(
       this,
     );
   }
@@ -778,57 +713,36 @@ class _$_MovieDetailResponseModel implements _MovieDetailResponseModel {
 
 abstract class _MovieDetailResponseModel implements MovieDetailResponseModel {
   const factory _MovieDetailResponseModel(
-      {@JsonKey(name: 'id')
-          final int id,
-      @JsonKey(name: 'imdb_id')
-          final String imdbId,
-      @JsonKey(name: 'original_title')
-          final String originalTitle,
-      @JsonKey(name: 'original_language')
-          final String originalLanguage,
-      @JsonKey(name: 'title')
-          final String title,
-      @JsonKey(name: 'tagline')
-          final String tagline,
-      @JsonKey(name: 'homepage')
-          final String homepage,
-      @JsonKey(name: 'overview')
-          final String overview,
-      @JsonKey(name: 'genres')
-          final List<GenreModel> genres,
-      @JsonKey(name: 'backdrop_path')
-          final String backdropPath,
-      @JsonKey(name: 'poster_path')
-          final String posterPath,
-      @JsonKey(name: 'budget')
-          final double budget,
-      @JsonKey(name: 'revenue')
-          final double revenue,
-      @JsonKey(name: 'release_date')
-          final String releaseDate,
-      @JsonKey(name: 'status')
-          final String status,
-      @JsonKey(name: 'runtime')
-          final int runtime,
-      @JsonKey(name: 'vote_average')
-          final double voteAverage,
-      @JsonKey(name: 'belongs_to_collection')
-          final CollectionModel collection,
+      {@JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'imdb_id') final String imdbId,
+      @JsonKey(name: 'original_title') final String originalTitle,
+      @JsonKey(name: 'original_language') final String originalLanguage,
+      @JsonKey(name: 'title') final String title,
+      @JsonKey(name: 'tagline') final String tagline,
+      @JsonKey(name: 'homepage') final String homepage,
+      @JsonKey(name: 'overview') final String overview,
+      @JsonKey(name: 'genres') final List<GenreModel> genres,
+      @JsonKey(name: 'backdrop_path') final String backdropPath,
+      @JsonKey(name: 'poster_path') final String posterPath,
+      @JsonKey(name: 'budget') final double budget,
+      @JsonKey(name: 'revenue') final double revenue,
+      @JsonKey(name: 'release_date') final String releaseDate,
+      @JsonKey(name: 'status') final String status,
+      @JsonKey(name: 'runtime') final int runtime,
+      @JsonKey(name: 'vote_average') final double voteAverage,
+      @JsonKey(name: 'belongs_to_collection') final CollectionModel collection,
       @JsonKey(name: 'production_companies')
-          final List<CompanyModel> productionCompanies,
-      @JsonKey(name: 'credits')
-          final CreditModel credit,
-      @JsonKey(name: 'images')
-          final MovieImageResponseModel images,
+      final List<CompanyModel> productionCompanies,
+      @JsonKey(name: 'credits') final CreditModel credit,
+      @JsonKey(name: 'images') final MovieImageResponseModel images,
       @JsonKey(name: 'recommendations')
-          final MoviesResponseModel recommendations,
-      @JsonKey(name: 'similar')
-          final MoviesResponseModel similar,
+      final MoviesResponseModel recommendations,
+      @JsonKey(name: 'similar') final MoviesResponseModel similar,
       @JsonKey(name: 'videos')
-          final VideoResponseModel video}) = _$_MovieDetailResponseModel;
+      final VideoResponseModel video}) = _$MovieDetailResponseModelImpl;
 
   factory _MovieDetailResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_MovieDetailResponseModel.fromJson;
+      _$MovieDetailResponseModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -904,6 +818,6 @@ abstract class _MovieDetailResponseModel implements MovieDetailResponseModel {
   VideoResponseModel get video;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieDetailResponseModelCopyWith<_$_MovieDetailResponseModel>
+  _$$MovieDetailResponseModelImplCopyWith<_$MovieDetailResponseModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

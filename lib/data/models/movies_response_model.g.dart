@@ -6,9 +6,9 @@ part of 'movies_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MoviesResponseModel _$$_MoviesResponseModelFromJson(
+_$MoviesResponseModelImpl _$$MoviesResponseModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MoviesResponseModel(
+    _$MoviesResponseModelImpl(
       page: json['page'] as int? ?? 0,
       totalPage: json['total_pages'] as int? ?? 0,
       movies: (json['results'] as List<dynamic>?)
@@ -17,8 +17,8 @@ _$_MoviesResponseModel _$$_MoviesResponseModelFromJson(
           const <MovieModel>[],
     );
 
-Map<String, dynamic> _$$_MoviesResponseModelToJson(
-        _$_MoviesResponseModel instance) =>
+Map<String, dynamic> _$$MoviesResponseModelImplToJson(
+        _$MoviesResponseModelImpl instance) =>
     <String, dynamic>{
       'page': instance.page,
       'total_pages': instance.totalPage,

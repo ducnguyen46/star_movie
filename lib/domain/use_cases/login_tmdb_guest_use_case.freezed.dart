@@ -12,7 +12,7 @@ part of 'login_tmdb_guest_use_case.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginTMDBGuestParams {}
@@ -37,25 +37,25 @@ class _$LoginTMDBGuestParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_LoginTMDBGuestParamsCopyWith<$Res> {
-  factory _$$_LoginTMDBGuestParamsCopyWith(_$_LoginTMDBGuestParams value,
-          $Res Function(_$_LoginTMDBGuestParams) then) =
-      __$$_LoginTMDBGuestParamsCopyWithImpl<$Res>;
+abstract class _$$LoginTMDBGuestParamsImplCopyWith<$Res> {
+  factory _$$LoginTMDBGuestParamsImplCopyWith(_$LoginTMDBGuestParamsImpl value,
+          $Res Function(_$LoginTMDBGuestParamsImpl) then) =
+      __$$LoginTMDBGuestParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoginTMDBGuestParamsCopyWithImpl<$Res>
-    extends _$LoginTMDBGuestParamsCopyWithImpl<$Res, _$_LoginTMDBGuestParams>
-    implements _$$_LoginTMDBGuestParamsCopyWith<$Res> {
-  __$$_LoginTMDBGuestParamsCopyWithImpl(_$_LoginTMDBGuestParams _value,
-      $Res Function(_$_LoginTMDBGuestParams) _then)
+class __$$LoginTMDBGuestParamsImplCopyWithImpl<$Res>
+    extends _$LoginTMDBGuestParamsCopyWithImpl<$Res, _$LoginTMDBGuestParamsImpl>
+    implements _$$LoginTMDBGuestParamsImplCopyWith<$Res> {
+  __$$LoginTMDBGuestParamsImplCopyWithImpl(_$LoginTMDBGuestParamsImpl _value,
+      $Res Function(_$LoginTMDBGuestParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoginTMDBGuestParams implements _LoginTMDBGuestParams {
-  const _$_LoginTMDBGuestParams();
+class _$LoginTMDBGuestParamsImpl implements _LoginTMDBGuestParams {
+  const _$LoginTMDBGuestParamsImpl();
 
   @override
   String toString() {
@@ -63,9 +63,10 @@ class _$_LoginTMDBGuestParams implements _LoginTMDBGuestParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoginTMDBGuestParams);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginTMDBGuestParamsImpl);
   }
 
   @override
@@ -73,5 +74,5 @@ class _$_LoginTMDBGuestParams implements _LoginTMDBGuestParams {
 }
 
 abstract class _LoginTMDBGuestParams implements LoginTMDBGuestParams {
-  const factory _LoginTMDBGuestParams() = _$_LoginTMDBGuestParams;
+  const factory _LoginTMDBGuestParams() = _$LoginTMDBGuestParamsImpl;
 }

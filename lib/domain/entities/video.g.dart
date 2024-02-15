@@ -6,14 +6,15 @@ part of 'video.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Video _$$_VideoFromJson(Map<String, dynamic> json) => _$_Video(
+_$VideoImpl _$$VideoImplFromJson(Map<String, dynamic> json) => _$VideoImpl(
       title: json['title'] as String,
       key: json['key'] as String,
       site: $enumDecode(_$VideoSiteEnumMap, json['site']),
       isOfficialVid: json['isOfficialVid'] as bool,
     );
 
-Map<String, dynamic> _$$_VideoToJson(_$_Video instance) => <String, dynamic>{
+Map<String, dynamic> _$$VideoImplToJson(_$VideoImpl instance) =>
+    <String, dynamic>{
       'title': instance.title,
       'key': instance.key,
       'site': _$VideoSiteEnumMap[instance.site]!,
