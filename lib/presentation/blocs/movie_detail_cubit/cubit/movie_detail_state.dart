@@ -10,6 +10,7 @@ part of 'movie_detail_cubit.dart';
 // addedFav
 
 enum MovieDetailStatus {
+  init,
   loading,
   loaded,
   error,
@@ -22,7 +23,7 @@ enum MovieDetailStatus {
 @freezed
 class MovieDetailState with _$MovieDetailState {
   const factory MovieDetailState.initial({
-    @Default(MovieDetailStatus.loading) MovieDetailStatus status,
+    @Default(MovieDetailStatus.init) MovieDetailStatus status,
     MovieDetail? movieDetail,
     ErrorStateCommon? errorState,
 

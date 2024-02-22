@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:star_movie/domain/entities/entities.dart';
 import 'package:star_movie/domain/use_cases/get_language_tmdb_use_case.dart';

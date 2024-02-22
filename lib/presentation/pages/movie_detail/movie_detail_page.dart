@@ -15,16 +15,37 @@ import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/navigator/route_path/route_path.dart';
 import 'package:star_movie/share/resources/resources.dart';
+import 'package:star_movie/share/utils/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/movie_detail_image_content.dart';
 import 'widgets/movie_detail_info_card.dart';
 
 @RoutePage()
+class MovieDetailRouterScreen extends AutoRouter implements AutoRouteWrapper {
+  const MovieDetailRouterScreen({
+    super.key,
+    @PathParam('movie_id') required this.movieId,
+  });
+
+  final int movieId;
+
+  @override
+  Widget wrappedRoute(Object context) {
+    return BlocProvider(
+      create: (context) => MovieDetailCubit(
+        movieDetailUseCase: getIt<GetMovieDetailUseCase>(),
+      )..getDetailMovie(movieId),
+      child: this,
+    );
+  }
+}
+
+@RoutePage()
 class MovieDetailPage extends StatelessWidget {
   const MovieDetailPage({
     super.key,
-    @PathParam('movie_id') required this.movieId,
+    @PathParam.inherit('movie_id') required this.movieId,
   });
 
   final int movieId;
@@ -34,10 +55,8 @@ class MovieDetailPage extends StatelessWidget {
     final screenSize = MediaQuery.sizeOf(context);
     final backdropHeight = screenSize.height / 3 * 4 / 5;
     final paddingTop = MediaQuery.viewPaddingOf(context).top;
-    return BlocProvider(
-      create: (context) => MovieDetailCubit(
-        movieDetailUseCase: getIt<GetMovieDetailUseCase>(),
-      )..getDetailMovie(movieId),
+    return BlocProvider.value(
+      value: context.read<MovieDetailCubit>(),
       child: MovieDetailView(
         movieId: movieId,
         screenSize: screenSize,
@@ -302,8 +321,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 ReadMoreText(
                                   movieDetail.overview,
                                   trimLines: 6,
-                                  trimCollapsedText: ' read more',
-                                  trimExpandedText: ' show less',
+                                  trimCollapsedText: ' read more'.hardCode,
+                                  trimExpandedText: ' show less'.hardCode,
                                   trimMode: TrimMode.Line,
                                   style: AppTextStyle.s14Regular,
                                   colorClickableText:
@@ -330,8 +349,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         children: [
                           Column(
                             children: [
-                              const Text(
-                                'My rating',
+                              Text(
+                                'My rating'.hardCode,
                                 style: AppTextStyle.s12Regular,
                               ),
                               Text(
@@ -352,8 +371,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                           ),
                           Column(
                             children: [
-                              const Text(
-                                'TMDB',
+                              Text(
+                                'TMDB'.hardCode,
                                 style: AppTextStyle.s12Regular,
                               ),
                               Text(
@@ -376,7 +395,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const MovieDetailTitleContent(title: 'Genres'),
+                        MovieDetailTitleContent(title: 'Genres'.hardCode),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                             horizontal: Dimens.d16,
@@ -413,8 +432,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const MovieDetailTitleContent(
-                            title: 'Videos',
+                          MovieDetailTitleContent(
+                            title: 'Videos'.hardCode,
                           ),
                           SizedBox(
                             height: Dimens.d140,
@@ -459,8 +478,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const MovieDetailTitleContent(
-                              title: 'Collections',
+                            MovieDetailTitleContent(
+                              title: 'Collections'.hardCode,
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(
@@ -526,7 +545,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         Dimens.d8,
                       ),
                       child: LargeTitleViewAll(
-                        largeTitle: 'Cast',
+                        largeTitle: 'Cast'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
                         onPressed: () {},
                       ),
@@ -565,7 +584,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         Dimens.d8,
                       ),
                       child: LargeTitleViewAll(
-                        largeTitle: 'Crew',
+                        largeTitle: 'Crew'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
                         onPressed: () {},
                       ),
@@ -599,8 +618,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const MovieDetailTitleContent(
-                          title: 'Informations',
+                        MovieDetailTitleContent(
+                          title: 'Informations'.hardCode,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(bottom: Dimens.d8),
@@ -612,7 +631,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 child: SizedBox(
                                   width: screenSize.width / 2,
                                   child: MovieDetailInfoCard(
-                                    title: 'Budget',
+                                    title: 'Budget'.hardCode,
                                     info: movieDetail.budget,
                                   ),
                                 ),
@@ -622,7 +641,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 child: SizedBox(
                                   width: screenSize.width / 2,
                                   child: MovieDetailInfoCard(
-                                    title: 'Revenue',
+                                    title: 'Revenue'.hardCode,
                                     info: movieDetail.revenue,
                                   ),
                                 ),
@@ -632,7 +651,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 child: SizedBox(
                                   width: screenSize.width / 2,
                                   child: MovieDetailInfoCard(
-                                    title: 'Original title',
+                                    title: 'Original title'.hardCode,
                                     info: movieDetail.originalTitle,
                                   ),
                                 ),
@@ -643,7 +662,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 child: SizedBox(
                                   width: screenSize.width / 2,
                                   child: MovieDetailInfoCard(
-                                    title: 'Original language',
+                                    title: 'Original language'.hardCode,
                                     info: movieDetail.originalLanguage,
                                   ),
                                 ),
@@ -654,7 +673,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         Visibility(
                           visible: movieDetail.homepage.isNotEmpty,
                           child: MovieDetailInfoCard(
-                            title: 'Home page',
+                            title: 'Home page'.hardCode,
                             info: movieDetail.homepage,
                             infoStyle: AppTextStyle.s14Regular.copyWith(
                               decoration: TextDecoration.underline,
@@ -688,15 +707,28 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const MovieDetailTitleContent(
-                            title: 'Images',
+                          MovieDetailTitleContent(
+                            title: 'Images'.hardCode,
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: Dimens.d16,
                             ),
                             child: MovieDetailImageContent(
-                                movieDetail: movieDetail),
+                              movieDetail: movieDetail,
+                              onTapBackdrops: () {
+                                if (movieDetail.backdropImages.isNotEmpty) {
+                                  context.router.pushNamed(
+                                      '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.photoViewer}?type=${AppConstants.backdrops}');
+                                }
+                              },
+                              onTapPosters: () {
+                                if (movieDetail.posterImages.isNotEmpty) {
+                                  context.router.pushNamed(
+                                      '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.photoViewer}?type=${AppConstants.posters}');
+                                }
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -725,8 +757,8 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const MovieDetailTitleContent(
-                                title: 'You\'ll Also Like'),
+                            MovieDetailTitleContent(
+                                title: 'You\'ll Also Like'.hardCode),
                             HorizontalMoviesList(
                               movies: movieDetail.recommendations,
                               onPressed: (movieId) {

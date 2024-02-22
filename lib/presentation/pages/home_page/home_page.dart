@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:star_movie/share/navigator/app_router.dart';
+import 'package:star_movie/share/utils/utils.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +29,10 @@ class HomePage extends StatelessWidget {
                 tabsRouter.setActiveIndex(index);
               },
               items: [
-                const BottomNavigationBarItem(label: 'Movies', icon: Icon(Icons.movie)),
-                const BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.person)),
+                BottomNavigationBarItem(
+                    label: 'Movies'.hardCode, icon: Icon(Icons.movie)),
+                BottomNavigationBarItem(
+                    label: 'Profile'.hardCode, icon: Icon(Icons.person)),
               ],
             ));
       },

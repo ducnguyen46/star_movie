@@ -43,20 +43,51 @@ abstract class _$AppRouter extends RootStackRouter {
     MovieDetailRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<MovieDetailRouteArgs>(
-          orElse: () =>
-              MovieDetailRouteArgs(movieId: pathParams.getInt('movie_id')));
+          orElse: () => MovieDetailRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: MovieDetailPage(
           key: args.key,
-          movieId: args.movieId,
+          movieId: pathParams.getInt('movie_id'),
         ),
+      );
+    },
+    MovieDetailRouterRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<MovieDetailRouterRouteArgs>(
+          orElse: () => MovieDetailRouterRouteArgs(
+              movieId: pathParams.getInt('movie_id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: MovieDetailRouterScreen(
+          key: args.key,
+          movieId: args.movieId,
+        )),
       );
     },
     MovieRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const MoviePage(),
+      );
+    },
+    PhotoViewerRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final queryParams = routeData.queryParams;
+      final args = routeData.argsAs<PhotoViewerRouteArgs>(
+          orElse: () => PhotoViewerRouteArgs(
+                  imageType: queryParams.getString(
+                'type',
+                '',
+              )));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PhotoViewerPage(
+          key: args.key,
+          movieId: pathParams.getString('movie_id'),
+          imageType: args.imageType,
+        ),
       );
     },
     ProfileRoute.name: (routeData) {
@@ -172,15 +203,10 @@ class LogInRoute extends PageRouteInfo<void> {
 class MovieDetailRoute extends PageRouteInfo<MovieDetailRouteArgs> {
   MovieDetailRoute({
     Key? key,
-    required int movieId,
     List<PageRouteInfo>? children,
   }) : super(
           MovieDetailRoute.name,
-          args: MovieDetailRouteArgs(
-            key: key,
-            movieId: movieId,
-          ),
-          rawPathParams: {'movie_id': movieId},
+          args: MovieDetailRouteArgs(key: key),
           initialChildren: children,
         );
 
@@ -191,7 +217,41 @@ class MovieDetailRoute extends PageRouteInfo<MovieDetailRouteArgs> {
 }
 
 class MovieDetailRouteArgs {
-  const MovieDetailRouteArgs({
+  const MovieDetailRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'MovieDetailRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [MovieDetailRouterScreen]
+class MovieDetailRouterRoute extends PageRouteInfo<MovieDetailRouterRouteArgs> {
+  MovieDetailRouterRoute({
+    Key? key,
+    required int movieId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          MovieDetailRouterRoute.name,
+          args: MovieDetailRouterRouteArgs(
+            key: key,
+            movieId: movieId,
+          ),
+          rawPathParams: {'movie_id': movieId},
+          initialChildren: children,
+        );
+
+  static const String name = 'MovieDetailRouterRoute';
+
+  static const PageInfo<MovieDetailRouterRouteArgs> page =
+      PageInfo<MovieDetailRouterRouteArgs>(name);
+}
+
+class MovieDetailRouterRouteArgs {
+  const MovieDetailRouterRouteArgs({
     this.key,
     required this.movieId,
   });
@@ -202,7 +262,7 @@ class MovieDetailRouteArgs {
 
   @override
   String toString() {
-    return 'MovieDetailRouteArgs{key: $key, movieId: $movieId}';
+    return 'MovieDetailRouterRouteArgs{key: $key, movieId: $movieId}';
   }
 }
 
@@ -218,6 +278,45 @@ class MovieRoute extends PageRouteInfo<void> {
   static const String name = 'MovieRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PhotoViewerPage]
+class PhotoViewerRoute extends PageRouteInfo<PhotoViewerRouteArgs> {
+  PhotoViewerRoute({
+    Key? key,
+    String imageType = '',
+    List<PageRouteInfo>? children,
+  }) : super(
+          PhotoViewerRoute.name,
+          args: PhotoViewerRouteArgs(
+            key: key,
+            imageType: imageType,
+          ),
+          rawQueryParams: {'type': imageType},
+          initialChildren: children,
+        );
+
+  static const String name = 'PhotoViewerRoute';
+
+  static const PageInfo<PhotoViewerRouteArgs> page =
+      PageInfo<PhotoViewerRouteArgs>(name);
+}
+
+class PhotoViewerRouteArgs {
+  const PhotoViewerRouteArgs({
+    this.key,
+    this.imageType = '',
+  });
+
+  final Key? key;
+
+  final String imageType;
+
+  @override
+  String toString() {
+    return 'PhotoViewerRouteArgs{key: $key, imageType: $imageType}';
+  }
 }
 
 /// generated route for

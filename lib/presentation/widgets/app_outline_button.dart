@@ -3,7 +3,7 @@ import 'package:star_movie/share/resources/resources.dart';
 
 class AppOutlineButton extends StatelessWidget {
   AppOutlineButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.title,
     this.foregroundColor,
@@ -20,10 +20,10 @@ class AppOutlineButton extends StatelessWidget {
     this.disabledSideColor,
     this.shape,
     this.tapTargetSize,
-  }) : super(key: key);
+  });
 
   AppOutlineButton.icon({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.icon,
     this.title,
@@ -41,7 +41,7 @@ class AppOutlineButton extends StatelessWidget {
     this.disabledSideColor,
     this.shape,
     this.tapTargetSize,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   String? title;

@@ -21,12 +21,14 @@ class LoaderUtil {
   static OverlayEntry _createLoadingOverlay(BuildContext context) {
     return OverlayEntry(
       builder: (context) {
-        return WillPopScope(
-          onWillPop: () => Future.value(false),
+        return PopScope(
+          canPop: false,
           child: ColoredBox(
             color: const Color(0x80000000),
             child: Center(
-              child: Platform.isAndroid ? const CircularProgressIndicator() : const CupertinoActivityIndicator(),
+              child: Platform.isAndroid
+                  ? const CircularProgressIndicator()
+                  : const CupertinoActivityIndicator(),
             ),
           ),
         );

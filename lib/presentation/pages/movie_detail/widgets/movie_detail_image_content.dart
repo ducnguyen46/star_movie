@@ -4,6 +4,7 @@ import 'package:star_movie/domain/entities/entities.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/resources/resources.dart';
+import 'package:star_movie/share/utils/utils.dart';
 
 class MovieDetailImageContent extends StatelessWidget {
   const MovieDetailImageContent({
@@ -60,7 +61,7 @@ class MovieDetailImageContent extends StatelessWidget {
                       horizontal: Dimens.d20,
                     ),
                     child: Text(
-                      '${movieDetail.backdropImages.length} backdrops',
+                      '${movieDetail.backdropImages.length} backdrops'.hardCode,
                       style: AppTextStyle.s14SemiBold.copyWith(
                         color: AppColors.white,
                       ),
@@ -108,7 +109,7 @@ class MovieDetailImageContent extends StatelessWidget {
                       horizontal: Dimens.d20,
                     ),
                     child: Text(
-                      '${movieDetail.posterImages.length} posters',
+                      '${movieDetail.posterImages.length} posters'.hardCode,
                       style: AppTextStyle.s14SemiBold.copyWith(
                         color: AppColors.white,
                       ),

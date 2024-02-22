@@ -45,12 +45,25 @@ class AppRouter extends _$AppRouter {
           path: RoutePath.listHomeMoviesPage,
         ),
         AutoRoute(
-          page: MovieDetailRoute.page,
+          page: MovieDetailRouterRoute.page,
           path: '${RoutePath.movieDetail}/:movie_id',
+          // /movie-detail/:movie_id
+          children: [
+            AutoRoute(
+              initial: true,
+              page: MovieDetailRoute.page,
+              path: '',
+            ),
+            AutoRoute(
+              page: PhotoViewerRoute.page,
+              path: RoutePath.photoViewer.isSubPage,
+              // photo-viewer
+            ),
+          ],
         ),
         AutoRoute(
           page: VideoPlayerRoute.page,
           path: '${RoutePath.videoPlayer}/:video_key',
-        )
+        ),
       ];
 }

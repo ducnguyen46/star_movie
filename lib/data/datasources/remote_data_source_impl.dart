@@ -247,8 +247,8 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       for (CrewModel crew in movieDetail.credit.crews) {
         int indexOfCrew = editedCrew.indexWhere((e) => e.id == crew.id);
         if (indexOfCrew >= 0) {
-          var newCrew = editedCrew[indexOfCrew].copyWith(
-              job: '${editedCrew[indexOfCrew].job}, ${crew.job}');
+          var newCrew = editedCrew[indexOfCrew]
+              .copyWith(job: '${editedCrew[indexOfCrew].job}, ${crew.job}');
           editedCrew.removeAt(indexOfCrew);
           editedCrew.insert(indexOfCrew, newCrew);
         } else {
@@ -279,6 +279,25 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         return null;
       }
       return LanguagesModel.fromList(response.data);
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<MovieImageResponseModel?> getMovieImages({
+    required String movieId,
+  }) async {
+    try {
+      final response = await apiClient.request(
+        method: RequestMethod.get,
+        path: '/movie/$movieId/images',
+      );
+
+      if(response.data == null) {
+        return null;
+      }
+      return MovieImageResponseModel.fromJson(response.data);
     } catch (_) {
       rethrow;
     }

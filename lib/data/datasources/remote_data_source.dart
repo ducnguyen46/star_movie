@@ -4,9 +4,11 @@ abstract class RemoteDataSource {
   Future<LanguagesModel?> getLanguages();
 
   Future<RequestTokenModel?> createRequestToken();
+
   Future<SessionResponseModel?> createAuthenticatedUserSession({
     required String requestToken,
   });
+
   Future<GuestSessionResponseModel?> createGuestUserSession();
 
   Future<List<GenreModel>> getMovieGenres({
@@ -46,6 +48,10 @@ abstract class RemoteDataSource {
   });
 
   Future<MovieDetailResponseModel?> getMovieDetail({
+    required String movieId,
+  });
+
+  Future<MovieImageResponseModel?> getMovieImages({
     required String movieId,
   });
 }

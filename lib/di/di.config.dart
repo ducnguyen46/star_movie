@@ -27,14 +27,15 @@ import '../domain/use_cases/get_authenticated_user_data_use_case.dart' as _i40;
 import '../domain/use_cases/get_language_tmdb_use_case.dart' as _i41;
 import '../domain/use_cases/get_movie_detail_use_case.dart' as _i42;
 import '../domain/use_cases/get_movie_genres_use_case.dart' as _i43;
-import '../domain/use_cases/get_now_playing_movies_use_case.dart' as _i44;
-import '../domain/use_cases/get_popular_movies_use_case.dart' as _i45;
-import '../domain/use_cases/get_top_rate_movies_use_case.dart' as _i46;
-import '../domain/use_cases/get_trending_movies_use_case.dart' as _i47;
-import '../domain/use_cases/get_upcoming_movies_use_case.dart' as _i48;
-import '../domain/use_cases/login_tmdb_authenticated_use_case.dart' as _i51;
-import '../domain/use_cases/login_tmdb_guest_use_case.dart' as _i52;
-import '../domain/use_cases/use_cases.dart' as _i50;
+import '../domain/use_cases/get_movie_images_use_case.dart' as _i44;
+import '../domain/use_cases/get_now_playing_movies_use_case.dart' as _i45;
+import '../domain/use_cases/get_popular_movies_use_case.dart' as _i46;
+import '../domain/use_cases/get_top_rate_movies_use_case.dart' as _i47;
+import '../domain/use_cases/get_trending_movies_use_case.dart' as _i48;
+import '../domain/use_cases/get_upcoming_movies_use_case.dart' as _i49;
+import '../domain/use_cases/login_tmdb_authenticated_use_case.dart' as _i52;
+import '../domain/use_cases/login_tmdb_guest_use_case.dart' as _i53;
+import '../domain/use_cases/use_cases.dart' as _i51;
 import '../share/local_storage/local_storage_service.dart' as _i23;
 import '../share/mappers/app_setting_mapper.dart' as _i3;
 import '../share/mappers/authenticated_user_mapper.dart' as _i5;
@@ -53,7 +54,7 @@ import '../share/mappers/movie_mapper.dart' as _i26;
 import '../share/mappers/region_mapper.dart' as _i18;
 import '../share/mappers/video_mapper.dart' as _i20;
 import '../share/navigator/route_guards/authenticated_guard.dart' as _i4;
-import '../share/navigator/route_guards/logged_in_guard.dart' as _i49;
+import '../share/navigator/route_guards/logged_in_guard.dart' as _i50;
 import '../share/remote_api_client/api_client/api_client.dart' as _i29;
 import '../share/remote_api_client/api_client/app_rest_api_client.dart' as _i30;
 import '../share/remote_api_client/api_client/refresh_session_client.dart'
@@ -65,7 +66,7 @@ import '../share/remote_api_client/interceptors/header_authentication_intercepto
 import '../share/remote_api_client/interceptors/interceptors.dart' as _i17;
 import '../share/remote_api_client/interceptors/refresh_session_interceptor.dart'
     as _i28;
-import 'register_module.dart' as _i53;
+import 'register_module.dart' as _i54;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -150,6 +151,7 @@ extension GetItInjectableX on _i1.GetIt {
           genreMapper: gh<_i22.GenreMapper>(),
           movieDetailMapper: gh<_i22.MovieDetailMapper>(),
           languageMapper: gh<_i14.LanguageMapper>(),
+          movieImageMapper: gh<_i22.MovieImageMapper>(),
         ));
     gh.factory<_i35.ChangeAppLanguageUseCase>(
         () => _i35.ChangeAppLanguageUseCase(repository: gh<_i33.Repository>()));
@@ -170,24 +172,26 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i42.GetMovieDetailUseCase(repository: gh<_i33.Repository>()));
     gh.factory<_i43.GetMovieGenresUseCase>(
         () => _i43.GetMovieGenresUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i44.GetNowPlayingMoviesUseCase>(() =>
-        _i44.GetNowPlayingMoviesUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i45.GetPopularMoviesUseCase>(
-        () => _i45.GetPopularMoviesUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i46.GetTopRateMoviesUseCase>(
-        () => _i46.GetTopRateMoviesUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i47.GetTrendingMoviesUseCase>(
-        () => _i47.GetTrendingMoviesUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i48.GetUpcomingMoviesUseCase>(
-        () => _i48.GetUpcomingMoviesUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i49.LoggedInGuard>(() => _i49.LoggedInGuard(
-        checkIsLoggedInUseCase: gh<_i50.CheckIsLoggedInUseCase>()));
-    gh.factory<_i51.LoginTMDBAuthenticatedUseCase>(() =>
-        _i51.LoginTMDBAuthenticatedUseCase(repository: gh<_i33.Repository>()));
-    gh.factory<_i52.LoginTMDBGuestUseCase>(
-        () => _i52.LoginTMDBGuestUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i44.GetMovieImagesUseCase>(
+        () => _i44.GetMovieImagesUseCase(gh<_i33.Repository>()));
+    gh.factory<_i45.GetNowPlayingMoviesUseCase>(() =>
+        _i45.GetNowPlayingMoviesUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i46.GetPopularMoviesUseCase>(
+        () => _i46.GetPopularMoviesUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i47.GetTopRateMoviesUseCase>(
+        () => _i47.GetTopRateMoviesUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i48.GetTrendingMoviesUseCase>(
+        () => _i48.GetTrendingMoviesUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i49.GetUpcomingMoviesUseCase>(
+        () => _i49.GetUpcomingMoviesUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i50.LoggedInGuard>(() => _i50.LoggedInGuard(
+        checkIsLoggedInUseCase: gh<_i51.CheckIsLoggedInUseCase>()));
+    gh.factory<_i52.LoginTMDBAuthenticatedUseCase>(() =>
+        _i52.LoginTMDBAuthenticatedUseCase(repository: gh<_i33.Repository>()));
+    gh.factory<_i53.LoginTMDBGuestUseCase>(
+        () => _i53.LoginTMDBGuestUseCase(repository: gh<_i33.Repository>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i53.RegisterModule {}
+class _$RegisterModule extends _i54.RegisterModule {}

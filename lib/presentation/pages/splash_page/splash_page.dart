@@ -9,7 +9,7 @@ import 'package:star_movie/share/resources/resources.dart';
 
 @RoutePage()
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
