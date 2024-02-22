@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:star_movie/domain/entities/entities.dart';
-import 'package:star_movie/presentation/blocs/movie_detail_cubit/cubit/movie_detail_cubit.dart';
+import 'package:star_movie/presentation/blocs/movie_detail_cubit/movie_detail_cubit.dart';
 import 'package:star_movie/presentation/widgets/app_bar_common.dart';
 import 'package:star_movie/presentation/widgets/app_scaffold.dart';
 import 'package:star_movie/share/constants/constants.dart';
