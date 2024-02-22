@@ -7,8 +7,7 @@ import 'package:star_movie/share/utils/utils.dart';
 
 @RoutePage<bool?>()
 class UserApprovalPage extends StatefulWidget {
-  const UserApprovalPage({Key? key, @PathParam('token') required this.token})
-      : super(key: key);
+  const UserApprovalPage({super.key, @PathParam('token') required this.token});
   final String token;
 
   @override

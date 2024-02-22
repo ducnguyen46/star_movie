@@ -22,15 +22,30 @@ import 'widgets/movie_detail_image_content.dart';
 import 'widgets/movie_detail_info_card.dart';
 
 @RoutePage()
-class MovieDetailRouterScreen extends AutoRouter {
-  const MovieDetailRouterScreen({super.key});
+class MovieDetailRouterScreen extends AutoRouter implements AutoRouteWrapper {
+  const MovieDetailRouterScreen({
+    super.key,
+    @PathParam('movie_id') required this.movieId,
+  });
+
+  final int movieId;
+
+  @override
+  Widget wrappedRoute(Object context) {
+    return BlocProvider(
+      create: (context) => MovieDetailCubit(
+        movieDetailUseCase: getIt<GetMovieDetailUseCase>(),
+      )..getDetailMovie(movieId),
+      child: this,
+    );
+  }
 }
 
 @RoutePage()
 class MovieDetailPage extends StatelessWidget {
   const MovieDetailPage({
     super.key,
-    @PathParam('movie_id') required this.movieId,
+    @PathParam.inherit('movie_id') required this.movieId,
   });
 
   final int movieId;
@@ -40,10 +55,8 @@ class MovieDetailPage extends StatelessWidget {
     final screenSize = MediaQuery.sizeOf(context);
     final backdropHeight = screenSize.height / 3 * 4 / 5;
     final paddingTop = MediaQuery.viewPaddingOf(context).top;
-    return BlocProvider(
-      create: (context) => MovieDetailCubit(
-        movieDetailUseCase: getIt<GetMovieDetailUseCase>(),
-      )..getDetailMovie(movieId),
+    return BlocProvider.value(
+      value: context.read<MovieDetailCubit>(),
       child: MovieDetailView(
         movieId: movieId,
         screenSize: screenSize,
@@ -707,7 +720,6 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                 if (movieDetail.backdropImages.isNotEmpty) {
                                   context.router.pushNamed(
                                       '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.photoViewer}?type=${AppConstants.backdrops}');
-                                  // path: movie-detail/1234/photo-viewer
                                 }
                               },
                               onTapPosters: () {

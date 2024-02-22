@@ -209,7 +209,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {this.status = MovieDetailStatus.loading,
+      {this.status = MovieDetailStatus.init,
       this.movieDetail,
       this.errorState,
       this.showTitle = false});
