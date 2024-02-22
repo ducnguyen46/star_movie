@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
 import 'package:star_movie/share/constants/constants.dart';
@@ -23,7 +23,8 @@ class AppSettingCubit extends Cubit<AppSettingState> {
   final ChangeAppThemeUseCase _changeAppThemeUseCase;
 
   Future<void> loadingAppSetting() async {
-    final appSettingEither = await _getAppSettingUseCase.call(const GetAppSettingParams());
+    final appSettingEither =
+        await _getAppSettingUseCase.call(const GetAppSettingParams());
     return appSettingEither.fold(
       (exception) => emit(AppSettingState.error(
         messages: ExceptionMessagesMapper.map(exception),

@@ -3,7 +3,7 @@ import 'package:star_movie/share/resources/resources.dart';
 
 class AppTextButton extends StatelessWidget {
   const AppTextButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.title,
     this.foregroundColor,
@@ -21,10 +21,10 @@ class AppTextButton extends StatelessWidget {
     this.shape,
     this.tapTargetSize,
     this.icon,
-  }) : super(key: key);
+  });
 
   const AppTextButton.icon({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.icon,
     this.title,
@@ -42,7 +42,7 @@ class AppTextButton extends StatelessWidget {
     this.disabledSideColor,
     this.shape,
     this.tapTargetSize,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final String? title;

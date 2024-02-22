@@ -16,7 +16,7 @@ import 'widgets/carousel_movies_slider.dart';
 
 @RoutePage()
 class MoviePage extends StatelessWidget {
-  const MoviePage({Key? key}) : super(key: key);
+  const MoviePage({super.key});
 
   @override
   Widget build(BuildContext context) {

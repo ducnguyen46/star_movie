@@ -9,4 +9,8 @@ class AppConstants {
   //
   static const posterRatio = 2 / 3;
   static const backdropRatio = 16 / 9;
+
+  //
+  static const backdrops = 'backdrops';
+  static const posters = 'posters';
 }

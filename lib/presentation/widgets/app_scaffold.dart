@@ -3,7 +3,7 @@ import 'package:star_movie/share/utils/utils.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold({
-    Key? key,
+    super.key,
     this.appBar,
     this.body,
     this.floatingActionButton,
@@ -11,7 +11,7 @@ class AppScaffold extends StatelessWidget {
     this.bottomNavigationBar,
     this.backgroundColor,
     this.isHideKeyboardTouchOutside = true,
-  }) : super(key: key);
+  });
 
   final PreferredSizeWidget? appBar;
   final Widget? body;

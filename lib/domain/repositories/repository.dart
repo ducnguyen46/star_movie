@@ -93,4 +93,7 @@ abstract class Repository {
 
   /// get detail movie
   Future<Either<AppException, MovieDetail>> getMovieDetail(String movieId);
+
+  /// get movie images
+  Future<Either<AppException, List<MovieImage>>> getMovieImage(String movieId, String type);
 }

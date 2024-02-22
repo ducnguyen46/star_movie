@@ -22,6 +22,7 @@ class RepositoryImpl implements Repository {
     required GenreMapper genreMapper,
     required MovieDetailMapper movieDetailMapper,
     required LanguageMapper languageMapper,
+    required MovieImageMapper movieImageMapper,
   })  : _localDataSource = localDataSource,
         _remoteDataSource = remoteDataSource,
         _appSettingMapper = appSettingMapper,
@@ -30,7 +31,8 @@ class RepositoryImpl implements Repository {
         _movieMapper = movieMapper,
         _genreMapper = genreMapper,
         _languageMapper = languageMapper,
-        _movieDetailMapper = movieDetailMapper;
+        _movieDetailMapper = movieDetailMapper,
+        _movieImageMapper = movieImageMapper;
 
   final LocalDataSource _localDataSource;
   final RemoteDataSource _remoteDataSource;
@@ -43,6 +45,7 @@ class RepositoryImpl implements Repository {
   final GenreMapper _genreMapper;
   final MovieDetailMapper _movieDetailMapper;
   final LanguageMapper _languageMapper;
+  final MovieImageMapper _movieImageMapper;
 
   @override
   Future<Either<AppException, bool>> changeAppLanguage(
@@ -422,6 +425,29 @@ class RepositoryImpl implements Repository {
       }
 
       return Right(_movieDetailMapper.toEntity(movieDetailModel));
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, List<MovieImage>>> getMovieImage(
+    String movieId,
+    String type,
+  ) async {
+    try {
+      final movieImagesModel =
+          await _remoteDataSource.getMovieImages(movieId: movieId);
+      if (movieImagesModel == null) {
+        return const Left(RemoteException(RemoteExceptionType.unknown));
+      }
+
+      if (type.isNotEmpty && type == AppConstants.backdrops) {
+        return Right(
+            _movieImageMapper.toListEntity(movieImagesModel.backdrops));
+      } else {
+        return Right(_movieImageMapper.toListEntity(movieImagesModel.posters));
+      }
     } on RemoteException catch (e) {
       return Left(e);
     }

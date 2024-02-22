@@ -3,7 +3,7 @@ import 'package:star_movie/share/resources/resources.dart';
 
 class AppDialogWidget extends StatelessWidget {
   const AppDialogWidget({
-    Key? key,
+    super.key,
     this.icon,
     this.iconPadding,
     this.title,
@@ -15,9 +15,10 @@ class AppDialogWidget extends StatelessWidget {
     this.actions,
     this.backgroundColor,
     this.shape,
-    this.insetPadding = const EdgeInsets.symmetric(vertical: Dimens.d40, horizontal: Dimens.d24),
+    this.insetPadding = const EdgeInsets.symmetric(
+        vertical: Dimens.d40, horizontal: Dimens.d24),
     this.scrollable = false,
-  }) : super(key: key);
+  });
 
   final Widget? icon;
 
@@ -180,7 +181,8 @@ class AppDialogWidget extends StatelessWidget {
     );
 
     return Dialog(
-      backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.background,
+      backgroundColor:
+          backgroundColor ?? Theme.of(context).colorScheme.background,
       shape: shape ??
           const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(Dimens.d16)),

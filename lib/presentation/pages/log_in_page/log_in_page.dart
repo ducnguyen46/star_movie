@@ -13,7 +13,7 @@ import 'package:star_movie/share/utils/utils.dart';
 
 @RoutePage()
 class LogInPage extends StatelessWidget {
-  const LogInPage({Key? key}) : super(key: key);
+  const LogInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class LogInPage extends StatelessWidget {
             AppDialogUtil.showAppDialog(
               context,
               AppDialogInfo.errorRetryDialog(
-                title: 'Error',
+                title: 'Error'.hardCode,
                 messages: state.message,
                 onRetryAction: () {
                   context.router.pop();

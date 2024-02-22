@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -54,11 +53,12 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         CloseButton(
           color: AppColors.white,
           onPressed: () {
-            context.router.pop();
+            context.router.back();
           },
         ),
       ],
       bottomActions: [
+        const Gap(Dimens.d24),
         CurrentPosition(),
         const Gap(Dimens.d12),
         ProgressBar(
@@ -72,6 +72,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         ),
         const Gap(Dimens.d12),
         RemainingDuration(),
+        const Gap(Dimens.d24),
       ],
     );
   }

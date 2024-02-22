@@ -53,10 +53,31 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MovieDetailRouterRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MovieDetailRouterScreen(),
+      );
+    },
     MovieRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const MoviePage(),
+      );
+    },
+    PhotoViewerRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final queryParams = routeData.queryParams;
+      final args = routeData.argsAs<PhotoViewerRouteArgs>(
+          orElse: () =>
+              PhotoViewerRouteArgs(imageType: queryParams.optString('type')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PhotoViewerPage(
+          key: args.key,
+          movieId: pathParams.getString('movie_id'),
+          imageType: args.imageType,
+        ),
       );
     },
     ProfileRoute.name: (routeData) {
@@ -207,6 +228,20 @@ class MovieDetailRouteArgs {
 }
 
 /// generated route for
+/// [MovieDetailRouterScreen]
+class MovieDetailRouterRoute extends PageRouteInfo<void> {
+  const MovieDetailRouterRoute({List<PageRouteInfo>? children})
+      : super(
+          MovieDetailRouterRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MovieDetailRouterRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [MoviePage]
 class MovieRoute extends PageRouteInfo<void> {
   const MovieRoute({List<PageRouteInfo>? children})
@@ -218,6 +253,45 @@ class MovieRoute extends PageRouteInfo<void> {
   static const String name = 'MovieRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PhotoViewerPage]
+class PhotoViewerRoute extends PageRouteInfo<PhotoViewerRouteArgs> {
+  PhotoViewerRoute({
+    Key? key,
+    String? imageType,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PhotoViewerRoute.name,
+          args: PhotoViewerRouteArgs(
+            key: key,
+            imageType: imageType,
+          ),
+          rawQueryParams: {'type': imageType},
+          initialChildren: children,
+        );
+
+  static const String name = 'PhotoViewerRoute';
+
+  static const PageInfo<PhotoViewerRouteArgs> page =
+      PageInfo<PhotoViewerRouteArgs>(name);
+}
+
+class PhotoViewerRouteArgs {
+  const PhotoViewerRouteArgs({
+    this.key,
+    this.imageType,
+  });
+
+  final Key? key;
+
+  final String? imageType;
+
+  @override
+  String toString() {
+    return 'PhotoViewerRouteArgs{key: $key, imageType: $imageType}';
+  }
 }
 
 /// generated route for

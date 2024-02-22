@@ -4,7 +4,7 @@ import 'package:star_movie/share/resources/resources.dart';
 
 class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   const AppBarCommon({
-    Key? key,
+    super.key,
     this.leading,
     this.automaticallyImplyLeading,
     this.title,
@@ -14,8 +14,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
     this.shape,
     this.backgroundColor,
     this.foregroundColor,
-  })  : preferredSize = const Size.fromHeight(Dimens.d56),
-        super(key: key);
+  }) : preferredSize = const Size.fromHeight(Dimens.d56);
 
   final Widget? leading;
   final bool? automaticallyImplyLeading;
