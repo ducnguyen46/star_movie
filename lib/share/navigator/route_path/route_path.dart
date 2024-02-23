@@ -11,6 +11,8 @@ class RoutePath {
   static const movieDetail = '/movie-detail';
   static const videoPlayer = '/video-player';
   static const photoViewer = '/photo-viewer';
+  static const movieCasts = '/movie-casts';
+  static const movieCrews = '/moviecrews';
 }
 
 extension $RoutePath on String {

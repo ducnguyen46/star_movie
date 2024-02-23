@@ -47,7 +47,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: MovieDetailRouterRoute.page,
           path: '${RoutePath.movieDetail}/:movie_id',
-          // /movie-detail/:movie_id
           children: [
             AutoRoute(
               initial: true,
@@ -57,7 +56,18 @@ class AppRouter extends _$AppRouter {
             AutoRoute(
               page: PhotoViewerRoute.page,
               path: RoutePath.photoViewer.isSubPage,
-              // photo-viewer
+            ),
+            AutoRoute(
+              page: MovieCastsRoute.page,
+              path: RoutePath.movieCasts.isSubPage,
+            ),
+            AutoRoute(
+              page: MovieCrewsRoute.page,
+              path: RoutePath.movieCrews.isSubPage,
+            ),
+            AutoRoute(
+              page: PhotoViewerRoute.page,
+              path: RoutePath.photoViewer.isSubPage,
             ),
           ],
         ),

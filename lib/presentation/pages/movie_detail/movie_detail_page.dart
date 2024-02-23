@@ -547,7 +547,11 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: LargeTitleViewAll(
                         largeTitle: 'Cast'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.router.pushNamed(
+                            '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.movieCasts}',
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -586,7 +590,11 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: LargeTitleViewAll(
                         largeTitle: 'Crew'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.router.pushNamed(
+                            '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.movieCrews}',
+                          );
+                        },
                       ),
                     ),
                   ),

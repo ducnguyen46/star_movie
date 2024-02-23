@@ -8,3 +8,5 @@ export 'list_home_movies_page/list_home_movies_page.dart';
 export 'movie_detail/movie_detail_page.dart';
 export 'video_player_page/video_player_page.dart';
 export 'photo_viewer/photo_viewer_page.dart';
+export 'movie_casts_page/movie_casts_page.dart';
+export 'movie_crews_page/movie_crews_page.dart';
