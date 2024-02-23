@@ -40,6 +40,18 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LogInPage(),
       );
     },
+    MovieCastsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MovieCastsPage(),
+      );
+    },
+    MovieCrewsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MovieCrewsPage(),
+      );
+    },
     MovieDetailRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<MovieDetailRouteArgs>(
@@ -194,6 +206,34 @@ class LogInRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LogInRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MovieCastsPage]
+class MovieCastsRoute extends PageRouteInfo<void> {
+  const MovieCastsRoute({List<PageRouteInfo>? children})
+      : super(
+          MovieCastsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MovieCastsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MovieCrewsPage]
+class MovieCrewsRoute extends PageRouteInfo<void> {
+  const MovieCrewsRoute({List<PageRouteInfo>? children})
+      : super(
+          MovieCrewsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MovieCrewsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

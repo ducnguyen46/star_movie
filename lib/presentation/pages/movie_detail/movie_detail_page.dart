@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:readmore/readmore.dart';
 import 'package:star_movie/di/di.dart';
 import 'package:star_movie/domain/use_cases/get_movie_detail_use_case.dart';
-import 'package:star_movie/presentation/blocs/movie_detail_cubit/cubit/movie_detail_cubit.dart';
+import 'package:star_movie/presentation/blocs/movie_detail_cubit/movie_detail_cubit.dart';
 import 'package:star_movie/presentation/pages/movie_detail/widgets/movie_detail_cast_card.dart';
 import 'package:star_movie/presentation/pages/movie_detail/widgets/movie_detail_crew_card.dart';
 import 'package:star_movie/presentation/pages/movie_detail/widgets/movie_detail_title_content.dart';
@@ -547,7 +547,11 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: LargeTitleViewAll(
                         largeTitle: 'Cast'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.router.pushNamed(
+                            '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.movieCasts}',
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -586,7 +590,11 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: LargeTitleViewAll(
                         largeTitle: 'Crew'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.router.pushNamed(
+                            '${RoutePath.movieDetail}/${movieDetail.id}${RoutePath.movieCrews}',
+                          );
+                        },
                       ),
                     ),
                   ),

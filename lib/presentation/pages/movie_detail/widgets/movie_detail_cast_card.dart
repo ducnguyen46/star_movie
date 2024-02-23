@@ -9,9 +9,11 @@ class MovieDetailCastCard extends StatelessWidget {
   const MovieDetailCastCard({
     super.key,
     required this.cast,
+    this.onTap,
   });
 
   final Cast cast;
+  final Function(String castId)? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,36 +21,40 @@ class MovieDetailCastCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         horizontal: Dimens.d16,
       ),
-      child: Row(
-        children: [
-          ClipOval(
-            child: CachedImageCommon(
-              height: Dimens.d50,
-              width: Dimens.d50,
-              fit: BoxFit.fitWidth,
-              imageUrl: ImageConfigConstant.profileImgH632 + cast.profilePath,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: onTap != null ? onTap!('${cast.id}') : null,
+        child: Row(
+          children: [
+            ClipOval(
+              child: CachedImageCommon(
+                height: Dimens.d50,
+                width: Dimens.d50,
+                fit: BoxFit.fitWidth,
+                imageUrl: ImageConfigConstant.profileImgH632 + cast.profilePath,
+              ),
             ),
-          ),
-          const Gap(Dimens.d16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  cast.name,
-                  style: AppTextStyle.s14Medium,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  cast.character,
-                  style: AppTextStyle.s12Regular,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
+            const Gap(Dimens.d16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    cast.name,
+                    style: AppTextStyle.s14Medium,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    cast.character,
+                    style: AppTextStyle.s12Regular,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
