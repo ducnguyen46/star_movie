@@ -14,3 +14,5 @@ export 'get_trending_movies_use_case.dart';
 export 'get_movie_genres_use_case.dart';
 export 'get_movie_detail_use_case.dart';
 export 'get_movie_images_use_case.dart';
+export 'rating_movie_use_case.dart';
+export 'remove_rating_movie_use_case.dart';

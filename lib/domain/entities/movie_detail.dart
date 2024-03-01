@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:star_movie/domain/entities/entities.dart';
+import 'package:star_movie/share/constants/constants.dart';
 
 part 'movie_detail.freezed.dart';
 part 'movie_detail.g.dart';
@@ -36,8 +37,8 @@ class MovieDetail with _$MovieDetail {
 
     /// user and movie
     @Default(false) bool isFavorite,
-    @Default(false) bool inWatchList,
-    @Default(-1) double rate,
+    @Default(false) bool isWatchList,
+    @Default(AppConstants.defaultMovieRate) double rate,
 
     // @JsonKey(name: 'production_countries') @Default('')
   }) = _MovieDetail;

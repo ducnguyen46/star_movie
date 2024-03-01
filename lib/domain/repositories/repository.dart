@@ -95,5 +95,23 @@ abstract class Repository {
   Future<Either<AppException, MovieDetail>> getMovieDetail(String movieId);
 
   /// get movie images
-  Future<Either<AppException, List<MovieImage>>> getMovieImage(String movieId, String type);
+  Future<Either<AppException, List<MovieImage>>> getMovieImage(
+    String movieId,
+    String type,
+  );
+
+  /// Get account state for movie
+  Future<Either<AppException, AccountState>> getAccountStateOfMovie(
+      String movieId);
+
+  /// Rating movie
+  Future<Either<AppException, CommonResponse>> ratingMovie(
+    String movieId,
+    double value,
+  );
+
+  /// Detele rating movie
+  Future<Either<AppException, CommonResponse>> removeRatingMovie(
+    String movieId,
+  );
 }

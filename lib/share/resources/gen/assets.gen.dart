@@ -68,6 +68,10 @@ class $AssetsImagesIconsGen {
   SvgGenImage get icAvatar =>
       const SvgGenImage('assets/images/icons/ic_avatar.svg');
 
+  /// File path: assets/images/icons/ic_empty_heart.svg
+  SvgGenImage get icEmptyHeart =>
+      const SvgGenImage('assets/images/icons/ic_empty_heart.svg');
+
   /// File path: assets/images/icons/ic_event_ticket.svg
   SvgGenImage get icEventTicket =>
       const SvgGenImage('assets/images/icons/ic_event_ticket.svg');
@@ -75,6 +79,10 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/ic_event_ticket_ac.svg
   SvgGenImage get icEventTicketAc =>
       const SvgGenImage('assets/images/icons/ic_event_ticket_ac.svg');
+
+  /// File path: assets/images/icons/ic_full_heart.svg
+  SvgGenImage get icFullHeart =>
+      const SvgGenImage('assets/images/icons/ic_full_heart.svg');
 
   /// File path: assets/images/icons/ic_img_error.svg
   SvgGenImage get icImgError =>
@@ -105,8 +113,10 @@ class $AssetsImagesIconsGen {
         icAlarm,
         icAlarmAc,
         icAvatar,
+        icEmptyHeart,
         icEventTicket,
         icEventTicketAc,
+        icFullHeart,
         icImgError,
         icMovieReel,
         icMovieReelAc,

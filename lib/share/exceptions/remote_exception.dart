@@ -17,7 +17,7 @@ enum RemoteExceptionType {
   network,
 
   /// server has defined response
-  /// example: 401, 402,... and has response return
+  /// example: 400, 401, 402,... and has response return
   serverDefined,
 
   /// server has not defined response

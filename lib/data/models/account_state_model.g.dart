@@ -10,16 +10,16 @@ _$AccountStateModelImpl _$$AccountStateModelImplFromJson(
         Map<String, dynamic> json) =>
     _$AccountStateModelImpl(
       movieId: json['id'] as int? ?? -1,
-      favorite: json['favorite'] as bool? ?? false,
+      isFavorite: json['favorite'] as bool? ?? false,
       rated: json['rated'] ?? false,
-      watchlist: json['watchlist'] as bool? ?? false,
+      isWatchlist: json['watchlist'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$AccountStateModelImplToJson(
         _$AccountStateModelImpl instance) =>
     <String, dynamic>{
       'id': instance.movieId,
-      'favorite': instance.favorite,
+      'favorite': instance.isFavorite,
       'rated': instance.rated,
-      'watchlist': instance.watchlist,
+      'watchlist': instance.isWatchlist,
     };

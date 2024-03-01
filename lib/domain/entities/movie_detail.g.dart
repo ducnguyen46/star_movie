@@ -52,7 +52,7 @@ _$MovieDetailImpl _$$MovieDetailImplFromJson(Map<String, dynamic> json) =>
           .map((e) => Video.fromJson(e as Map<String, dynamic>))
           .toList(),
       isFavorite: json['isFavorite'] as bool? ?? false,
-      inWatchList: json['inWatchList'] as bool? ?? false,
+      isWatchList: json['isWatchList'] as bool? ?? false,
       rate: (json['rate'] as num?)?.toDouble() ?? -1,
     );
 
@@ -85,6 +85,6 @@ Map<String, dynamic> _$$MovieDetailImplToJson(_$MovieDetailImpl instance) =>
       'similar': instance.similar,
       'video': instance.video,
       'isFavorite': instance.isFavorite,
-      'inWatchList': instance.inWatchList,
+      'isWatchList': instance.isWatchList,
       'rate': instance.rate,
     };
