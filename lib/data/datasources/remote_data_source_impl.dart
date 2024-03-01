@@ -294,10 +294,93 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         path: '/movie/$movieId/images',
       );
 
-      if(response.data == null) {
+      if (response.data == null) {
         return null;
       }
       return MovieImageResponseModel.fromJson(response.data);
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<AccountStateModel?> getAccountStateOfMovie({
+    required String movieId,
+    required String sessionId,
+    required bool isGuest,
+  }) async {
+    try {
+      late Map<String, dynamic> queryParameters;
+      if (isGuest) {
+        queryParameters = {'guest_session_id': sessionId};
+      } else {
+        queryParameters = {'session_id': sessionId};
+      }
+      final response = await apiClient.request(
+        method: RequestMethod.get,
+        path: '/movie/$movieId/account_states',
+        queryParameters: queryParameters,
+      );
+
+      if (response.data == null) {
+        return null;
+      }
+      return AccountStateModel.fromJson(response.data);
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<CommonResponseModel?> ratingMovie({
+    required String movieId,
+    required String sessionId,
+    required double value,
+    required bool isGuest,
+  }) async {
+    try {
+      late Map<String, dynamic> queryParameters;
+      if (isGuest) {
+        queryParameters = {'guest_session_id': sessionId};
+      } else {
+        queryParameters = {'session_id': sessionId};
+      }
+      final response = await apiClient.request(
+        method: RequestMethod.post,
+        path: '/movie/$movieId/rating',
+        queryParameters: queryParameters,
+        data: {'value': value},
+      );
+      if (response.data == null) {
+        return null;
+      }
+      return CommonResponseModel.fromJson(response.data);
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<CommonResponseModel?> removeRatingMovie({
+    required String movieId,
+    required String sessionId,
+    required bool isGuest,
+  }) async {
+    try {
+      late Map<String, dynamic> queryParameters;
+      if (isGuest) {
+        queryParameters = {'guest_session_id': sessionId};
+      } else {
+        queryParameters = {'session_id': sessionId};
+      }
+      final response = await apiClient.request(
+          method: RequestMethod.delete,
+          path: '/movie/$movieId/rating',
+          queryParameters: queryParameters);
+      if (response.data == null) {
+        return null;
+      }
+      return CommonResponseModel.fromJson(response.data);
     } catch (_) {
       rethrow;
     }

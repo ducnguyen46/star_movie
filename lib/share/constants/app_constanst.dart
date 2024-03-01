@@ -13,4 +13,8 @@ class AppConstants {
   //
   static const backdrops = 'backdrops';
   static const posters = 'posters';
+
+  //
+  // When movie is not rated, it has default value
+  static const defaultMovieRate = -1.0;
 }

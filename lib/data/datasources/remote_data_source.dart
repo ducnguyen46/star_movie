@@ -1,3 +1,5 @@
+import 'package:star_movie/data/models/common_response_model.dart';
+
 import '../models/models.dart';
 
 abstract class RemoteDataSource {
@@ -53,5 +55,24 @@ abstract class RemoteDataSource {
 
   Future<MovieImageResponseModel?> getMovieImages({
     required String movieId,
+  });
+
+  Future<AccountStateModel?> getAccountStateOfMovie({
+    required String movieId,
+    required String sessionId,
+    required bool isGuest,
+  });
+
+  Future<CommonResponseModel?> ratingMovie({
+    required String movieId,
+    required String sessionId,
+    required double value,
+    required bool isGuest,
+  });
+
+  Future<CommonResponseModel?> removeRatingMovie({
+    required String movieId,
+    required String sessionId,
+    required bool isGuest,
   });
 }

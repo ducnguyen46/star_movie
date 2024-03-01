@@ -49,7 +49,7 @@ mixin _$MovieDetail {
 
   /// user and movie
   bool get isFavorite => throw _privateConstructorUsedError;
-  bool get inWatchList => throw _privateConstructorUsedError;
+  bool get isWatchList => throw _privateConstructorUsedError;
   double get rate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -92,7 +92,7 @@ abstract class $MovieDetailCopyWith<$Res> {
       List<Movie> similar,
       List<Video> video,
       bool isFavorite,
-      bool inWatchList,
+      bool isWatchList,
       double rate});
 
   $CollectionCopyWith<$Res> get collection;
@@ -139,7 +139,7 @@ class _$MovieDetailCopyWithImpl<$Res, $Val extends MovieDetail>
     Object? similar = null,
     Object? video = null,
     Object? isFavorite = null,
-    Object? inWatchList = null,
+    Object? isWatchList = null,
     Object? rate = null,
   }) {
     return _then(_value.copyWith(
@@ -251,9 +251,9 @@ class _$MovieDetailCopyWithImpl<$Res, $Val extends MovieDetail>
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      inWatchList: null == inWatchList
-          ? _value.inWatchList
-          : inWatchList // ignore: cast_nullable_to_non_nullable
+      isWatchList: null == isWatchList
+          ? _value.isWatchList
+          : isWatchList // ignore: cast_nullable_to_non_nullable
               as bool,
       rate: null == rate
           ? _value.rate
@@ -315,7 +315,7 @@ abstract class _$$MovieDetailImplCopyWith<$Res>
       List<Movie> similar,
       List<Video> video,
       bool isFavorite,
-      bool inWatchList,
+      bool isWatchList,
       double rate});
 
   @override
@@ -362,7 +362,7 @@ class __$$MovieDetailImplCopyWithImpl<$Res>
     Object? similar = null,
     Object? video = null,
     Object? isFavorite = null,
-    Object? inWatchList = null,
+    Object? isWatchList = null,
     Object? rate = null,
   }) {
     return _then(_$MovieDetailImpl(
@@ -474,9 +474,9 @@ class __$$MovieDetailImplCopyWithImpl<$Res>
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      inWatchList: null == inWatchList
-          ? _value.inWatchList
-          : inWatchList // ignore: cast_nullable_to_non_nullable
+      isWatchList: null == isWatchList
+          ? _value.isWatchList
+          : isWatchList // ignore: cast_nullable_to_non_nullable
               as bool,
       rate: null == rate
           ? _value.rate
@@ -517,7 +517,7 @@ class _$MovieDetailImpl implements _MovieDetail {
       required final List<Movie> similar,
       required final List<Video> video,
       this.isFavorite = false,
-      this.inWatchList = false,
+      this.isWatchList = false,
       this.rate = -1})
       : _genres = genres,
         _productionCompanies = productionCompanies,
@@ -638,14 +638,14 @@ class _$MovieDetailImpl implements _MovieDetail {
   final bool isFavorite;
   @override
   @JsonKey()
-  final bool inWatchList;
+  final bool isWatchList;
   @override
   @JsonKey()
   final double rate;
 
   @override
   String toString() {
-    return 'MovieDetail(id: $id, imdbId: $imdbId, originalTitle: $originalTitle, originalLanguage: $originalLanguage, title: $title, tagline: $tagline, homepage: $homepage, overview: $overview, genres: $genres, backdropPath: $backdropPath, posterPath: $posterPath, budget: $budget, revenue: $revenue, releaseDate: $releaseDate, status: $status, runtime: $runtime, voteAverage: $voteAverage, collection: $collection, productionCompanies: $productionCompanies, credit: $credit, backdropImages: $backdropImages, logoImages: $logoImages, posterImages: $posterImages, recommendations: $recommendations, similar: $similar, video: $video, isFavorite: $isFavorite, inWatchList: $inWatchList, rate: $rate)';
+    return 'MovieDetail(id: $id, imdbId: $imdbId, originalTitle: $originalTitle, originalLanguage: $originalLanguage, title: $title, tagline: $tagline, homepage: $homepage, overview: $overview, genres: $genres, backdropPath: $backdropPath, posterPath: $posterPath, budget: $budget, revenue: $revenue, releaseDate: $releaseDate, status: $status, runtime: $runtime, voteAverage: $voteAverage, collection: $collection, productionCompanies: $productionCompanies, credit: $credit, backdropImages: $backdropImages, logoImages: $logoImages, posterImages: $posterImages, recommendations: $recommendations, similar: $similar, video: $video, isFavorite: $isFavorite, isWatchList: $isWatchList, rate: $rate)';
   }
 
   @override
@@ -695,8 +695,8 @@ class _$MovieDetailImpl implements _MovieDetail {
             const DeepCollectionEquality().equals(other._video, _video) &&
             (identical(other.isFavorite, isFavorite) ||
                 other.isFavorite == isFavorite) &&
-            (identical(other.inWatchList, inWatchList) ||
-                other.inWatchList == inWatchList) &&
+            (identical(other.isWatchList, isWatchList) ||
+                other.isWatchList == isWatchList) &&
             (identical(other.rate, rate) || other.rate == rate));
   }
 
@@ -731,7 +731,7 @@ class _$MovieDetailImpl implements _MovieDetail {
         const DeepCollectionEquality().hash(_similar),
         const DeepCollectionEquality().hash(_video),
         isFavorite,
-        inWatchList,
+        isWatchList,
         rate
       ]);
 
@@ -778,7 +778,7 @@ abstract class _MovieDetail implements MovieDetail {
       required final List<Movie> similar,
       required final List<Video> video,
       final bool isFavorite,
-      final bool inWatchList,
+      final bool isWatchList,
       final double rate}) = _$MovieDetailImpl;
 
   factory _MovieDetail.fromJson(Map<String, dynamic> json) =
@@ -841,7 +841,7 @@ abstract class _MovieDetail implements MovieDetail {
   /// user and movie
   bool get isFavorite;
   @override
-  bool get inWatchList;
+  bool get isWatchList;
   @override
   double get rate;
   @override

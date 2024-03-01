@@ -23,11 +23,11 @@ mixin _$AccountStateModel {
   @JsonKey(name: 'id')
   int get movieId => throw _privateConstructorUsedError;
   @JsonKey(name: 'favorite')
-  bool get favorite => throw _privateConstructorUsedError;
+  bool get isFavorite => throw _privateConstructorUsedError;
   @JsonKey(name: 'rated')
   dynamic get rated => throw _privateConstructorUsedError;
   @JsonKey(name: 'watchlist')
-  bool get watchlist => throw _privateConstructorUsedError;
+  bool get isWatchlist => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,9 +43,9 @@ abstract class $AccountStateModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int movieId,
-      @JsonKey(name: 'favorite') bool favorite,
+      @JsonKey(name: 'favorite') bool isFavorite,
       @JsonKey(name: 'rated') dynamic rated,
-      @JsonKey(name: 'watchlist') bool watchlist});
+      @JsonKey(name: 'watchlist') bool isWatchlist});
 }
 
 /// @nodoc
@@ -62,26 +62,26 @@ class _$AccountStateModelCopyWithImpl<$Res, $Val extends AccountStateModel>
   @override
   $Res call({
     Object? movieId = null,
-    Object? favorite = null,
+    Object? isFavorite = null,
     Object? rated = freezed,
-    Object? watchlist = null,
+    Object? isWatchlist = null,
   }) {
     return _then(_value.copyWith(
       movieId: null == movieId
           ? _value.movieId
           : movieId // ignore: cast_nullable_to_non_nullable
               as int,
-      favorite: null == favorite
-          ? _value.favorite
-          : favorite // ignore: cast_nullable_to_non_nullable
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
       rated: freezed == rated
           ? _value.rated
           : rated // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      watchlist: null == watchlist
-          ? _value.watchlist
-          : watchlist // ignore: cast_nullable_to_non_nullable
+      isWatchlist: null == isWatchlist
+          ? _value.isWatchlist
+          : isWatchlist // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -97,9 +97,9 @@ abstract class _$$AccountStateModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int movieId,
-      @JsonKey(name: 'favorite') bool favorite,
+      @JsonKey(name: 'favorite') bool isFavorite,
       @JsonKey(name: 'rated') dynamic rated,
-      @JsonKey(name: 'watchlist') bool watchlist});
+      @JsonKey(name: 'watchlist') bool isWatchlist});
 }
 
 /// @nodoc
@@ -114,26 +114,26 @@ class __$$AccountStateModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? movieId = null,
-    Object? favorite = null,
+    Object? isFavorite = null,
     Object? rated = freezed,
-    Object? watchlist = null,
+    Object? isWatchlist = null,
   }) {
     return _then(_$AccountStateModelImpl(
       movieId: null == movieId
           ? _value.movieId
           : movieId // ignore: cast_nullable_to_non_nullable
               as int,
-      favorite: null == favorite
-          ? _value.favorite
-          : favorite // ignore: cast_nullable_to_non_nullable
+      isFavorite: null == isFavorite
+          ? _value.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
       rated: freezed == rated
           ? _value.rated
           : rated // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      watchlist: null == watchlist
-          ? _value.watchlist
-          : watchlist // ignore: cast_nullable_to_non_nullable
+      isWatchlist: null == isWatchlist
+          ? _value.isWatchlist
+          : isWatchlist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -144,9 +144,9 @@ class __$$AccountStateModelImplCopyWithImpl<$Res>
 class _$AccountStateModelImpl implements _AccountStateModel {
   const _$AccountStateModelImpl(
       {@JsonKey(name: 'id') this.movieId = -1,
-      @JsonKey(name: 'favorite') this.favorite = false,
+      @JsonKey(name: 'favorite') this.isFavorite = false,
       @JsonKey(name: 'rated') this.rated = false,
-      @JsonKey(name: 'watchlist') this.watchlist = false});
+      @JsonKey(name: 'watchlist') this.isWatchlist = false});
 
   factory _$AccountStateModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccountStateModelImplFromJson(json);
@@ -156,17 +156,17 @@ class _$AccountStateModelImpl implements _AccountStateModel {
   final int movieId;
   @override
   @JsonKey(name: 'favorite')
-  final bool favorite;
+  final bool isFavorite;
   @override
   @JsonKey(name: 'rated')
   final dynamic rated;
   @override
   @JsonKey(name: 'watchlist')
-  final bool watchlist;
+  final bool isWatchlist;
 
   @override
   String toString() {
-    return 'AccountStateModel(movieId: $movieId, favorite: $favorite, rated: $rated, watchlist: $watchlist)';
+    return 'AccountStateModel(movieId: $movieId, isFavorite: $isFavorite, rated: $rated, isWatchlist: $isWatchlist)';
   }
 
   @override
@@ -175,17 +175,17 @@ class _$AccountStateModelImpl implements _AccountStateModel {
         (other.runtimeType == runtimeType &&
             other is _$AccountStateModelImpl &&
             (identical(other.movieId, movieId) || other.movieId == movieId) &&
-            (identical(other.favorite, favorite) ||
-                other.favorite == favorite) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
             const DeepCollectionEquality().equals(other.rated, rated) &&
-            (identical(other.watchlist, watchlist) ||
-                other.watchlist == watchlist));
+            (identical(other.isWatchlist, isWatchlist) ||
+                other.isWatchlist == isWatchlist));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, movieId, favorite,
-      const DeepCollectionEquality().hash(rated), watchlist);
+  int get hashCode => Object.hash(runtimeType, movieId, isFavorite,
+      const DeepCollectionEquality().hash(rated), isWatchlist);
 
   @JsonKey(ignore: true)
   @override
@@ -205,9 +205,9 @@ class _$AccountStateModelImpl implements _AccountStateModel {
 abstract class _AccountStateModel implements AccountStateModel {
   const factory _AccountStateModel(
           {@JsonKey(name: 'id') final int movieId,
-          @JsonKey(name: 'favorite') final bool favorite,
+          @JsonKey(name: 'favorite') final bool isFavorite,
           @JsonKey(name: 'rated') final dynamic rated,
-          @JsonKey(name: 'watchlist') final bool watchlist}) =
+          @JsonKey(name: 'watchlist') final bool isWatchlist}) =
       _$AccountStateModelImpl;
 
   factory _AccountStateModel.fromJson(Map<String, dynamic> json) =
@@ -218,13 +218,13 @@ abstract class _AccountStateModel implements AccountStateModel {
   int get movieId;
   @override
   @JsonKey(name: 'favorite')
-  bool get favorite;
+  bool get isFavorite;
   @override
   @JsonKey(name: 'rated')
   dynamic get rated;
   @override
   @JsonKey(name: 'watchlist')
-  bool get watchlist;
+  bool get isWatchlist;
   @override
   @JsonKey(ignore: true)
   _$$AccountStateModelImplCopyWith<_$AccountStateModelImpl> get copyWith =>

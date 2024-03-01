@@ -23,6 +23,8 @@ class RepositoryImpl implements Repository {
     required MovieDetailMapper movieDetailMapper,
     required LanguageMapper languageMapper,
     required MovieImageMapper movieImageMapper,
+    required CommonResponseMapper commonResponseMapper,
+    required AccountStateMapper accountStateMapper,
   })  : _localDataSource = localDataSource,
         _remoteDataSource = remoteDataSource,
         _appSettingMapper = appSettingMapper,
@@ -32,7 +34,9 @@ class RepositoryImpl implements Repository {
         _genreMapper = genreMapper,
         _languageMapper = languageMapper,
         _movieDetailMapper = movieDetailMapper,
-        _movieImageMapper = movieImageMapper;
+        _movieImageMapper = movieImageMapper,
+        _commonResponseMapper = commonResponseMapper,
+        _accountStateMapper = accountStateMapper;
 
   final LocalDataSource _localDataSource;
   final RemoteDataSource _remoteDataSource;
@@ -46,6 +50,8 @@ class RepositoryImpl implements Repository {
   final MovieDetailMapper _movieDetailMapper;
   final LanguageMapper _languageMapper;
   final MovieImageMapper _movieImageMapper;
+  final CommonResponseMapper _commonResponseMapper;
+  final AccountStateMapper _accountStateMapper;
 
   @override
   Future<Either<AppException, bool>> changeAppLanguage(
@@ -416,15 +422,25 @@ class RepositoryImpl implements Repository {
 
   @override
   Future<Either<AppException, MovieDetail>> getMovieDetail(
-      String movieId) async {
+    String movieId,
+  ) async {
     try {
       final movieDetailModel =
           await _remoteDataSource.getMovieDetail(movieId: movieId);
       if (movieDetailModel == null) {
         return const Left(RemoteException(RemoteExceptionType.unknown));
       }
+      final movieDetail = _movieDetailMapper.toEntity(movieDetailModel);
 
-      return Right(_movieDetailMapper.toEntity(movieDetailModel));
+      final accountStateEi = await getAccountStateOfMovie(movieId);
+      return accountStateEi.fold((e) => Left(e), (accountState) {
+        return Right(movieDetail.copyWith(
+            rate: accountState.rated is bool
+                ? AppConstants.defaultMovieRate
+                : (accountState.rated as Map<String, dynamic>)['value'],
+            isFavorite: accountState.isFavorite,
+            isWatchList: accountState.isWatchlist));
+      });
     } on RemoteException catch (e) {
       return Left(e);
     }
@@ -448,6 +464,106 @@ class RepositoryImpl implements Repository {
       } else {
         return Right(_movieImageMapper.toListEntity(movieImagesModel.posters));
       }
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, CommonResponse>> ratingMovie(
+    String movieId,
+    double value,
+  ) async {
+    try {
+      final authUserDataEi = await getAuthenticatedUserDataLocal();
+      return authUserDataEi.fold((e) {
+        return Left(e);
+      }, (user) async {
+        if (user.guestSessionId.isNotEmpty || user.sessionId.isNotEmpty) {
+          final model = await _remoteDataSource.ratingMovie(
+            movieId: movieId,
+            sessionId: user.sessionId.isNotEmpty
+                ? user.sessionId
+                : user.guestSessionId,
+            value: value,
+            isGuest: !user.isAuthenticatedUser,
+          );
+          if (model == null) {
+            return const Left(
+              RemoteException(
+                RemoteExceptionType.unknown,
+              ),
+            );
+          }
+          return Right(_commonResponseMapper.toEntity(model));
+        } else {
+          return const Left(LocalException(LocalExceptionType.get));
+        }
+      });
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, CommonResponse>> removeRatingMovie(
+    String movieId,
+  ) async {
+    try {
+      final authUserDataEi = await getAuthenticatedUserDataLocal();
+
+      return authUserDataEi.fold((e) => Left(e), (user) async {
+        if (user.guestSessionId.isNotEmpty || user.sessionId.isNotEmpty) {
+          final model = await _remoteDataSource.removeRatingMovie(
+            movieId: movieId,
+            sessionId: user.sessionId.isNotEmpty
+                ? user.sessionId
+                : user.guestSessionId,
+            isGuest: !user.isAuthenticatedUser,
+          );
+          if (model == null) {
+            return const Left(
+              RemoteException(
+                RemoteExceptionType.unknown,
+              ),
+            );
+          }
+          return Right(_commonResponseMapper.toEntity(model));
+        } else {
+          return const Left(LocalException(LocalExceptionType.get));
+        }
+      });
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, AccountState>> getAccountStateOfMovie(
+      String movieId) async {
+    try {
+      final authUserDataEi = await getAuthenticatedUserDataLocal();
+      return authUserDataEi.fold((e) => Left(e), (user) async {
+        if (user.guestSessionId.isNotEmpty || user.sessionId.isNotEmpty) {
+          final model = await _remoteDataSource.getAccountStateOfMovie(
+            movieId: movieId,
+            sessionId: user.sessionId.isNotEmpty
+                ? user.sessionId
+                : user.guestSessionId,
+            isGuest: !user.isAuthenticatedUser,
+          );
+          if (model == null) {
+            return const Left(
+              RemoteException(
+                RemoteExceptionType.unknown,
+              ),
+            );
+          }
+          return Right(_accountStateMapper.toEntity(model));
+        } else {
+          return const Left(LocalException(LocalExceptionType.get));
+        }
+      });
     } on RemoteException catch (e) {
       return Left(e);
     }
