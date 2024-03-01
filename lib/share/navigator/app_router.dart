@@ -65,10 +65,6 @@ class AppRouter extends _$AppRouter {
               page: MovieCrewsRoute.page,
               path: RoutePath.movieCrews.isSubPage,
             ),
-            AutoRoute(
-              page: PhotoViewerRoute.page,
-              path: RoutePath.photoViewer.isSubPage,
-            ),
           ],
         ),
         AutoRoute(
