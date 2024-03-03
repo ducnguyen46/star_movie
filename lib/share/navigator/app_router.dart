@@ -71,5 +71,16 @@ class AppRouter extends _$AppRouter {
           page: VideoPlayerRoute.page,
           path: '${RoutePath.videoPlayer}/:video_key',
         ),
+        AutoRoute(
+          page: SearchMovieRouterRoute.page,
+          path: RoutePath.searchMovie,
+          children: [
+            AutoRoute(
+              initial: true,
+              page: SearchMovieRoute.page,
+              path: '',
+            )
+          ],
+        ),
       ];
 }

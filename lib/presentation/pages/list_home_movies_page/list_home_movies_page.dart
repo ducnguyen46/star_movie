@@ -6,6 +6,7 @@ import 'package:star_movie/di/di.dart';
 import 'package:star_movie/domain/entities/entities.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
 import 'package:star_movie/presentation/blocs/list_home_movies_cubit/list_home_movies_cubit.dart';
+import 'package:star_movie/presentation/widgets/movie_item_list_card.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/navigator/route_path/route_path.dart';
@@ -124,110 +125,40 @@ class _ListHomeMoviesContentState extends State<ListHomeMoviesContent> {
                   return state.movies;
                 },
                 builder: (context, movies) {
-                  return SliverList.builder(
+                  return SliverList.separated(
                     itemCount: movies.length,
                     itemBuilder: (context, index) {
                       final movie = movies[index];
-                      final isFirst =
-                          movies.length > 1 && index == 0 ? true : false;
-
-                      return GestureDetector(
-                        onTap: () {
-                          context.router.pushNamed(
-                              '${RoutePath.movieDetail}/${movies[index].id}');
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: Dimens.d16,
-                          ),
-                          margin: isFirst
-                              ? const EdgeInsets.only(bottom: Dimens.d8)
-                              : const EdgeInsets.symmetric(vertical: Dimens.d8),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(Dimens.d8),
-                                  ),
-                                  child: Stack(
-                                    children: [
-                                      SizedBox(
-                                        height: Dimens.d140,
-                                        width: Dimens.d140 *
-                                            AppConstants.posterRatio,
-                                        child: CachedImageCommon(
-                                          imageUrl: ImageConfigConstant
-                                                  .posterImgW500 +
-                                              movie.posterPath,
-                                        ),
-                                      ),
-                                      Positioned(
-                                        top: Dimens.d4,
-                                        right: Dimens.d4,
-                                        child: VoteAverageMarker(
-                                          movie: movie,
-                                        ),
-                                      ),
-                                    ],
-                                  )),
-                              const SizedBox(
-                                width: Dimens.d12,
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      movie.title,
-                                      style: AppTextStyle.s16SemiBold,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    const SizedBox(
-                                      height: Dimens.d6,
-                                    ),
-                                    Text(
-                                      _genreMovie(movie.genres),
-                                      style: AppTextStyle.s12Regular.copyWith(
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: Dimens.d6,
-                                    ),
-                                    Text(
-                                      movie.releaseDate,
-                                      style: AppTextStyle.s12Regular,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                      return MovieItemListCard(
+                        movie: movie,
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return const SizedBox(
+                        height: Dimens.d16,
                       );
                     },
                   );
                 },
               ),
               BlocSelector<ListHomeMoviesCubit, ListHomeMoviesState,
-                      ListHomeMoviesStatus>(
-                  selector: (state) => state.status,
-                  builder: (context, status) {
-                    if (status == ListHomeMoviesStatus.loadingMore) {
-                      return const SliverPadding(
+                  ListHomeMoviesStatus>(
+                selector: (state) => state.status,
+                builder: (context, status) {
+                  if (status == ListHomeMoviesStatus.loadingMore) {
+                    return const SliverToBoxAdapter(
+                      child: Padding(
                         padding: EdgeInsets.all(Dimens.d4),
-                        sliver: Center(
+                        child: Center(
                           child: CircularProgressIndicator(),
                         ),
-                      );
-                    } else {
-                      return const SliverToBoxAdapter(child: SizedBox());
-                    }
-                  }),
+                      ),
+                    );
+                  } else {
+                    return const SliverToBoxAdapter(child: SizedBox());
+                  }
+                },
+              ),
             ],
           );
         },

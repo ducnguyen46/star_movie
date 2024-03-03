@@ -75,4 +75,12 @@ abstract class RemoteDataSource {
     required String sessionId,
     required bool isGuest,
   });
+
+  Future<MoviesResponseModel?> searchMovie({
+    required String query,
+    required int page,
+    required bool includeAdult,
+    required String year,
+    required String primaryReleaseYear,
+  });
 }

@@ -14,6 +14,7 @@ class DateTimeUtil {
   static String releaseDateConvert(String releaseDate) {
     final releaseDateTMDB = DateFormat('yyyy-MM-dd');
     final releaseFormat = DateFormat('dd/MM/yyyy');
+    if (releaseDate.isEmpty) return releaseDate;
     try {
       return releaseFormat.format(releaseDateTMDB.parse(releaseDate));
     } on FormatException catch (e) {
@@ -22,8 +23,8 @@ class DateTimeUtil {
         name: 'DateTimeUtil.releaseDateConvert',
         error: e,
       );
-      return releaseDate;
     }
+    return '';
   }
 
   /// Convert minute(s) to hour(s) and minute(s)
