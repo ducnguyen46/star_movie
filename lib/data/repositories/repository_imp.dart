@@ -6,6 +6,7 @@ import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/exceptions/exceptions.dart';
 import 'package:star_movie/share/mappers/language_mapper.dart';
 import 'package:star_movie/share/mappers/mappers.dart';
+import 'package:star_movie/share/utils/utils.dart';
 
 import '../datasources/data_source.dart';
 import '../models/models.dart';
@@ -564,6 +565,34 @@ class RepositoryImpl implements Repository {
           return const Left(LocalException(LocalExceptionType.get));
         }
       });
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, List<Movie>>> searchMovie(
+    String query,
+    int page,
+    bool includeAdult,
+    String year,
+    String primaryReleaseYear,
+  ) async {
+    try {
+      final moviesResponseModel = await _remoteDataSource.searchMovie(
+        query: query,
+        page: page,
+        includeAdult: includeAdult,
+        year: year,
+        primaryReleaseYear: primaryReleaseYear,
+      );
+      if (moviesResponseModel != null) {
+        return Right(
+          _movieMapper.toListEntity(moviesResponseModel.movies),
+        );
+      } else {
+        return const Left(RemoteException(RemoteExceptionType.unknown));
+      }
     } on RemoteException catch (e) {
       return Left(e);
     }

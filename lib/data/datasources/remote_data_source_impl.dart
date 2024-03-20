@@ -385,4 +385,36 @@ class RemoteDataSourceImpl implements RemoteDataSource {
       rethrow;
     }
   }
+
+  @override
+  Future<MoviesResponseModel?> searchMovie({
+    required String query,
+    required int page,
+    required bool includeAdult,
+    required String year,
+    required String primaryReleaseYear,
+  }) async {
+    try {
+      var queryParameters = {
+        'query': query,
+        'page': page,
+        'include_adult': includeAdult,
+        'year': year,
+        'primary_release_year': primaryReleaseYear,
+      };
+
+      final response = await apiClient.request(
+        method: RequestMethod.get,
+        path: '/search/movie',
+        queryParameters: queryParameters,
+      );
+
+      if (response.data != null) {
+        return MoviesResponseModel.fromJson(response.data);
+      }
+      return null;
+    } catch (_) {
+      rethrow;
+    }
+  }
 }

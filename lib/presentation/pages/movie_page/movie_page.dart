@@ -33,6 +33,17 @@ class MoviePage extends StatelessWidget {
       child: AppScaffold(
         appBar: AppBarCommon(
           title: Text(context.tr('movies')),
+          actions: [
+            IconButton.filledTonal(
+              onPressed: () {
+                context.router.pushNamed(RoutePath.searchMovie);
+              },
+              icon: Icon(
+                Icons.search,
+                color: AppColors.redPrimary,
+              ),
+            ),
+          ],
         ),
         body: BlocConsumer<MovieCubit, MovieState>(
           listener: (context, state) {},

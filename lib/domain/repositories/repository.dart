@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:star_movie/data/models/models.dart';
 import 'package:star_movie/share/constants/localization_constant.dart';
 import 'package:star_movie/share/exceptions/app_exception.dart';
 
@@ -113,5 +114,14 @@ abstract class Repository {
   /// Detele rating movie
   Future<Either<AppException, CommonResponse>> removeRatingMovie(
     String movieId,
+  );
+
+  /// Search movie
+  Future<Either<AppException, List<Movie>>> searchMovie(
+    String query,
+    int page,
+    bool includeAdult,
+    String year,
+    String primaryReleaseYear,
   );
 }
