@@ -4,7 +4,7 @@ class RoutePath {
   static const splashPage = '/splash';
 
   // home
-  static const homePage = '/';
+  static const homePage = '/home';
   static const profilePage = '/profile';
   static const listHomeMoviesPage = '/list-home-movies';
 
