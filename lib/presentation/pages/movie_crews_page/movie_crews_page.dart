@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -8,7 +7,6 @@ import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:star_movie/share/utils/utils.dart';
 
-@RoutePage()
 class MovieCrewsPage extends StatelessWidget {
   const MovieCrewsPage({super.key});
 

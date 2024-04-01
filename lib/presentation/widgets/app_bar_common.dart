@@ -1,5 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:star_movie/share/resources/resources.dart';
 
 class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
@@ -33,10 +33,11 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: leading ??
-          AutoLeadingButton(
-            color: Theme.of(context).colorScheme.primary,
-          ),
+      leading: GoRouter.of(context).canPop()
+          ? BackButton(
+              color: Theme.of(context).colorScheme.primary,
+            )
+          : const SizedBox(),
       title: title,
       titleTextStyle: titleTextStyle ??
           AppTextStyle.s18Medium.copyWith(

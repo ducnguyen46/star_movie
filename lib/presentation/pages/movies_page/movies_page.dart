@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,15 +8,13 @@ import 'package:star_movie/presentation/blocs/list_home_movies_cubit/list_home_m
 import 'package:star_movie/presentation/widgets/movie_item_list_card.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/constants/constants.dart';
-import 'package:star_movie/share/navigator/route_path/route_path.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:star_movie/share/utils/utils.dart';
 
-@RoutePage()
-class ListHomeMoviesPage extends StatelessWidget {
-  const ListHomeMoviesPage({
+class MoviesPage extends StatelessWidget {
+  const MoviesPage({
     super.key,
-    @QueryParam('type') this.movieType,
+    this.movieType,
   });
 
   final String? movieType;
@@ -37,7 +34,7 @@ class ListHomeMoviesPage extends StatelessWidget {
           nowPlayingMoviesUseCase: getIt<GetNowPlayingMoviesUseCase>(),
           topRateMoviesUseCase: getIt<GetTopRateMoviesUseCase>(),
         )..loadingMovieInitial(),
-        child: const ListHomeMoviesContent(),
+        child: const MoviesContent(),
       ),
     );
   }
@@ -62,14 +59,14 @@ class ListHomeMoviesPage extends StatelessWidget {
   }
 }
 
-class ListHomeMoviesContent extends StatefulWidget {
-  const ListHomeMoviesContent({super.key});
+class MoviesContent extends StatefulWidget {
+  const MoviesContent({super.key});
 
   @override
-  State<ListHomeMoviesContent> createState() => _ListHomeMoviesContentState();
+  State<MoviesContent> createState() => _MoviesContentState();
 }
 
-class _ListHomeMoviesContentState extends State<ListHomeMoviesContent> {
+class _MoviesContentState extends State<MoviesContent> {
   late ScrollController _scrollController;
 
   @override

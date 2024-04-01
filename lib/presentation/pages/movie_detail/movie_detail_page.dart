@@ -1,10 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:readmore/readmore.dart';
-import 'package:star_movie/di/di.dart';
-import 'package:star_movie/domain/use_cases/use_cases.dart';
 import 'package:star_movie/presentation/blocs/movie_detail_cubit/movie_detail_cubit.dart';
 import 'package:star_movie/presentation/pages/movie_page/widgets/horizontal_movies_list.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
@@ -16,36 +14,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/widgets.dart';
 
-@RoutePage()
-class MovieDetailRouterScreen extends AutoRouter implements AutoRouteWrapper {
-  const MovieDetailRouterScreen({
-    super.key,
-    @PathParam('movie_id') required this.movieId,
-  });
-
-  final int movieId;
-
-  @override
-  Widget wrappedRoute(Object context) {
-    return BlocProvider(
-      create: (context) => MovieDetailCubit(
-        movieDetailUseCase: getIt<GetMovieDetailUseCase>(),
-        ratingMovieUseCase: getIt<RatingMovieUseCase>(),
-        removeRatingMovieUseCase: getIt<RemoveRatingMovieUseCase>(),
-      )..getDetailMovie(movieId),
-      child: this,
-    );
-  }
-}
-
-@RoutePage()
 class MovieDetailPage extends StatelessWidget {
   const MovieDetailPage({
     super.key,
-    @PathParam.inherit('movie_id') required this.movieId,
+    required this.movieId,
   });
 
-  final int movieId;
+  final String movieId;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +48,7 @@ class MovieDetailView extends StatefulWidget {
     required this.paddingTop,
   });
 
-  final int movieId;
+  final String movieId;
   final Size screenSize;
   final double backdropHeight;
   final double paddingTop;
@@ -149,14 +124,14 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                             AnimatedOpacity(
                               opacity: showTitle ? 0 : 1,
                               duration: const Duration(milliseconds: 200),
-                              child: AutoLeadingButton(
+                              child: BackButton(
                                 color: AppColors.white,
                               ),
                             ),
                             AnimatedOpacity(
                               opacity: showTitle ? 1 : 0,
                               duration: const Duration(milliseconds: 200),
-                              child: AutoLeadingButton(
+                              child: BackButton(
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             ),
@@ -347,11 +322,12 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           GestureDetector(
-                            onTap: () => showRatingDialog(
-                              context: context,
-                              movieId: movieDetail.id,
-                              ratedValue: state.movieDetail!.rate,
-                            ),
+                            onTap: () {
+                              showRatingDialog(
+                                movieId: movieDetail.id,
+                                ratedValue: state.movieDetail!.rate,
+                              );
+                            },
                             child: Column(
                               children: [
                                 Text(
@@ -467,8 +443,14 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                       videoTitle: video.title,
                                       height: Dimens.d120,
                                       onPressed: () {
-                                        context.router.pushNamed(
-                                            '${RoutePath.videoPlayer}/${video.key}');
+                                        context.pushNamed(
+                                            RoutePath.videoPlayer.named,
+                                            pathParameters: {
+                                              AppConstants.pathMovieId:
+                                                  '${movieDetail.id}',
+                                              AppConstants.pathVideoKey:
+                                                  video.key,
+                                            });
                                       },
                                     ),
                                     const Gap(Dimens.d16)
@@ -565,8 +547,12 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         largeTitle: 'Cast'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
                         onPressed: () {
-                          context.router.pushNamed(
-                            RoutePath.movieCasts.isSubPage,
+                          context.pushNamed(
+                            RoutePath.movieCasts.named,
+                            pathParameters: {
+                              AppConstants.pathMovieId: '${movieDetail.id}'
+                            },
+                            extra: context.read<MovieDetailCubit>(),
                           );
                         },
                       ),
@@ -608,8 +594,12 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                         largeTitle: 'Crew'.hardCode,
                         titleStyle: AppTextStyle.s16SemiBold,
                         onPressed: () {
-                          context.router.pushNamed(
-                            RoutePath.movieCrews.isSubPage,
+                          context.pushNamed(
+                            RoutePath.movieCrews.named,
+                            pathParameters: {
+                              AppConstants.pathMovieId: '${movieDetail.id}'
+                            },
+                            extra: context.read<MovieDetailCubit>(),
                           );
                         },
                       ),
@@ -743,14 +733,34 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                               movieDetail: movieDetail,
                               onTapBackdrops: () {
                                 if (movieDetail.backdropImages.isNotEmpty) {
-                                  context.router.pushNamed(
-                                      '${RoutePath.photoViewer.isSubPage}?type=${AppConstants.backdrops}');
+                                  context.pushNamed(
+                                    RoutePath.photoViewer.named,
+                                    pathParameters: {
+                                      AppConstants.pathMovieId:
+                                          '${movieDetail.id}',
+                                    },
+                                    queryParameters: {
+                                      AppConstants.queryImageType:
+                                          AppConstants.backdrops
+                                    },
+                                    extra: context.read<MovieDetailCubit>(),
+                                  );
                                 }
                               },
                               onTapPosters: () {
                                 if (movieDetail.posterImages.isNotEmpty) {
-                                  context.router.pushNamed(
-                                      '${RoutePath.photoViewer.isSubPage}?type=${AppConstants.posters}');
+                                  context.pushNamed(
+                                    RoutePath.photoViewer.named,
+                                    pathParameters: {
+                                      AppConstants.pathMovieId:
+                                          '${movieDetail.id}',
+                                    },
+                                    queryParameters: {
+                                      AppConstants.queryImageType:
+                                          AppConstants.posters
+                                    },
+                                    extra: context.read<MovieDetailCubit>(),
+                                  );
                                 }
                               },
                             ),
@@ -787,8 +797,12 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                             HorizontalMoviesList(
                               movies: movieDetail.recommendations,
                               onPressed: (movieId) {
-                                context.router.pushNamed(
-                                    '${RoutePath.movieDetail}/$movieId');
+                                context.pushNamed(
+                                  RoutePath.movieDetail.named,
+                                  pathParameters: {
+                                    AppConstants.pathMovieId: '$movieId',
+                                  },
+                                );
                               },
                             ),
                           ],
@@ -808,7 +822,6 @@ class _MovieDetailViewState extends State<MovieDetailView> {
   }
 
   void showRatingDialog({
-    required BuildContext context,
     required int movieId,
     required double ratedValue,
   }) {
@@ -835,7 +848,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
         actions: [
           AppOutlineButton(
             onPressed: () {
-              context.router.pop();
+              Navigator.of(context, rootNavigator: true).pop();
             },
             title: 'Cancel'.hardCode,
           ),
@@ -849,7 +862,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       value: ratingValue,
                     )
                   : movieCubit.removeRatingMovie(movieId: '$movieId');
-              context.router.pop();
+              Navigator.of(context, rootNavigator: true).pop();
             },
             title: ratedValue != AppConstants.defaultMovieRate
                 ? 'Remove rating'.hardCode

@@ -1,29 +1,11 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:star_movie/di/di.dart';
-import 'package:star_movie/domain/use_cases/use_cases.dart';
 import 'package:star_movie/presentation/blocs/search_movie_cubit/cubit/search_movie_cubit.dart';
 import 'package:star_movie/presentation/pages/search_movie_page/widgets/widgets.dart';
 import 'package:star_movie/presentation/widgets/movie_item_list_card.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/resources/resources.dart';
 
-@RoutePage()
-class SearchMovieRouterPage extends AutoRouter implements AutoRouteWrapper {
-  const SearchMovieRouterPage({super.key});
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (_) =>
-          SearchMovieCubit(searchMovieUseCase: getIt<SearchMovieUseCase>()),
-      child: this,
-    );
-  }
-}
-
-@RoutePage()
 class SearchMoviePage extends StatefulWidget {
   const SearchMoviePage({super.key});
 

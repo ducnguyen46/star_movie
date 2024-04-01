@@ -1,5 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:star_movie/domain/entities/entities.dart';
 import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/navigator/route_path/route_path.dart';
@@ -20,7 +20,10 @@ class MovieItemListCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.router.pushNamed('${RoutePath.movieDetail}/${movie.id}');
+        context.pushNamed(
+          RoutePath.movieDetail.named,
+          pathParameters: {AppConstants.pathMovieId: '${movie.id}'},
+        );
       },
       child: Container(
         padding: const EdgeInsets.symmetric(

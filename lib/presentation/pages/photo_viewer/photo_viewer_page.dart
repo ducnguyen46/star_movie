@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:star_movie/domain/entities/entities.dart';
@@ -11,16 +10,13 @@ import 'package:star_movie/share/utils/utils.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:photo_view/photo_view.dart';
 
-@RoutePage()
 class PhotoViewerPage extends StatelessWidget {
   const PhotoViewerPage({
     super.key,
-    @PathParam.inherit('movie_id') required this.movieId,
-    @QueryParam('type') this.imageType = '',
+    this.imageType = '',
   });
 
-  final String movieId;
-  final String imageType;
+  final String? imageType;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +40,7 @@ class PhotoViewerPage extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               default:
-                final images = _getImageByType(state.movieDetail!, imageType);
+                final images = _getImageByType(state.movieDetail!, imageType!);
                 return PhotoViewGallery.builder(
                   scrollPhysics: const BouncingScrollPhysics(),
                   builder: (BuildContext context, int index) {

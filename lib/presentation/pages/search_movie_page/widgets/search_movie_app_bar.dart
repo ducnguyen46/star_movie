@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:star_movie/share/utils/utils.dart';
@@ -37,7 +36,7 @@ class _SearchMovieAppBarState extends State<SearchMovieAppBar> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
-      leading: const AutoLeadingButton(),
+      leading: const BackButton(),
       title: Center(
         child: TextFormField(
           controller: _searchInputController,

@@ -36,8 +36,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _appRouter = AppRouter();
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -59,7 +57,7 @@ class _MyAppState extends State<MyApp> {
         },
         builder: (context, state) {
           return MaterialApp.router(
-            routerConfig: _appRouter.config(),
+            routerConfig: getIt.get<AppRouter>().router,
             themeMode: _setThemeMode(state),
             theme: lightTheme,
             localizationsDelegates: context.localizationDelegates,

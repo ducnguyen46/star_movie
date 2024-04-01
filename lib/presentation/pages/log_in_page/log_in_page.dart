@@ -1,17 +1,17 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:star_movie/di/di.dart';
 import 'package:star_movie/domain/use_cases/login_tmdb_authenticated_use_case.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
 import 'package:star_movie/presentation/blocs/login_cubit/login_cubit.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
+import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/navigator/route_path/route_path.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:star_movie/share/utils/utils.dart';
 
-@RoutePage()
 class LogInPage extends StatelessWidget {
   const LogInPage({super.key});
 
@@ -43,11 +43,11 @@ class LogInPage extends StatelessWidget {
                 title: 'Error'.hardCode,
                 messages: state.message,
                 onRetryAction: () {
-                  context.router.pop();
+                  Navigator.of(context, rootNavigator: true).pop();
                   state.onRetry?.call();
                 },
                 onCancelAction: () {
-                  context.router.pop();
+                  Navigator.of(context, rootNavigator: true).pop();
                 },
               ),
             );
@@ -61,10 +61,14 @@ class LogInPage extends StatelessWidget {
                   messages: context.tr('user_approval_description'),
                   onPressedAction: () async {
                     final token = state.token;
-                    final isApproval = await context.router.pushNamed<bool?>(
-                        '${RoutePath.userApprovalPage}/$token');
+                    final isApproval = await context.pushNamed<bool?>(
+                      RoutePath.userApprovalPage.named,
+                      pathParameters: {
+                        AppConstants.pathToken: token,
+                      },
+                    );
                     if (context.mounted) {
-                      context.router.pop();
+                      Navigator.of(context, rootNavigator: true).pop();
                       context.read<LoginCubit>().loginAsTMDBAccount(
                           context, isApproval ?? false, token);
                     }
@@ -73,12 +77,12 @@ class LogInPage extends StatelessWidget {
           }
           // transaction to home page after got guest session
           if (state is GotGuestSession) {
-            context.router.replaceNamed(RoutePath.homePage);
+            context.replaceNamed(RoutePath.moviePage.named);
           }
 
           // transaction to home page after got session id
           if (state is GotTMDBSession) {
-            context.router.replaceNamed(RoutePath.homePage);
+            context.replaceNamed(RoutePath.moviePage.named);
           }
         },
         builder: (context, state) {
