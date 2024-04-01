@@ -23,12 +23,14 @@ class AppDialogUtil {
     }
 
     return showGeneralDialog<T>(
+        useRootNavigator: true,
         context: context,
         barrierDismissible: barrierDismissible,
         barrierLabel: MaterialLocalizations.of(context).dialogLabel,
-        pageBuilder: (context, animation, secondAnimation) {
+        pageBuilder: (dialogContext, animation, secondAnimation) {
           return WillPopScope(
-              child: appDialogInfo.when<Widget>(confirmDialog: (title, messages, onPressedAction) {
+              child: appDialogInfo.when<Widget>(
+                  confirmDialog: (title, messages, onPressedAction) {
                 return AppDialogWidget(
                   shape: shape,
                   backgroundColor: backgroundColor,
@@ -48,7 +50,8 @@ class AppDialogUtil {
                     ),
                   ],
                 );
-              }, errorRetryDialog: (title, messages, onRetryAction, onCancelAction) {
+              }, errorRetryDialog:
+                      (title, messages, onRetryAction, onCancelAction) {
                 return AppDialogWidget(
                   shape: shape,
                   backgroundColor: backgroundColor,
@@ -72,8 +75,16 @@ class AppDialogUtil {
                     )
                   ],
                 );
-              }, customDialog: (icon, iconPadding, title, titlePadding, titleTextStyle, content, contentPadding,
-                  contentTextStyle, actions, scrollable) {
+              }, customDialog: (icon,
+                      iconPadding,
+                      title,
+                      titlePadding,
+                      titleTextStyle,
+                      content,
+                      contentPadding,
+                      contentTextStyle,
+                      actions,
+                      scrollable) {
                 return AppDialogWidget(
                   shape: shape,
                   backgroundColor: backgroundColor,

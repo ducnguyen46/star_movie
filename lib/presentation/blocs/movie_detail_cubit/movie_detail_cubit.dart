@@ -21,7 +21,7 @@ class MovieDetailCubit extends Cubit<MovieDetailState> {
   final RatingMovieUseCase _ratingMovieUseCase;
   final RemoveRatingMovieUseCase _removeRatingMovieUseCase;
 
-  void getDetailMovie(int movieId) async {
+  void getDetailMovie(String movieId) async {
     emit(state.copyWith(
       status: MovieDetailStatus.loading,
       movieDetail: null,
@@ -30,7 +30,7 @@ class MovieDetailCubit extends Cubit<MovieDetailState> {
 
     // get movie detail
     final movieDetailEi = await _movieDetailUseCase.call(
-      GetMovieDetailUseCaseParams(movieId: '$movieId'),
+      GetMovieDetailUseCaseParams(movieId: movieId),
     );
 
     return movieDetailEi.fold((ex) {

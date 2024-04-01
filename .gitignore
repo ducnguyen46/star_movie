@@ -52,3 +52,6 @@ app.*.map.json
 *.gen.dart
 *.config.dart
 *.gr.dart
+
+# vs code
+.vscode/

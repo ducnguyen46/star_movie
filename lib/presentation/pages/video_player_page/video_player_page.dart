@@ -1,15 +1,13 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-@RoutePage()
 class VideoPlayerPage extends StatefulWidget {
   const VideoPlayerPage({
     super.key,
-    @PathParam('video_key') required this.videoKey,
+    required this.videoKey,
   });
 
   final String videoKey;
@@ -53,7 +51,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         CloseButton(
           color: AppColors.white,
           onPressed: () {
-            context.router.back();
+            Navigator.of(context, rootNavigator: true).pop();
           },
         ),
       ],

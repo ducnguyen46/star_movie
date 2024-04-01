@@ -1,13 +1,11 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/utils/utils.dart';
 
-@RoutePage<bool?>()
 class UserApprovalPage extends StatefulWidget {
-  const UserApprovalPage({super.key, @PathParam('token') required this.token});
+  const UserApprovalPage({super.key, required this.token});
   final String token;
 
   @override
@@ -41,14 +39,10 @@ class _UserApprovalPageState extends State<UserApprovalPage> {
       child: AppScaffold(
         appBar: AppBarCommon(
           title: Text(context.tr('user_approval')),
-          leading: AutoLeadingButton(
-            builder: (context, leadingType, action) {
-              return CloseButton(
-                onPressed: () {
-                  isForceBack = true;
-                  action?.call();
-                },
-              );
+          leading: CloseButton(
+            onPressed: () {
+              isForceBack = true;
+              Navigator.of(context, rootNavigator: true).pop();
             },
           ),
         ),
@@ -70,10 +64,10 @@ class _UserApprovalPageState extends State<UserApprovalPage> {
             final urlDeny = '$urlRequest/deny';
             if (urlLoaded == urlAllow) {
               isForceBack = true;
-              context.router.pop<bool?>(true);
+              Navigator.of(context, rootNavigator: true).pop<bool?>(true);
             } else if (urlLoaded == urlDeny) {
               isForceBack = true;
-              context.router.pop<bool?>(false);
+              Navigator.of(context, rootNavigator: true).pop<bool?>(false);
             }
           },
         ),

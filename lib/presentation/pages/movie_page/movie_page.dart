@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:star_movie/di/di.dart';
 import 'package:star_movie/domain/use_cases/get_language_tmdb_use_case.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
@@ -14,12 +14,18 @@ import 'package:star_movie/share/resources/resources.dart';
 
 import 'widgets/carousel_movies_slider.dart';
 
-@RoutePage()
-class MoviePage extends StatelessWidget {
+class MoviePage extends StatefulWidget {
   const MoviePage({super.key});
 
   @override
+  State<MoviePage> createState() => _MoviePageState();
+}
+
+class _MoviePageState extends State<MoviePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider(
       create: (context) => MovieCubit(
         popularMoviesUseCase: getIt<GetPopularMoviesUseCase>(),
@@ -36,7 +42,7 @@ class MoviePage extends StatelessWidget {
           actions: [
             IconButton.filledTonal(
               onPressed: () {
-                context.router.pushNamed(RoutePath.searchMovie);
+                context.pushNamed(RoutePath.searchMovie.named);
               },
               icon: Icon(
                 Icons.search,
@@ -62,8 +68,12 @@ class MoviePage extends StatelessWidget {
                       CarouselMoviesSlider(
                         movies: trendingMovies,
                         onPressed: (movieId) {
-                          context.router
-                              .pushNamed('${RoutePath.movieDetail}/$movieId');
+                          context.pushNamed(
+                            RoutePath.movieDetail.named,
+                            pathParameters: {
+                              AppConstants.pathMovieId: '$movieId'
+                            },
+                          );
                         },
                       ),
                       Column(
@@ -79,8 +89,11 @@ class MoviePage extends StatelessWidget {
                             child: LargeTitleViewAll(
                               largeTitle: context.tr('popular_movies'),
                               onPressed: () {
-                                context.router.pushNamed(
-                                  '${RoutePath.listHomeMoviesPage}?type=${AppConstants.viewAllPopularMovie}',
+                                context.pushNamed(
+                                  RoutePath.moviesPage.named,
+                                  queryParameters: {
+                                    'type': AppConstants.viewAllPopularMovie,
+                                  },
                                 );
                               },
                             ),
@@ -88,8 +101,12 @@ class MoviePage extends StatelessWidget {
                           HorizontalMoviesList(
                             movies: popularMovies,
                             onPressed: (movieId) {
-                              context.router.pushNamed(
-                                  '${RoutePath.movieDetail}/$movieId');
+                              context.pushNamed(
+                                RoutePath.movieDetail.named,
+                                pathParameters: {
+                                  AppConstants.pathMovieId: '$movieId',
+                                },
+                              );
                             },
                           ),
                         ],
@@ -107,8 +124,11 @@ class MoviePage extends StatelessWidget {
                             child: LargeTitleViewAll(
                               largeTitle: context.tr('upcoming_movies'),
                               onPressed: () {
-                                context.router.pushNamed(
-                                  '${RoutePath.listHomeMoviesPage}?type=${AppConstants.viewAllUpcomingMovie}',
+                                context.pushNamed(
+                                  RoutePath.moviesPage.named,
+                                  queryParameters: {
+                                    'type': AppConstants.viewAllUpcomingMovie,
+                                  },
                                 );
                               },
                             ),
@@ -116,8 +136,10 @@ class MoviePage extends StatelessWidget {
                           HorizontalMoviesList(
                             movies: upcomingMovies,
                             onPressed: (movieId) {
-                              context.router.pushNamed(
-                                  '${RoutePath.movieDetail}/$movieId');
+                              context.pushNamed(RoutePath.movieDetail.named,
+                                  pathParameters: {
+                                    AppConstants.pathMovieId: '$movieId',
+                                  });
                             },
                           ),
                         ],
@@ -135,8 +157,12 @@ class MoviePage extends StatelessWidget {
                             child: LargeTitleViewAll(
                               largeTitle: context.tr('now_playing_movies'),
                               onPressed: () {
-                                context.router.pushNamed(
-                                  '${RoutePath.listHomeMoviesPage}?type=${AppConstants.viewAllNowPlayingMovie}',
+                                context.pushNamed(
+                                  RoutePath.moviesPage.named,
+                                  queryParameters: {
+                                    AppConstants.queryType:
+                                        AppConstants.viewAllNowPlayingMovie,
+                                  },
                                 );
                               },
                             ),
@@ -144,8 +170,12 @@ class MoviePage extends StatelessWidget {
                           HorizontalMoviesList(
                             movies: nowPlayingMovies,
                             onPressed: (movieId) {
-                              context.router.pushNamed(
-                                  '${RoutePath.movieDetail}/$movieId');
+                              context.pushNamed(
+                                RoutePath.movieDetail.named,
+                                pathParameters: {
+                                  AppConstants.pathMovieId: '$movieId',
+                                },
+                              );
                             },
                           ),
                         ],
@@ -163,8 +193,12 @@ class MoviePage extends StatelessWidget {
                             child: LargeTitleViewAll(
                               largeTitle: context.tr('top_rate_movies'),
                               onPressed: () {
-                                context.router.pushNamed(
-                                  '${RoutePath.listHomeMoviesPage}?type=${AppConstants.viewAllTopRateMovie}',
+                                context.pushNamed(
+                                  RoutePath.moviesPage.named,
+                                  queryParameters: {
+                                    AppConstants.queryType:
+                                        AppConstants.viewAllTopRateMovie
+                                  },
                                 );
                               },
                             ),
@@ -172,8 +206,12 @@ class MoviePage extends StatelessWidget {
                           HorizontalMoviesList(
                             movies: topRateMovies,
                             onPressed: (movieId) {
-                              context.router.pushNamed(
-                                  '${RoutePath.movieDetail}/$movieId');
+                              context.pushNamed(
+                                RoutePath.movieDetail.named,
+                                pathParameters: {
+                                  AppConstants.pathMovieId: '$movieId'
+                                },
+                              );
                             },
                           ),
                         ],
@@ -193,4 +231,7 @@ class MoviePage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
