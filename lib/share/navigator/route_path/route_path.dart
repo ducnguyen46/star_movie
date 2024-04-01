@@ -4,12 +4,14 @@ class RoutePath {
   static const splashPage = '/splash';
 
   // home
-  static const homePage = '/home';
+  static const homePage = '/';
+  static const homeNamed = 'home';
   static const profilePage = '/profile';
   static const moviesPage = '/movies';
 
   // movie
   static const moviePage = '/movie';
+
   static const movieDetail = '/movie-detail';
   static const videoPlayer = 'video-player';
   static const photoViewer = 'photo-viewer';

@@ -77,12 +77,12 @@ class LogInPage extends StatelessWidget {
           }
           // transaction to home page after got guest session
           if (state is GotGuestSession) {
-            context.replaceNamed(RoutePath.moviePage.named);
+            context.replaceNamed(RoutePath.homePage.named);
           }
 
           // transaction to home page after got session id
           if (state is GotTMDBSession) {
-            context.replaceNamed(RoutePath.moviePage.named);
+            context.replaceNamed(RoutePath.homePage.named);
           }
         },
         builder: (context, state) {

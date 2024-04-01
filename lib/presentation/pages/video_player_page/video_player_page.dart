@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 import 'package:star_movie/share/resources/resources.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 

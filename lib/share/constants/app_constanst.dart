@@ -26,4 +26,8 @@ class AppConstants {
   //
   // When movie is not rated, it has default value
   static const defaultMovieRate = -1.0;
+
+  // Extra map keys
+  static const extraMovieDetailCubit = 'movie-detail-cubit';
+  static const extraAppAuthCubit = 'app-auth-cubit';
 }

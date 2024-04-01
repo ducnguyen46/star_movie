@@ -14,11 +14,18 @@ import 'package:star_movie/share/resources/resources.dart';
 
 import 'widgets/carousel_movies_slider.dart';
 
-class MoviePage extends StatelessWidget {
+class MoviePage extends StatefulWidget {
   const MoviePage({super.key});
 
   @override
+  State<MoviePage> createState() => _MoviePageState();
+}
+
+class _MoviePageState extends State<MoviePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider(
       create: (context) => MovieCubit(
         popularMoviesUseCase: getIt<GetPopularMoviesUseCase>(),
@@ -35,7 +42,7 @@ class MoviePage extends StatelessWidget {
           actions: [
             IconButton.filledTonal(
               onPressed: () {
-                context.pushNamed(RoutePath.searchMovie.isSubPage);
+                context.pushNamed(RoutePath.searchMovie.named);
               },
               icon: Icon(
                 Icons.search,
@@ -61,11 +68,6 @@ class MoviePage extends StatelessWidget {
                       CarouselMoviesSlider(
                         movies: trendingMovies,
                         onPressed: (movieId) {
-                          final currentLocation = GoRouter.of(context)
-                              .routerDelegate
-                              .currentConfiguration
-                              .last
-                              .matchedLocation;
                           context.pushNamed(
                             RoutePath.movieDetail.named,
                             pathParameters: {
@@ -88,7 +90,7 @@ class MoviePage extends StatelessWidget {
                               largeTitle: context.tr('popular_movies'),
                               onPressed: () {
                                 context.pushNamed(
-                                  RoutePath.moviesPage.isSubPage,
+                                  RoutePath.moviesPage.named,
                                   queryParameters: {
                                     'type': AppConstants.viewAllPopularMovie,
                                   },
@@ -229,4 +231,7 @@ class MoviePage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

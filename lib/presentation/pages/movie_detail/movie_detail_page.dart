@@ -552,7 +552,10 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                             pathParameters: {
                               AppConstants.pathMovieId: '${movieDetail.id}'
                             },
-                            extra: context.read<MovieDetailCubit>(),
+                            extra: <String, dynamic>{
+                              AppConstants.extraMovieDetailCubit:
+                                  context.read<MovieDetailCubit>(),
+                            },
                           );
                         },
                       ),
@@ -599,7 +602,10 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                             pathParameters: {
                               AppConstants.pathMovieId: '${movieDetail.id}'
                             },
-                            extra: context.read<MovieDetailCubit>(),
+                            extra: <String, dynamic>{
+                              AppConstants.extraMovieDetailCubit:
+                                  context.read<MovieDetailCubit>(),
+                            },
                           );
                         },
                       ),
@@ -743,7 +749,10 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                       AppConstants.queryImageType:
                                           AppConstants.backdrops
                                     },
-                                    extra: context.read<MovieDetailCubit>(),
+                                    extra: <String, dynamic>{
+                                      AppConstants.extraMovieDetailCubit:
+                                          context.read<MovieDetailCubit>(),
+                                    },
                                   );
                                 }
                               },
@@ -759,7 +768,10 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                       AppConstants.queryImageType:
                                           AppConstants.posters
                                     },
-                                    extra: context.read<MovieDetailCubit>(),
+                                    extra: <String, dynamic>{
+                                      AppConstants.extraMovieDetailCubit:
+                                          context.read<MovieDetailCubit>(),
+                                    },
                                   );
                                 }
                               },

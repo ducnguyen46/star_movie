@@ -24,7 +24,7 @@ class SplashPage extends StatelessWidget {
             context.pushReplacement(RoutePath.logInPage);
           } else if (state is AppAuthGuest || state is AppAuthAuthenticated) {
             // navigate to home page
-            context.pushReplacement(RoutePath.moviePage);
+            context.pushReplacement(RoutePath.homePage);
           }
         },
         child: Scaffold(

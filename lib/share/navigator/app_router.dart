@@ -27,59 +27,16 @@ class AppRouter {
   static final shellProfileTabNavigatorKey = GlobalKey<NavigatorState>();
 
   static final routes = [
-    StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) =>
-          ScaffoldWithNavigatorBar(shell: navigationShell),
-      branches: [
-        StatefulShellBranch(
-          initialLocation: RoutePath.moviePage,
-          navigatorKey: shellMovieTabNavigatorKey,
-          routes: [
-            GoRoute(
-              name: RoutePath.moviePage.named,
-              path: RoutePath.moviePage,
-              builder: (context, state) => const MoviePage(),
-            ),
-            movieDetailRouter,
-            GoRoute(
-              name: RoutePath.moviesPage.named,
-              path: RoutePath.moviesPage,
-              builder: (context, state) => MoviesPage(
-                movieType: state.uri.queryParameters[AppConstants.queryType],
-              ),
-            ),
-            GoRoute(
-              name: RoutePath.searchMovie.isSubPage,
-              path: RoutePath.searchMovie,
-              builder: (context, state) {
-                return BlocProvider(
-                  create: (_) => SearchMovieCubit(
-                    searchMovieUseCase: getIt.get<SearchMovieUseCase>(),
-                  ),
-                  child: const SearchMoviePage(),
-                );
-              },
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          navigatorKey: shellProfileTabNavigatorKey,
-          routes: [
-            GoRoute(
-              path: RoutePath.profilePage,
-              builder: (context, state) => const ProfilePage(),
-            ),
-          ],
-        ),
-      ],
+    GoRoute(
+      path: '/',
+      name: RoutePath.homeNamed,
+      builder: (context, state) => const HomePage(),
     ),
-    //
     GoRoute(
       name: RoutePath.splashPage.named,
       path: RoutePath.splashPage,
       builder: (context, state) => const SplashPage(),
     ),
-    //
     GoRoute(
       name: RoutePath.logInPage.named,
       path: RoutePath.logInPage,
@@ -93,6 +50,35 @@ class AppRouter {
           ),
         ),
       ],
+    ),
+    GoRoute(
+      name: RoutePath.moviePage.named,
+      path: RoutePath.moviePage,
+      builder: (context, state) => const MoviePage(),
+    ),
+    GoRoute(
+      path: RoutePath.profilePage,
+      builder: (context, state) => const ProfilePage(),
+    ),
+    movieDetailRouter,
+    GoRoute(
+      name: RoutePath.moviesPage.named,
+      path: RoutePath.moviesPage,
+      builder: (context, state) => MoviesPage(
+        movieType: state.uri.queryParameters[AppConstants.queryType],
+      ),
+    ),
+    GoRoute(
+      name: RoutePath.searchMovie.named,
+      path: RoutePath.searchMovie,
+      builder: (context, state) {
+        return BlocProvider(
+          create: (_) => SearchMovieCubit(
+            searchMovieUseCase: getIt.get<SearchMovieUseCase>(),
+          ),
+          child: const SearchMoviePage(),
+        );
+      },
     ),
   ];
 
@@ -116,7 +102,9 @@ class AppRouter {
         name: RoutePath.movieCasts.named,
         path: RoutePath.movieCasts,
         builder: (context, state) => BlocProvider.value(
-          value: state.extra! as MovieDetailCubit,
+          value: (state.extra!
+                  as Map<String, dynamic>)[AppConstants.extraMovieDetailCubit]
+              as MovieDetailCubit,
           child: const MovieCastsPage(),
         ),
       ),
@@ -124,7 +112,9 @@ class AppRouter {
         name: RoutePath.movieCrews.named,
         path: RoutePath.movieCrews,
         builder: (context, state) => BlocProvider.value(
-          value: state.extra! as MovieDetailCubit,
+          value: (state.extra!
+                  as Map<String, dynamic>)[AppConstants.extraMovieDetailCubit]
+              as MovieDetailCubit,
           child: const MovieCrewsPage(),
         ),
       ),
@@ -133,7 +123,8 @@ class AppRouter {
           path: RoutePath.photoViewer,
           builder: (context, state) {
             return BlocProvider.value(
-              value: state.extra! as MovieDetailCubit,
+              value: (state.extra! as Map<String, dynamic>)[
+                  AppConstants.extraMovieDetailCubit] as MovieDetailCubit,
               child: PhotoViewerPage(
                 imageType:
                     state.uri.queryParameters[AppConstants.queryImageType],
