@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:star_movie/share/resources/resources.dart';
 import 'package:star_movie/share/utils/utils.dart';
 
 class SearchMovieAppBar extends StatefulWidget {
@@ -35,35 +35,44 @@ class _SearchMovieAppBarState extends State<SearchMovieAppBar> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      automaticallyImplyLeading: false,
       pinned: true,
-      leading: const BackButton(),
-      title: Center(
-        child: TextFormField(
-          controller: _searchInputController,
-          autofocus: true,
-          autocorrect: false,
-          keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.search,
-          cursorRadius: const Radius.circular(Dimens.d8),
-          cursorHeight: AppTextStyle.s16Regular.height,
-          style: AppTextStyle.s16Regular,
-          decoration: InputDecoration(
-            hintText: 'Search movies...'.hardCode,
-            hintStyle: AppTextStyle.s16Regular,
-            border: InputBorder.none,
-            suffix: _isClearIconShown
-                ? IconButton(
-                    onPressed: () {
-                      _searchInputController.clear();
-                    },
-                    icon: const Icon(Icons.clear),
-                  )
-                : null,
+      title: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          BackButton(
+            color: Theme.of(context).colorScheme.primary,
           ),
-          onFieldSubmitted: (value) {
-            widget.onSearch(value);
-          },
-        ),
+          Expanded(
+            child: SizedBox(
+              height: 36.0,
+              width: double.infinity,
+              child: CupertinoTextField(
+                controller: _searchInputController,
+                keyboardType: TextInputType.text,
+                placeholder: 'Search movies...'.hardCode,
+                placeholderStyle: const TextStyle(
+                  color: Color(0xffC4C6CC),
+                  fontSize: 14.0,
+                ),
+                prefix: const Padding(
+                  padding: EdgeInsets.fromLTRB(9.0, 6.0, 9.0, 6.0),
+                  child: Icon(
+                    Icons.search,
+                    color: Color(0xffC4C6CC),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: const Color(0xffF0F1F5),
+                ),
+                onSubmitted: (value) {
+                  widget.onSearch(value);
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

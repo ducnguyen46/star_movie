@@ -33,11 +33,12 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: GoRouter.of(context).canPop()
-          ? BackButton(
-              color: Theme.of(context).colorScheme.primary,
-            )
-          : const SizedBox(),
+      leading: leading ??
+          (GoRouter.of(context).canPop()
+              ? BackButton(
+                  color: Theme.of(context).colorScheme.primary,
+                )
+              : null),
       title: title,
       titleTextStyle: titleTextStyle ??
           AppTextStyle.s18Medium.copyWith(

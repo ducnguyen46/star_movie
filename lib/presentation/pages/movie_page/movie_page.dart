@@ -38,15 +38,20 @@ class _MoviePageState extends State<MoviePage>
       )..loadingMovies(),
       child: AppScaffold(
         appBar: AppBarCommon(
+          automaticallyImplyLeading: false,
+          centerTitle: false,
           title: Text(context.tr('movies')),
           actions: [
             IconButton.filledTonal(
+              padding: const EdgeInsets.all(Dimens.d6),
               onPressed: () {
                 context.pushNamed(RoutePath.searchMovie.named);
               },
-              icon: Icon(
-                Icons.search,
-                color: AppColors.redPrimary,
+              icon: FittedBox(
+                child: Icon(
+                  Icons.search,
+                  color: AppColors.redPrimary,
+                ),
               ),
             ),
           ],

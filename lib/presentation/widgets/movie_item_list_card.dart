@@ -44,6 +44,7 @@ class MovieItemListCard extends StatelessWidget {
                       child: CachedImageCommon(
                         imageUrl: ImageConfigConstant.posterImgW500 +
                             movie.posterPath,
+                        fit: BoxFit.fitHeight,
                       ),
                     ),
                     Positioned(
