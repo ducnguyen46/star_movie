@@ -40,6 +40,7 @@ class _UserApprovalPageState extends State<UserApprovalPage> {
         appBar: AppBarCommon(
           title: Text(context.tr('user_approval')),
           leading: CloseButton(
+            color: Theme.of(context).colorScheme.primary,
             onPressed: () {
               isForceBack = true;
               Navigator.of(context, rootNavigator: true).pop();

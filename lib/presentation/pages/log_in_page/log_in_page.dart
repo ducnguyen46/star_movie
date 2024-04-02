@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:star_movie/di/di.dart';
 import 'package:star_movie/domain/use_cases/login_tmdb_authenticated_use_case.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
+import 'package:star_movie/presentation/blocs/app_auth_cubit/app_auth_cubit.dart';
 import 'package:star_movie/presentation/blocs/login_cubit/login_cubit.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/constants/constants.dart';
@@ -77,12 +78,14 @@ class LogInPage extends StatelessWidget {
           }
           // transaction to home page after got guest session
           if (state is GotGuestSession) {
-            context.replaceNamed(RoutePath.homePage.named);
+            context.read<AppAuthCubit>().getInitialAppAuth();
+            context.replaceNamed(RoutePath.homeNamed);
           }
 
           // transaction to home page after got session id
           if (state is GotTMDBSession) {
-            context.replaceNamed(RoutePath.homePage.named);
+            context.read<AppAuthCubit>().getInitialAppAuth();
+            context.replaceNamed(RoutePath.homeNamed);
           }
         },
         builder: (context, state) {
@@ -90,6 +93,7 @@ class LogInPage extends StatelessWidget {
 
           return AppScaffold(
             appBar: AppBarCommon(
+              automaticallyImplyLeading: false,
               centerTitle: true,
               title: Text(context.tr('login')),
             ),
@@ -110,7 +114,6 @@ class LogInPage extends StatelessWidget {
                     onPressed: () {
                       // Call request token
                       loginCubit.requestTokenTMDB();
-                      // loginCubit.testRetry('Loi roi troi oi');
                     },
                     title: context.tr('login_tmdb_account'),
                   ),

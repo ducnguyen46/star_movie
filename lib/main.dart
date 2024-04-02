@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:star_movie/domain/use_cases/use_cases.dart';
+import 'package:star_movie/presentation/blocs/app_auth_cubit/app_auth_cubit.dart';
 import 'package:star_movie/presentation/blocs/app_setting_cubit/app_setting_cubit.dart';
 import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/navigator/app_router.dart';
@@ -39,12 +40,22 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppSettingCubit(
-        getAppSettingUseCase: getIt.get<GetAppSettingUseCase>(),
-        changeAppThemeUseCase: getIt.get<ChangeAppThemeUseCase>(),
-        changeAppLanguageUseCase: getIt.get<ChangeAppLanguageUseCase>(),
-      )..loadingAppSetting(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AppSettingCubit(
+            getAppSettingUseCase: getIt.get<GetAppSettingUseCase>(),
+            changeAppThemeUseCase: getIt.get<ChangeAppThemeUseCase>(),
+            changeAppLanguageUseCase: getIt.get<ChangeAppLanguageUseCase>(),
+          )..loadingAppSetting(),
+        ),
+        BlocProvider(
+          create: (context) => AppAuthCubit(
+            getAppAuthUseCase: getIt.get<GetAuthenticatedUserDataUseCase>(),
+            loginTMDBGuestUseCase: getIt<LoginTMDBGuestUseCase>(),
+          )..getInitialAppAuth(),
+        ),
+      ],
       child: BlocConsumer<AppSettingCubit, AppSettingState>(
         listener: (context, state) {
           // Show error dialog

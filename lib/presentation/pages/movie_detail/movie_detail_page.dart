@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:readmore/readmore.dart';
+import 'package:star_movie/presentation/blocs/app_auth_cubit/app_auth_cubit.dart';
 import 'package:star_movie/presentation/blocs/movie_detail_cubit/movie_detail_cubit.dart';
 import 'package:star_movie/presentation/pages/movie_page/widgets/horizontal_movies_list.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
@@ -217,14 +218,15 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                                   Text(
                                     movieDetail.tagline,
                                     style: AppTextStyle.s14Regular.copyWith(
-                                        color: AppColors.white,
-                                        shadows: [
-                                          const Shadow(
-                                            offset: Offset(1.0, 1.0),
-                                            blurRadius: 2.0,
-                                            color: Color.fromARGB(255, 0, 0, 0),
-                                          ),
-                                        ]),
+                                      color: AppColors.white,
+                                      shadows: [
+                                        const Shadow(
+                                          offset: Offset(1.0, 1.0),
+                                          blurRadius: 2.0,
+                                          color: Color.fromARGB(255, 0, 0, 0),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                               ],
                             ),
@@ -321,40 +323,52 @@ class _MovieDetailViewState extends State<MovieDetailView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              showRatingDialog(
-                                movieId: movieDetail.id,
-                                ratedValue: state.movieDetail!.rate,
-                              );
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  'My rating'.hardCode,
-                                  style: AppTextStyle.s12Regular,
-                                ),
-                                BlocBuilder<MovieDetailCubit, MovieDetailState>(
-                                  buildWhen: (previous, current) {
-                                    return previous.status ==
-                                            MovieDetailStatus.rating ||
-                                        current.status ==
-                                            MovieDetailStatus.rated;
-                                  },
-                                  builder: (context, state) {
-                                    return Text(
-                                      state.movieDetail!.rate !=
-                                              AppConstants.defaultMovieRate
-                                          ? state.movieDetail!.rate.toString()
-                                          : ' - ',
-                                      style: AppTextStyle.s14Regular.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                          BlocBuilder<AppAuthCubit, AppAuthState>(
+                            builder: (authContext, authState) {
+                              if (authState is AppAuthGuest) {
+                                return const SizedBox();
+                              } else {
+                                return GestureDetector(
+                                  onTap: () {
+                                    showRatingDialog(
+                                      movieId: movieDetail.id,
+                                      ratedValue: state.movieDetail!.rate,
                                     );
                                   },
-                                ),
-                              ],
-                            ),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        'My rating'.hardCode,
+                                        style: AppTextStyle.s12Regular,
+                                      ),
+                                      BlocBuilder<MovieDetailCubit,
+                                          MovieDetailState>(
+                                        buildWhen: (previous, current) {
+                                          return previous.status ==
+                                                  MovieDetailStatus.rating ||
+                                              current.status ==
+                                                  MovieDetailStatus.rated;
+                                        },
+                                        builder: (context, state) {
+                                          return Text(
+                                            state.movieDetail!.rate !=
+                                                    AppConstants
+                                                        .defaultMovieRate
+                                                ? state.movieDetail!.rate
+                                                    .toString()
+                                                : ' - ',
+                                            style: AppTextStyle.s14Regular
+                                                .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              }
+                            },
                           ),
                           SizedBox(
                             height: Dimens.d20,

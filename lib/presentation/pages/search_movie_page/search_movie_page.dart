@@ -5,6 +5,7 @@ import 'package:star_movie/presentation/pages/search_movie_page/widgets/widgets.
 import 'package:star_movie/presentation/widgets/movie_item_list_card.dart';
 import 'package:star_movie/presentation/widgets/widgets.dart';
 import 'package:star_movie/share/resources/resources.dart';
+import 'package:star_movie/share/utils/utils.dart';
 
 class SearchMoviePage extends StatefulWidget {
   const SearchMoviePage({super.key});
@@ -64,13 +65,15 @@ class _SearchMoviePageState extends State<SearchMoviePage> {
             buildWhen: (previous, current) => previous.status != current.status,
             builder: (context, state) {
               if (state.status == SearchMovieStatus.initial) {
-                return const SliverToBoxAdapter(
+                return SliverFillRemaining(
+                  hasScrollBody: false,
                   child: Center(
-                    child: Text('Search something'),
+                    child: Text('Search something'.hardCode),
                   ),
                 );
               } else if (state.status == SearchMovieStatus.loading) {
-                return const SliverToBoxAdapter(
+                return const SliverFillRemaining(
+                  hasScrollBody: false,
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),
@@ -80,7 +83,6 @@ class _SearchMoviePageState extends State<SearchMoviePage> {
                   itemCount: state.movies.length,
                   itemBuilder: (context, index) {
                     final movie = state.movies[index];
-
                     return MovieItemListCard(movie: movie);
                   },
                   separatorBuilder: (BuildContext context, int index) {
