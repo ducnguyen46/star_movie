@@ -7,4 +7,5 @@ class LocalStorageConstant {
   static const keyUsernamePassword = 'KEY_USERNAME_PASSWORD';
   static const keyMovieGenres = 'KEY_MOVIE_GENRES';
   static const keyLanguage = 'KEY_LANGUAGE';
+  static const keyAccountInfo = 'KEY_ACCOUNT_INFO';
 }

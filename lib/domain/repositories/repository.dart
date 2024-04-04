@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:star_movie/data/models/models.dart';
 import 'package:star_movie/share/constants/localization_constant.dart';
 import 'package:star_movie/share/exceptions/app_exception.dart';
 
@@ -123,5 +122,15 @@ abstract class Repository {
     bool includeAdult,
     String year,
     String primaryReleaseYear,
+  );
+
+  /// Get account info of authenticated user
+  Future<Either<AppException, AccountInfo>> getAccountInfo(
+    String sessionId,
+  );
+
+  /// Log out account
+  Future<Either<AppException, bool>> logOut(
+    String sessionId,
   );
 }

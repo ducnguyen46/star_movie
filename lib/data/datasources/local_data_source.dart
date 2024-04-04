@@ -1,6 +1,8 @@
 import '../models/models.dart';
 
 abstract class LocalDataSource {
+  void logOutAccount();
+
   Future<AppSettingModel> getAppSettingFromStorage();
   Future<void> saveAppSettingToStorage(AppSettingModel setting);
   RegionsModel getRegionsModelFromStorage();
@@ -11,4 +13,6 @@ abstract class LocalDataSource {
   Future<bool> saveGenresModelsToStorage(List<GenreModel> genresModel);
   List<LanguageModel> getLanguageModelFromStorage();
   Future<bool> saveLanguagesModelToStorage(List<LanguageModel> languagesModel);
+  AccountInfoModel? getAccountInfoModelFromStorage();
+  Future<void> saveAccountInfoModelToStorage(AccountInfoModel accountInfoModel);
 }

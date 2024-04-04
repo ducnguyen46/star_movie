@@ -5,7 +5,8 @@ import '../exceptions/exceptions.dart';
 
 @LazySingleton()
 class LocalStorageService {
-  const LocalStorageService({required SharedPreferences sp}) : _sharedPreferences = sp;
+  const LocalStorageService({required SharedPreferences sp})
+      : _sharedPreferences = sp;
   final SharedPreferences _sharedPreferences;
 
   /////////
@@ -86,5 +87,13 @@ class LocalStorageService {
     } catch (e) {
       throw LocalException(LocalExceptionType.save, rootException: e);
     }
+  }
+
+  void removeData({required String key}) {
+    _sharedPreferences.remove(key);
+  }
+
+  void clearData() {
+    _sharedPreferences.clear();
   }
 }
