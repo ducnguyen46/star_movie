@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
           create: (context) => AppAuthCubit(
             getAppAuthUseCase: getIt.get<GetAuthenticatedUserDataUseCase>(),
             loginTMDBGuestUseCase: getIt<LoginTMDBGuestUseCase>(),
+            accountInfoUseCase: getIt<GetAccountInfoUseCase>(),
           )..getInitialAppAuth(),
         ),
       ],

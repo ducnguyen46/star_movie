@@ -164,4 +164,42 @@ class LocalDataSourceImpl implements LocalDataSource {
       rethrow;
     }
   }
+
+  @override
+  AccountInfoModel? getAccountInfoModelFromStorage() {
+    try {
+      final accountInfoModelJson =
+          service.getString(key: LocalStorageConstant.keyAccountInfo);
+      if (accountInfoModelJson != null) {
+        return AccountInfoModel.fromJson(jsonDecode(accountInfoModelJson));
+      } else {
+        return null;
+      }
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> saveAccountInfoModelToStorage(
+      AccountInfoModel accountInfoModel) async {
+    try {
+      await service.saveString(
+        key: LocalStorageConstant.keyAccountInfo,
+        value: jsonEncode(accountInfoModel),
+      );
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  void logOutAccount() async {
+    try {
+      service.removeData(key: LocalStorageConstant.keyAccountInfo);
+      service.removeData(key: LocalStorageConstant.keyAuthenticatedUser);
+    } catch (_) {
+      rethrow;
+    }
+  }
 }

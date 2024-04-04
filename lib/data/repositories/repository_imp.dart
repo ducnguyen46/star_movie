@@ -6,7 +6,6 @@ import 'package:star_movie/share/constants/constants.dart';
 import 'package:star_movie/share/exceptions/exceptions.dart';
 import 'package:star_movie/share/mappers/language_mapper.dart';
 import 'package:star_movie/share/mappers/mappers.dart';
-import 'package:star_movie/share/utils/utils.dart';
 
 import '../datasources/data_source.dart';
 import '../models/models.dart';
@@ -26,6 +25,7 @@ class RepositoryImpl implements Repository {
     required MovieImageMapper movieImageMapper,
     required CommonResponseMapper commonResponseMapper,
     required AccountStateMapper accountStateMapper,
+    required AccountInfoMapper accountInfoMapper,
   })  : _localDataSource = localDataSource,
         _remoteDataSource = remoteDataSource,
         _appSettingMapper = appSettingMapper,
@@ -37,7 +37,8 @@ class RepositoryImpl implements Repository {
         _movieDetailMapper = movieDetailMapper,
         _movieImageMapper = movieImageMapper,
         _commonResponseMapper = commonResponseMapper,
-        _accountStateMapper = accountStateMapper;
+        _accountStateMapper = accountStateMapper,
+        _accountInfoMapper = accountInfoMapper;
 
   final LocalDataSource _localDataSource;
   final RemoteDataSource _remoteDataSource;
@@ -53,6 +54,7 @@ class RepositoryImpl implements Repository {
   final MovieImageMapper _movieImageMapper;
   final CommonResponseMapper _commonResponseMapper;
   final AccountStateMapper _accountStateMapper;
+  final AccountInfoMapper _accountInfoMapper;
 
   @override
   Future<Either<AppException, bool>> changeAppLanguage(
@@ -594,6 +596,37 @@ class RepositoryImpl implements Repository {
         return const Left(RemoteException(RemoteExceptionType.unknown));
       }
     } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, AccountInfo>> getAccountInfo(
+      String sessionId) async {
+    try {
+      final accountInfoResponseModel =
+          await _remoteDataSource.getAccountInfo(sessionId: sessionId);
+      if (accountInfoResponseModel != null) {
+        return Right(_accountInfoMapper.toEntity(accountInfoResponseModel));
+      } else {
+        return const Left(RemoteException(RemoteExceptionType.unknown));
+      }
+    } on RemoteException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<AppException, bool>> logOut(String sessionId) async {
+    try {
+      _localDataSource.logOutAccount();
+      if (sessionId.isNotEmpty) {
+        await _remoteDataSource.deleteSession(sessionId: sessionId);
+      }
+      return const Right(true);
+    } on RemoteException catch (e) {
+      return Left(e);
+    } on LocalException catch (e) {
       return Left(e);
     }
   }

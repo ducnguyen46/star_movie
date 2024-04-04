@@ -13,6 +13,7 @@ class AppAuthState with _$AppAuthState {
 
   const factory AppAuthState.authenticated({
     required String sessionId,
+    required AccountInfo accountInfo,
   }) = AppAuthAuthenticated;
 
   const factory AppAuthState.guest({

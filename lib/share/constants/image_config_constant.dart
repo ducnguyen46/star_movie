@@ -8,4 +8,5 @@ class ImageConfigConstant {
   static const profileImgH632 = '${baseImg}h632';
   static const profileImg = '${baseImg}original';
   static const stillImg = '${baseImg}original';
+  static const gravatarImg = 'https://gravatar.com/avatar/';
 }

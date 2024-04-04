@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
 import 'package:star_movie/data/models/genres_response.dart';
 import 'package:star_movie/data/models/models.dart';
@@ -413,6 +414,50 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         return MoviesResponseModel.fromJson(response.data);
       }
       return null;
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<AccountInfoModel?> getAccountInfo({required String sessionId}) async {
+    try {
+      var queryParams = {
+        'session_id': sessionId,
+      };
+
+      final response = await apiClient.request(
+        method: RequestMethod.get,
+        path: '/account/${dotenv.env["ACCOUNT_ID"]}',
+        queryParameters: queryParams,
+      );
+
+      if (response.data != null) {
+        return AccountInfoModel.fromJson(response.data);
+      }
+      return null;
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<bool> deleteSession({required String sessionId}) async {
+    try {
+      var data = {
+        'session_id': sessionId,
+      };
+      final response = await apiClient.request(
+        method: RequestMethod.delete,
+        path: '/authentication/session',
+        data: data,
+      );
+
+      if (response.data != null) {
+        final resultJson = response.data as Map<String, dynamic>;
+        return resultJson['success'];
+      }
+      return false;
     } catch (_) {
       rethrow;
     }

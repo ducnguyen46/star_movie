@@ -83,4 +83,12 @@ abstract class RemoteDataSource {
     required String year,
     required String primaryReleaseYear,
   });
+
+  Future<AccountInfoModel?> getAccountInfo({
+    required String sessionId,
+  });
+
+  Future<bool> deleteSession({
+    required String sessionId,
+  });
 }
